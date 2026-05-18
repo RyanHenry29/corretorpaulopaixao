@@ -1,0 +1,8 @@
+{
+  "name": "corretor-paulopaixao",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "npx serve . -l 3000 --no-clipboard"
+  }
+}

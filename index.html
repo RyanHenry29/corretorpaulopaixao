@@ -1232,7 +1232,8 @@
     const nome = sanitizeInput(document.getElementById('f-nome').value.trim());
     const cpf = sanitizeInput(document.getElementById('f-cpf').value.trim());
     const tel = sanitizeInput(document.getElementById('f-tel').value.trim());
-    const nascimento = sanitizeInput(document.getElementById('f-nascimento').value) || 'Não informado';
+    const nascimentoRaw = document.getElementById('f-nascimento').value;
+    const nascimento = nascimentoRaw ? nascimentoRaw.split('-').reverse().join('/') : 'N\u00e3o informado';
     const email = sanitizeInput(document.getElementById('f-email').value.trim()) || 'Não informado';
     const msgAdicional = sanitizeInput(document.getElementById('f-mensagem').value.trim());
 

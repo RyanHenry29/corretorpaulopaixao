@@ -115,8 +115,24 @@
       width: 100%; height: 100%; object-fit: cover;
       object-position: center;
       animation: slowZoom 25s infinite alternate linear;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
     @keyframes slowZoom { 0% { transform: scale(1); } 100% { transform: scale(1.06); } }
+    
+    /* Video mobile fix */
+    @media (max-width: 768px) {
+      .hero-video-wrapper {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      }
+      .hero-video-wrapper video {
+        animation: none;
+        min-width: 100%;
+        min-height: 100%;
+      }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .hero-video-wrapper video { animation: none; }
@@ -183,7 +199,7 @@
     .section-head { margin-bottom: 4rem; text-align: center; }
     .section-title { font-family: var(--serif); font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 500; line-height: 1.1; color: var(--teal); margin-top: 1rem; }
     .section-teal .section-title { color: var(--white); }
-    .section-sub { font-size: 1.1rem; color: var(--teal-light); margin-top: 1rem; font-weight: 400; max-width: 600px; margin-inline: auto; }
+    .section-sub { font-family: var(--sans); font-size: 1.1rem; color: var(--teal-light); margin-top: 1rem; font-weight: 400; max-width: 600px; margin-inline: auto; }
     .section-teal .section-sub { color: rgba(255,255,255,.7); }
     .section-teal .label { color: var(--gold-light); }
 
@@ -192,7 +208,7 @@
     .emp-img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 20px 40px rgba(8,75,81,0.15); }
     
     .emp-features { list-style: none; margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
-    .emp-feature { display: flex; align-items: center; gap: 1.2rem; font-size: 1rem; font-weight: 500; color: var(--teal); }
+    .emp-feature { display: flex; align-items: center; gap: 1.2rem; font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--teal); }
     .emp-feature i { color: var(--white); background: var(--gold); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; }
 
     /* ── TIPOLOGIAS ── */
@@ -202,21 +218,21 @@
     
     .tipo-card.destaque { background: var(--teal); color: var(--white); transform: scaleY(1.05); box-shadow: 0 20px 50px rgba(8,75,81,0.2); z-index: 2; position: relative; }
     
-    .tipo-tag { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .tipo-tag { font-family: var(--sans); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .tipo-name { font-family: var(--serif); font-size: 2.2rem; font-weight: 500; color: var(--teal); line-height: 1.1; margin-bottom: 0.5rem; }
     .tipo-card.destaque .tipo-name { color: var(--white); }
-    .tipo-area { font-size: 0.9rem; color: var(--teal-light); margin-bottom: 2.5rem; font-weight: 600; }
+    .tipo-area { font-family: var(--sans); font-size: 0.9rem; color: var(--teal-light); margin-bottom: 2.5rem; font-weight: 600; }
     .tipo-card.destaque .tipo-area { color: rgba(255,255,255,.6); }
     
-    .tipo-price-label { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.5rem; }
+    .tipo-price-label { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.5rem; }
     .tipo-card.destaque .tipo-price-label { color: rgba(255,255,255,.6); }
     .tipo-price { font-family: var(--serif); font-size: 2.5rem; font-weight: 500; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; }
     .tipo-card.destaque .tipo-price { color: var(--gold-light); }
-    .tipo-avaliacao { font-size: 0.85rem; color: var(--teal-light); margin-bottom: auto; }
+    .tipo-avaliacao { font-family: var(--sans); font-size: 0.85rem; color: var(--teal-light); margin-bottom: auto; }
     .tipo-card.destaque .tipo-avaliacao { color: rgba(255,255,255,.6); }
     
     .tipo-cta {
-      display: block; text-align: center; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      display: block; text-align: center; font-family: var(--sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       padding: 1.2rem; margin-top: 3rem; border: 1px solid var(--teal); color: var(--teal); transition: all .25s; cursor: pointer;
     }
     .tipo-card.destaque .tipo-cta { background: var(--gold); border-color: var(--gold); color: var(--white); }
@@ -233,7 +249,7 @@
     .mcmv-list { list-style: none; display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem; }
     .mcmv-list-item { display: flex; gap: 1.5rem; align-items: flex-start; }
     .mcmv-list-icon { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid rgba(201,169,107,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .mcmv-list-text { font-size: 0.95rem; color: rgba(255,255,255,.7); line-height: 1.6; }
+    .mcmv-list-text { font-family: var(--sans); font-size: 0.95rem; color: rgba(255,255,255,.7); line-height: 1.6; }
     .mcmv-list-text strong { color: var(--white); font-weight: 600; display: block; font-size: 1.1rem; margin-bottom: 4px; }
     
     .mcmv-steps-box {
@@ -261,7 +277,7 @@
     .loc-details { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
     .loc-detail-item { border-bottom: 1px solid rgba(8,75,81,0.1); padding-bottom: 1.5rem; }
     .loc-detail-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    .loc-detail-val { font-size: 1.1rem; color: var(--teal); line-height: 1.5; font-weight: 500; }
+    .loc-detail-val { font-family: var(--sans); font-size: 1.1rem; color: var(--teal); line-height: 1.5; font-weight: 500; }
     .loc-map { aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(8,75,81,0.15); }
 
     /* ── CORRETOR ── */
@@ -285,7 +301,7 @@
     .form-benefits { margin-top: 3rem; padding: 2.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; }
     .form-benefits-title { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
     .form-benefits-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-    .form-benefits-item { display: flex; align-items: flex-start; gap: 1rem; font-size: 1rem; color: var(--white); font-weight: 500; }
+    .form-benefits-item { display: flex; align-items: flex-start; gap: 1rem; font-family: var(--sans); font-size: 1rem; color: var(--white); font-weight: 500; }
     .form-benefits-item::before { content: "✓"; color: var(--gold); font-weight: 700; }
 
     .form-card { background: var(--white); border-radius: 8px; box-shadow: 0 20px 60px rgba(8,75,81,0.1); overflow: hidden; border: 1px solid rgba(8,75,81,0.05); }
@@ -314,25 +330,36 @@
 
     .form-group { margin-bottom: 1.8rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .form-group label { display: block; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.8rem; }
+    .form-group label { display: block; font-family: var(--sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.8rem; }
     
     input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
       width: 100%; padding: 1.2rem; border: 1px solid var(--light-mid); border-radius: 6px;
-      font-family: var(--sans); font-size: 1rem; color: var(--teal); background: var(--white);
+      font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--teal); background: var(--white);
       transition: all .25s; appearance: none;
     }
     input:focus, select:focus, textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 4px rgba(8,75,81,0.05); }
     input::placeholder, textarea::placeholder { color: #a0b6b8; }
     
-    .form-radio-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+    .form-radio-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
     .form-radio {
-      position: relative; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      cursor: pointer; padding: 1rem 0.8rem; border: 1px solid var(--light-mid); border-radius: 6px;
-      background: var(--white); transition: all .2s; font-size: 0.95rem; font-weight: 600; color: var(--teal); text-align: center; line-height: 1.3; word-break: break-word;
+      position: relative; display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      cursor: pointer; padding: 0.85rem 0.6rem; border: 1px solid var(--light-mid); border-radius: 6px;
+      background: var(--white); transition: all .2s; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; color: var(--teal); text-align: center; line-height: 1.25; word-break: break-word;
+      min-height: 48px;
     }
     .form-radio:hover { border-color: var(--teal); background: var(--light); }
     .form-radio input[type="radio"] { display: none; }
     .form-radio:has(input:checked) { border-color: var(--teal); background: var(--teal); color: var(--white); }
+    
+    /* Radio buttons responsive */
+    @media (max-width: 480px) {
+      .form-radio-group { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .form-radio { padding: 0.75rem 0.5rem; font-size: 0.82rem; min-height: 44px; }
+    }
+    @media (max-width: 360px) {
+      .form-radio-group { grid-template-columns: 1fr; }
+      .form-radio { padding: 0.85rem 0.75rem; font-size: 0.88rem; }
+    }
 
     .form-nav { display: flex; gap: 1rem; margin-top: 2.5rem; }
     .btn-form-next {
@@ -363,7 +390,7 @@
     .form-checkbox-wrap input[type="checkbox"] {
       width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--teal); cursor: pointer;
     }
-    .form-checkbox-text { font-size: 0.9rem; color: var(--teal); line-height: 1.5; font-weight: 500; text-transform: none; letter-spacing: 0; }
+    .form-checkbox-text { font-family: var(--sans); font-size: 0.9rem; color: var(--teal); line-height: 1.5; font-weight: 500; text-transform: none; letter-spacing: 0; }
     .form-checkbox-text small { display: block; font-size: 0.75rem; color: var(--teal-light); font-weight: 600; margin-top: 4px; }
     .form-radio-group.planta-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -436,7 +463,7 @@
 <section class="hero" id="home">
   <!-- Vídeo Background com Parallax Mouse -->
   <div class="hero-video-wrapper" id="video-wrapper">
-    <video id="hero-video" autoplay loop muted playsinline preload="metadata">
+    <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" disablepictureinpicture>
       <source src="assets/video%20landpage.mp4" type="video/mp4">
     </video>
   </div>
@@ -998,13 +1025,34 @@
   const heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
     heroVideo.muted = true;
-    const playHero = () => heroVideo.play().catch(() => {});
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+    
+    const playHero = () => {
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Auto-play was prevented, try again on user interaction
+          document.addEventListener('touchstart', function playOnTouch() {
+            heroVideo.play();
+            document.removeEventListener('touchstart', playOnTouch);
+          }, { once: true });
+        });
+      }
+    };
+    
+    // Try to play immediately
     playHero();
+    
+    // Also try when loaded
     heroVideo.addEventListener('loadeddata', playHero);
+    heroVideo.addEventListener('canplay', playHero);
+    
     heroVideo.addEventListener('error', () => {
       document.querySelector('.hero').style.background = 'linear-gradient(160deg, var(--teal-dark), var(--teal))';
       heroVideo.style.display = 'none';
     });
+    
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       heroVideo.pause();
       heroVideo.style.display = 'none';
@@ -1219,17 +1267,17 @@
 
     const msg = encodeURIComponent(
       `Olá Paulo! Preenchi o formulário no site e gostaria de uma simulação para o Residencial Maro. Seguem meus dados:\n\n` +
-      `\uD83D\uDCCB *DADOS PESSOAIS*\n` +
+      `📋 *DADOS PESSOAIS*\n` +
       `• Nome: ${nome}\n` +
       `• CPF: ${cpf}\n` +
       `• WhatsApp: ${tel}\n` +
       `• Nascimento: ${nascimento}\n` +
       `• E-mail: ${email}\n\n` +
-      `\uD83C\uDFE2 *PERFIL PROFISSIONAL*\n` +
+      `🏢 *PERFIL PROFISSIONAL*\n` +
       `• Tipo de renda: ${trab}\n` +
       `• Renda familiar: ${renda}\n` +
       `• Pessoas na renda: ${pessoasRenda}\n\n` +
-      `\uD83C\uDFE0 *FINANCIAMENTO & IMÓVEL*\n` +
+      `🏠 *FINANCIAMENTO & IMÓVEL*\n` +
       `• Possui FGTS: ${fgts} (Valor aprox: ${fgtsValor})\n` +
       `• Já usou MCMV: ${mcmv}\n` +
       `• Moradia atual: ${moradia}\n` +
@@ -1240,7 +1288,7 @@
       `• 1º Imóvel: ${primeiroImovel}\n` +
       `• Entrada disponível: ${entrada}\n` +
       `• Restrição CPF: ${restricao}\n\n` +
-      `\uD83D\uDCF1 *PREFERÊNCIAS DE CONTATO*\n` +
+      `📱 *PREFERÊNCIAS DE CONTATO*\n` +
       `• Prazo p/ compra: ${prazo}\n` +
       `• Melhor horário: ${horario}\n` +
       `• Como encontrou: ${origem}\n` +

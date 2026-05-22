@@ -1266,33 +1266,33 @@
     const lgpdOfertas = document.getElementById('f-lgpd-ofertas').checked ? 'Sim' : 'Não';
 
     const msg = encodeURIComponent(
-      `Olá Paulo! Preenchi o formulário no site e gostaria de uma simulação para o Residencial Maro. Seguem meus dados:\n\n` +
-      `📋 *DADOS PESSOAIS*\n` +
-      `• Nome: ${nome}\n` +
-      `• CPF: ${cpf}\n` +
-      `• WhatsApp: ${tel}\n` +
-      `• Nascimento: ${nascimento}\n` +
-      `• E-mail: ${email}\n\n` +
-      `🏢 *PERFIL PROFISSIONAL*\n` +
-      `• Tipo de renda: ${trab}\n` +
-      `• Renda familiar: ${renda}\n` +
-      `• Pessoas na renda: ${pessoasRenda}\n\n` +
-      `🏠 *FINANCIAMENTO & IMÓVEL*\n` +
-      `• Possui FGTS: ${fgts} (Valor aprox: ${fgtsValor})\n` +
-      `• Já usou MCMV: ${mcmv}\n` +
-      `• Moradia atual: ${moradia}\n` +
-      `• Estado civil: ${civil}\n` +
-      `• Dependentes: ${depend}\n` +
-      `• Cônjuge compõe renda: ${conjugeRenda}\n` +
-      `• Planta de interesse: ${planta}\n` +
-      `• 1º Imóvel: ${primeiroImovel}\n` +
-      `• Entrada disponível: ${entrada}\n` +
-      `• Restrição CPF: ${restricao}\n\n` +
-      `📱 *PREFERÊNCIAS DE CONTATO*\n` +
-      `• Prazo p/ compra: ${prazo}\n` +
-      `• Melhor horário: ${horario}\n` +
-      `• Como encontrou: ${origem}\n` +
-      (msgAdicional ? `• Mensagem extra: ${msgAdicional}\n` : '')
+      `Ola Paulo! Preenchi o formulario no site e gostaria de uma simulacao para o Residencial Maro. Seguem meus dados:\n\n` +
+      `--- *DADOS PESSOAIS* ---\n` +
+      `- Nome: ${nome}\n` +
+      `- CPF: ${cpf}\n` +
+      `- WhatsApp: ${tel}\n` +
+      `- Nascimento: ${nascimento}\n` +
+      `- E-mail: ${email}\n\n` +
+      `--- *PERFIL PROFISSIONAL* ---\n` +
+      `- Tipo de renda: ${trab}\n` +
+      `- Renda familiar: ${renda}\n` +
+      `- Pessoas na renda: ${pessoasRenda}\n\n` +
+      `--- *FINANCIAMENTO E IMOVEL* ---\n` +
+      `- Possui FGTS: ${fgts} (Valor aprox: ${fgtsValor})\n` +
+      `- Ja usou MCMV: ${mcmv}\n` +
+      `- Moradia atual: ${moradia}\n` +
+      `- Estado civil: ${civil}\n` +
+      `- Dependentes: ${depend}\n` +
+      `- Conjuge compoe renda: ${conjugeRenda}\n` +
+      `- Planta de interesse: ${planta}\n` +
+      `- 1o Imovel: ${primeiroImovel}\n` +
+      `- Entrada disponivel: ${entrada}\n` +
+      `- Restricao CPF: ${restricao}\n\n` +
+      `--- *PREFERENCIAS DE CONTATO* ---\n` +
+      `- Prazo p/ compra: ${prazo}\n` +
+      `- Melhor horario: ${horario}\n` +
+      `- Como encontrou: ${origem}\n` +
+      (msgAdicional ? `- Mensagem extra: ${msgAdicional}\n` : '')
     );
 
     window.open(`https://wa.me/5511984042039?text=${msg}`, '_blank');

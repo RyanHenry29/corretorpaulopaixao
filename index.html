@@ -4,18 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Paulo Paixão · Residencial Maro — Guarulhos</title>
-  <meta name="description" content="Conquiste seu apartamento em Guarulhos com o MCMV. Subsídio de até R$55mil e uso do FGTS. Fale com Paulo Paixão.">
+  <meta name="description" content="Residencial Maro em Guarulhos, em frente ao Shopping Internacional. Apartamentos de 27 a 46 m² com orientação para FGTS, subsídio e financiamento.">
   
   <!-- Security Headers (Anti-Fraude e Anti-XSS) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com; media-src 'self'; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <!-- Fontes Premium: Outfit e Cormorant -->
+  <!-- Fonte unificada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest" type="application/manifest+json">
+  <meta name="theme-color" content="#084B51">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,11 +35,11 @@
       --light:      #E0E7E8;
       --light-mid:  #cddadb;
       --white:      #ffffff;
-      --gold:       #b8883a;
-      --gold-light: #d4a85c;
+      --gold:       #c9932f;
+      --gold-light: #f0bd62;
       
-      --serif: 'Cormorant Garamond', serif;
       --sans:  'Outfit', sans-serif;
+      --serif: var(--sans);
 
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -73,7 +80,7 @@
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.5rem 3rem; transition: all .4s var(--ease-out);
+      gap: 1rem; padding: 1.5rem 3rem; transition: all .4s var(--ease-out);
       border-bottom: 1px solid transparent;
     }
     .nav.scrolled {
@@ -81,8 +88,8 @@
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom-color: rgba(8, 75, 81, 0.1); box-shadow: 0 4px 30px rgba(8,75,81,0.05);
     }
-    .nav-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--white); line-height: 1; transition: color .4s; }
-    .nav-logo em { display: block; font-style: normal; font-family: var(--sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 4px; transition: color .4s; }
+    .nav-logo { min-width: 0; flex: 0 1 auto; font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: var(--white); line-height: 1; transition: color .4s; }
+    .nav-logo em { display: block; font-style: normal; font-family: var(--sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 4px; transition: color .4s; white-space: nowrap; }
     .nav.scrolled .nav-logo { color: var(--teal); }
     .nav.scrolled .nav-logo em { color: var(--teal-light); opacity: 0.8; }
     
@@ -95,8 +102,9 @@
     .nav-cta {
       font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--teal); background: var(--white); padding: 0.8rem 1.8rem; border-radius: 40px;
-      transition: all .3s;
+      transition: all .3s; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; white-space: nowrap;
     }
+    .nav-cta-short { display: none; }
     .nav.scrolled .nav-cta { background: var(--teal); color: var(--white); }
     .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 
@@ -109,17 +117,26 @@
     
     .hero-video-wrapper {
       position: absolute; top: -5%; left: -5%; width: 110%; height: 110%; z-index: 0;
+      background:
+        linear-gradient(160deg, rgba(4,42,45,0.75), rgba(8,75,81,0.55)),
+        url("assets/foto residencial.jpeg") center / cover no-repeat;
       transition: transform 0.1s ease-out;
     }
     .hero-video-wrapper video {
       width: 100%; height: 100%; object-fit: cover;
       object-position: center;
+      filter: saturate(1.16) contrast(1.08) brightness(1.08);
       animation: slowZoom 25s infinite alternate linear;
+      opacity: 0;
+      transition: opacity .45s ease;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
+    .hero-video-wrapper.video-ready video { opacity: 1; }
+    .hero-video-wrapper.video-error video,
+    .hero-video-wrapper.video-disabled video { display: none; }
     @keyframes slowZoom { 0% { transform: scale(1); } 100% { transform: scale(1.06); } }
     
     /* Video mobile fix */
@@ -141,34 +158,48 @@
     .hero-overlay {
       position: absolute; inset: 0; z-index: 1;
       background:
-        linear-gradient(to bottom, rgba(4,42,45,0.88) 0%, rgba(8,75,81,0.72) 45%, rgba(4,42,45,0.9) 100%);
+        radial-gradient(circle at 50% 38%, rgba(8,75,81,0.12) 0%, rgba(4,42,45,0.44) 48%, rgba(4,42,45,0.72) 100%),
+        linear-gradient(to bottom, rgba(4,42,45,0.52) 0%, rgba(8,75,81,0.32) 48%, rgba(4,42,45,0.66) 100%);
     }
     
     .hero-content { position: relative; z-index: 10; width: 100%; max-width: 900px; display: flex; flex-direction: column; align-items: center; }
     
     .hero-eyebrow {
-      display: inline-block; padding: 0.5rem 1.5rem; border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
+      display: inline-block; padding: 0.5rem 1.5rem; border: 1px solid rgba(255,255,255,0.42);
+      border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
       margin-bottom: 2rem;
       text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(4, 42, 45, 0.32);
     }
     .hero-title {
       font-family: var(--sans); font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+      font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: 0;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.68);
     }
     .hero-subtitle {
-      font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .hero-quote {
-      font-family: var(--serif); font-size: 1.4rem; font-style: italic; color: var(--gold-light);
+      font-family: var(--sans); font-size: 1.25rem; font-style: normal; font-weight: 700; color: var(--gold-light);
       margin-bottom: 2.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
     }
     .hero-author { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
     .hero-social { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
+
+    .hero-facts {
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
+      margin: 1.75rem 0 0; max-width: 760px;
+    }
+    .hero-fact {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      min-height: 42px; padding: 0.7rem 1rem; border-radius: 999px;
+      background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.28);
+      color: var(--white); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+    }
+    .hero-fact i { color: var(--gold-light); }
 
     .hero-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
@@ -197,7 +228,7 @@
     .section-teal { background: var(--teal); color: var(--white); }
 
     .section-head { margin-bottom: 4rem; text-align: center; }
-    .section-title { font-family: var(--serif); font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 500; line-height: 1.1; color: var(--teal); margin-top: 1rem; }
+    .section-title { font-family: var(--sans); font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 700; line-height: 1.08; letter-spacing: 0; color: var(--teal); margin-top: 1rem; }
     .section-teal .section-title { color: var(--white); }
     .section-sub { font-family: var(--sans); font-size: 1.1rem; color: var(--teal-light); margin-top: 1rem; font-weight: 400; max-width: 600px; margin-inline: auto; }
     .section-teal .section-sub { color: rgba(255,255,255,.7); }
@@ -207,7 +238,7 @@
     .emp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1160px; margin: 0 auto; }
     .emp-img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 20px 40px rgba(8,75,81,0.15); }
     
-    .emp-features { list-style: none; margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+    .emp-features { list-style: none; margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
     .emp-feature { display: flex; align-items: center; gap: 1.2rem; font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--teal); }
     .emp-feature i { color: var(--white); background: var(--gold); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; }
 
@@ -219,14 +250,14 @@
     .tipo-card.destaque { background: var(--teal); color: var(--white); transform: scaleY(1.05); box-shadow: 0 20px 50px rgba(8,75,81,0.2); z-index: 2; position: relative; }
     
     .tipo-tag { font-family: var(--sans); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .tipo-name { font-family: var(--serif); font-size: 2.2rem; font-weight: 500; color: var(--teal); line-height: 1.1; margin-bottom: 0.5rem; }
+    .tipo-name { font-family: var(--sans); font-size: 2.05rem; font-weight: 700; color: var(--teal); line-height: 1.08; margin-bottom: 0.5rem; }
     .tipo-card.destaque .tipo-name { color: var(--white); }
     .tipo-area { font-family: var(--sans); font-size: 0.9rem; color: var(--teal-light); margin-bottom: 2.5rem; font-weight: 600; }
     .tipo-card.destaque .tipo-area { color: rgba(255,255,255,.6); }
     
     .tipo-price-label { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.5rem; }
     .tipo-card.destaque .tipo-price-label { color: rgba(255,255,255,.6); }
-    .tipo-price { font-family: var(--serif); font-size: 2.5rem; font-weight: 500; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; }
+    .tipo-price { font-family: var(--sans); font-size: 2.35rem; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; }
     .tipo-card.destaque .tipo-price { color: var(--gold-light); }
     .tipo-avaliacao { font-family: var(--sans); font-size: 0.85rem; color: var(--teal-light); margin-bottom: auto; }
     .tipo-card.destaque .tipo-avaliacao { color: rgba(255,255,255,.6); }
@@ -285,13 +316,13 @@
     .corretor-img-wrap { position: relative; }
     .corretor-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 20px 50px rgba(8,75,81,0.2); }
     .corretor-creci { position: absolute; bottom: -2rem; left: -2rem; background: var(--gold); color: var(--white); padding: 1.5rem 2rem; border-radius: 4px; box-shadow: 0 10px 20px rgba(184,136,58,.3); }
-    .corretor-creci-num { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; line-height: 1;}
+    .corretor-creci-num { font-family: var(--sans); font-size: 1.5rem; font-weight: 800; line-height: 1;}
     .corretor-creci-text { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
     
-    .corretor-bio { font-family: var(--serif); font-size: 1.8rem; font-style: italic; line-height: 1.5; color: var(--teal); margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(8,75,81,0.1); }
+    .corretor-bio { font-family: var(--sans); font-size: clamp(1.25rem, 2.5vw, 1.55rem); font-style: normal; font-weight: 500; line-height: 1.55; color: var(--teal); margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(8,75,81,0.1); }
     
     .corretor-meta { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .corretor-meta-val { font-family: var(--serif); font-size: 2.5rem; font-weight: 500; color: var(--teal); }
+    .corretor-meta-val { font-family: var(--sans); font-size: 2.35rem; font-weight: 800; color: var(--teal); }
     .corretor-meta-label { font-size: 0.75rem; font-weight: 700; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.5rem; }
     
     /* ── FORMULÁRIO (2 COLUNAS) ── */
@@ -304,9 +335,9 @@
     .form-benefits-item { display: flex; align-items: flex-start; gap: 1rem; font-family: var(--sans); font-size: 1rem; color: var(--white); font-weight: 500; }
     .form-benefits-item::before { content: "✓"; color: var(--gold); font-weight: 700; }
 
-    .form-card { background: var(--white); border-radius: 8px; box-shadow: 0 20px 60px rgba(8,75,81,0.1); overflow: hidden; border: 1px solid rgba(8,75,81,0.05); }
+    .form-card { background: var(--white); border-radius: 8px; box-shadow: 0 20px 60px rgba(8,75,81,0.1); overflow: hidden; border: 1px solid rgba(8,75,81,0.05); scroll-margin-top: 6rem; }
     .form-card-header { background: var(--teal); padding: 2.5rem; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .form-card-title { font-family: var(--serif); font-size: 1.8rem; font-weight: 500; }
+    .form-card-title { font-family: var(--sans); font-size: 1.65rem; font-weight: 700; }
     .form-card-sub { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,.6); margin-top: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
     .form-card-body { padding: 3rem; }
 
@@ -397,7 +428,7 @@
     /* ── FOOTER ── */
     footer { background: var(--teal-dark); padding: 5rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
     .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
-    .footer-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--white); line-height: 1; }
+    .footer-logo { font-family: var(--sans); font-size: 1.5rem; font-weight: 700; color: var(--white); line-height: 1; }
     .footer-logo em { display: block; font-style: normal; font-family: var(--sans); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 4px; }
     .footer-links { display: flex; gap: 2rem; list-style: none; }
     .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,.7); font-weight: 600; letter-spacing: 0.05em; transition: color .2s; text-transform: uppercase; }
@@ -420,18 +451,46 @@
       .emp-img-tag, .corretor-creci { position: relative; margin: -2rem auto 0 auto; width: max-content; z-index: 10; text-align: center; }
     }
     @media (max-width: 768px) {
-      .nav { padding: 1rem 1.5rem; }
+      .nav { padding: 0.9rem clamp(0.9rem, 4vw, 1.5rem); gap: 0.75rem; }
+      .nav.scrolled { padding: 0.9rem clamp(0.9rem, 4vw, 1.5rem); }
+      .nav-logo { font-size: clamp(1.15rem, 5.4vw, 1.45rem); }
+      .nav-logo em { font-size: clamp(0.48rem, 2.2vw, 0.56rem); letter-spacing: 0.12em; }
       .nav-links { display: none; }
-      .hero { padding: 0 1.5rem; }
-      .hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
-      .hero-subtitle { font-size: 1rem; }
-      .hero-quote { font-size: 1.2rem; }
+      .nav-cta { max-width: 52vw; padding: 0.72rem clamp(0.85rem, 3.8vw, 1.15rem); font-size: clamp(0.62rem, 2.6vw, 0.72rem); letter-spacing: 0.06em; }
+      .hero { height: auto; min-height: 100svh; padding: 6.5rem 1.25rem 3rem; }
+      .hero-content { max-width: min(100%, 34rem); }
+      .hero-eyebrow { margin-bottom: 1.25rem; padding: 0.45rem 1rem; font-size: 0.72rem; }
+      .hero-title { font-size: clamp(2rem, 9.5vw, 2.8rem); line-height: 1.08; margin-bottom: 1rem; max-width: 100% !important; }
+      .hero-subtitle { max-width: 22rem; font-size: clamp(0.95rem, 4vw, 1.05rem); line-height: 1.45; }
+      .hero-quote { max-width: 22rem; font-size: clamp(1rem, 4.2vw, 1.15rem); line-height: 1.35; margin-bottom: 1.5rem; }
+      .hero-author, .hero-social { font-size: 0.9rem; }
+      .hero-social { margin-bottom: 1.25rem; }
+      .hero-facts { width: 100%; margin-top: 1.25rem; gap: 0.5rem; }
+      .hero-fact { width: 100%; justify-content: center; min-height: 38px; padding: 0.62rem 0.9rem; font-size: 0.72rem; }
+      .hero-actions { width: 100%; max-width: 22rem; gap: 0.75rem; margin-top: 1rem !important; }
+      .hero-actions .btn-gold, .hero-actions .btn-ghost { width: 100%; justify-content: center; padding: 1rem 1.2rem; }
       .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
       .form-card-body { padding: 2rem 1.5rem; }
       .section { padding: 5rem 1.5rem; }
       .tipo-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .tipo-card { max-width: 380px; width: 100%; margin: 0 auto; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-direction: column; gap: 1rem; align-items: center; }
+    }
+
+    @media (max-width: 420px) {
+      .nav { padding: 0.75rem 0.85rem; }
+      .nav.scrolled { padding: 0.75rem 0.85rem; }
+      .nav-logo em { letter-spacing: 0.08em; }
+      .nav-cta { max-width: 48vw; padding: 0.68rem 0.8rem; }
+      .nav-cta-full { display: none; }
+      .nav-cta-short { display: inline; }
+      .hero-title { font-size: clamp(1.85rem, 9vw, 2.35rem); }
+    }
+
+    @media (max-width: 340px) {
+      .nav-logo em { display: none; }
+      .nav-cta { font-size: 0.6rem; letter-spacing: 0.04em; }
     }
   </style>
 </head>
@@ -440,7 +499,7 @@
 <div class="film-grain"></div>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20seu%20site%20e%20tenho%20interesse%20no%20Residencial%20Maro." class="wa-float" title="Falar no WhatsApp" target="_blank" rel="noopener">
+<a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20seu%20site%20e%20tenho%20interesse%20no%20Residencial%20Maro." class="wa-float" title="Falar no WhatsApp" target="_blank" rel="noopener noreferrer">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
@@ -456,15 +515,15 @@
     <li><a href="#mcmv">MCMV</a></li>
     <li><a href="#localizacao">Localização</a></li>
   </ul>
-  <a href="#contato" class="nav-cta">Análise Gratuita</a>
+  <a href="#formulario" class="nav-cta"><span class="nav-cta-full">Contato</span><span class="nav-cta-short">Contato</span></a>
 </nav>
 
 <!-- HERO 3D -->
 <section class="hero" id="home">
   <!-- Vídeo Background com Parallax Mouse -->
   <div class="hero-video-wrapper" id="video-wrapper">
-    <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" disablepictureinpicture>
-      <source src="assets/video%20landpage.mp4" type="video/mp4">
+    <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="assets/foto%20residencial.jpeg" disablepictureinpicture aria-hidden="true">
+      <source src="assets/hero-video.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -474,24 +533,31 @@
   <div class="hero-content text-center">
     <div data-reveal class="flex flex-col items-center">
       <div class="hero-eyebrow" style="color: var(--white);">
-        Minha Casa Minha Vida
+        Residencial Maro · Guarulhos
       </div>
       <h1 class="hero-title" style="font-family: var(--sans); font-weight: 800; max-width: 950px; line-height: 1.15;">
-        Conquiste seu apartamento em Guarulhos
+        Seu novo lar começa em Guarulhos
       </h1>
       <p class="hero-subtitle">
-        Em frente ao Shopping Internacional | Minha Casa Minha Vida
+        Apartamentos em frente ao Shopping Internacional, com acesso rápido à Dutra.
       </p>
       <p class="hero-quote">
-        "Realizando sonhos, conectando você ao seu novo lar"
+        Use seu FGTS, veja o subsídio disponível e escolha o caminho mais claro para comprar.
       </p>
-      <p class="hero-author">Paulo Paixão – Consultor Imobiliário</p>
-      <p class="hero-social"><a href="https://www.instagram.com/consultorpaixaosp/" target="_blank" rel="noopener" style="color:inherit">@consultorpaixaosp</a></p>
+      <p class="hero-author">Paulo Paixão · CRECI-SP 315.337</p>
+      <p class="hero-social"><a href="https://www.instagram.com/consultorpaixaosp/" target="_blank" rel="noopener noreferrer" style="color:inherit">@consultorpaixaosp</a></p>
+      <div class="hero-facts" aria-label="Destaques do Residencial Maro">
+        <span class="hero-fact"><i class="fa-solid fa-ruler-combined"></i> 27 a 46 m²</span>
+        <span class="hero-fact"><i class="fa-solid fa-building"></i> Studio e 2 dorms</span>
+        <span class="hero-fact"><i class="fa-solid fa-user-tie"></i> Atendimento direto</span>
+      </div>
       
       <div class="hero-actions" style="margin-top: 1.5rem;">
-        <a href="#contato" class="btn-gold">Análise Gratuita</a>
-        <a href="https://wa.me/5511984042039" class="btn-ghost" target="_blank">
-          <i class="fa-brands fa-whatsapp text-lg"></i> Falar Agora
+        <a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20o%20site%20do%20Residencial%20Maro%20e%20quero%20entender%20as%20op%C3%A7%C3%B5es." class="btn-gold" target="_blank" rel="noopener noreferrer">
+          Falar com Paulo
+        </a>
+        <a href="#tipologias" class="btn-ghost">
+          <i class="fa-solid fa-table-cells-large"></i> Ver plantas
         </a>
       </div>
     </div>
@@ -507,12 +573,12 @@
     <div data-reveal data-delay="1">
       <span class="label">O Empreendimento</span>
       <h2 class="section-title">Residencial Maro<br>Guarulhos</h2>
-      <p class="section-sub">Projeto moderno pensado para quem busca conforto, praticidade e custo-benefício. Localização estratégica no coração de Guarulhos, com toda infraestrutura a poucos passos.</p>
+      <p class="section-sub">Apartamentos de 27 a 46 m², com opções de studio e 2 dormitórios, em uma localização prática para morar, trabalhar e se deslocar por Guarulhos.</p>
       <ul class="emp-features">
-        <li class="emp-feature"><i class="fa-solid fa-bag-shopping"></i> Em frente ao Shopping Internacional</li>
-        <li class="emp-feature"><i class="fa-solid fa-train"></i> A 5 minutos da Estação Metrô Dutra</li>
-        <li class="emp-feature"><i class="fa-solid fa-swimming-pool"></i> Área de lazer completa e privativa</li>
-        <li class="emp-feature"><i class="fa-solid fa-shield-halved"></i> Segurança 24h com portaria controlada</li>
+        <li class="emp-feature"><i class="fa-solid fa-bag-shopping"></i> Em frente ao Shopping Internacional de Guarulhos</li>
+        <li class="emp-feature"><i class="fa-solid fa-train"></i> A poucos minutos da Estação Metrô Dutra</li>
+        <li class="emp-feature"><i class="fa-solid fa-building"></i> Plantas compactas com bom aproveitamento</li>
+        <li class="emp-feature"><i class="fa-solid fa-shield-halved"></i> Estrutura pensada para a rotina diária</li>
       </ul>
     </div>
   </div>
@@ -537,7 +603,7 @@
       <div class="tipo-price-label">Preço Base</div>
       <div class="tipo-price">R$ 238.000</div>
       <div class="tipo-avaliacao">Avaliado em R$ 262.000</div>
-      <a href="#contato" class="tipo-cta" data-planta="Studio">Tenho Interesse</a>
+      <a href="#formulario" class="tipo-cta" data-planta="Studio">Quero esta planta</a>
     </div>
     
     <!-- 2 Dorms S/ Vaga -->
@@ -549,7 +615,7 @@
       <div class="tipo-price-label">Preço Base</div>
       <div class="tipo-price">R$ 357.000</div>
       <div class="tipo-avaliacao">Avaliado em R$ 390.500</div>
-      <a href="#contato" class="tipo-cta" data-planta="2 Dorms Sem Vaga">Tenho Interesse</a>
+      <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Sem Vaga">Quero esta planta</a>
     </div>
 
     <!-- 2 Dorms C/ Vaga (DESTAQUE) -->
@@ -562,7 +628,7 @@
       <div class="tipo-price-label">Preço Base</div>
       <div class="tipo-price">R$ 377.000</div>
       <div class="tipo-avaliacao">Avaliado em R$ 415.000</div>
-      <a href="#contato" class="tipo-cta" data-planta="2 Dorms Com Vaga">Tenho Interesse</a>
+      <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Com Vaga">Quero esta planta</a>
     </div>
     
     <!-- Suíte -->
@@ -574,7 +640,7 @@
       <div class="tipo-price-label">Preço Base</div>
       <div class="tipo-price">R$ 440.000</div>
       <div class="tipo-avaliacao">Avaliado em R$ 484.000</div>
-      <a href="#contato" class="tipo-cta" data-planta="2 Dorms Com Suíte">Tenho Interesse</a>
+      <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Com Suíte">Quero esta planta</a>
     </div>
 
   </div>
@@ -586,7 +652,7 @@
     <div data-reveal>
       <span class="label">Minha Casa Minha Vida</span>
       <h2 class="section-title">O programa que torna<br><em>possível</em></h2>
-      <p class="section-sub">Benefícios reais para quem quer sair do aluguel e conquistar o primeiro imóvel com segurança.</p>
+      <p class="section-sub">Entenda o que pode entrar no seu financiamento antes de escolher a planta.</p>
       
       <ul class="mcmv-list">
         <li class="mcmv-list-item">
@@ -603,7 +669,7 @@
         </li>
         <li class="mcmv-list-item">
           <div class="mcmv-list-icon"><i class="fa-solid fa-clock" style="color: var(--gold-light);"></i></div>
-          <div class="mcmv-list-text"><strong>Análise rápida e gratuita</strong>Responda o formulário e receba sua simulação personalizada em até 2 horas.</div>
+          <div class="mcmv-list-text"><strong>Estimativa pelo WhatsApp</strong>Paulo confere renda, FGTS e planta de interesse para orientar o próximo passo.</div>
         </li>
       </ul>
     </div>
@@ -612,8 +678,8 @@
       <div class="mcmv-step">
         <div class="mcmv-step-num">1</div>
         <div class="mcmv-step-text">
-          <strong>Preencha a pré-qualificação</strong>
-          <span>Leva cerca de 2 minutos. Informe renda, FGTS e a planta que mais combina com você.</span>
+          <strong>Informe seu perfil</strong>
+          <span>Leva cerca de 2 minutos. Renda, FGTS e planta de interesse já bastam para começar.</span>
         </div>
       </div>
       <div class="mcmv-step">
@@ -630,7 +696,7 @@
           <span>Conheça o empreendimento em Guarulhos e tire todas as dúvidas com quem entende de MCMV.</span>
         </div>
       </div>
-      <a href="#contato" class="mcmv-cta">Fazer análise gratuita</a>
+      <a href="#formulario" class="mcmv-cta">Ver minhas opções</a>
     </div>
   </div>
 </section>
@@ -645,7 +711,7 @@
         <div class="loc-detail-item">
           <div class="loc-detail-label">Endereço (Clique para abrir)</div>
           <div class="loc-detail-val">
-            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" style="color: var(--teal); text-decoration: underline; text-underline-offset: 4px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: underline; text-underline-offset: 4px;">
               Rua Eng. Camilo Olivetti, s/nº
             </a>
           </div>
@@ -658,7 +724,7 @@
           <div class="loc-detail-label">Mobilidade</div>
           <div class="loc-detail-val">Acesso direto à Via Dutra e Metrô Dutra a 5 min.</div>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 1rem 2rem; background: var(--teal); color: white; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Abrir no Google Maps</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 1rem 2rem; background: var(--teal); color: white; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Abrir no Google Maps</a>
       </div>
     </div>
     <div class="loc-map" data-reveal data-delay="1">
@@ -671,7 +737,7 @@
 <section class="section section-light" id="corretor">
   <div class="corretor-inner">
     <div class="corretor-img-wrap" data-reveal>
-      <img src="assets/corretor.png" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85&auto=format&fit=crop'" alt="Paulo Paixão" class="corretor-img">
+      <img src="assets/corretor.png" data-fallback-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85&auto=format&fit=crop" alt="Paulo Paixão" class="corretor-img">
       <div class="corretor-creci">
         <div class="corretor-creci-num">315.337</div>
         <div class="corretor-creci-text">CRECI-SP</div>
@@ -681,7 +747,7 @@
       <span class="label">Quem vai te atender</span>
       <h2 class="section-title">Paulo Paixão</h2>
       <p class="corretor-bio">
-        "Seu futuro imóvel começa aqui. Atendimento humanizado, transparência total e acompanhamento completo do início ao fim."
+        Atendimento direto com Paulo para comparar plantas, entender FGTS, estimar subsídio e organizar o caminho até a visita.
       </p>
       <!-- Correção na seção CORRETOR (Removido os itens indesejados) -->
       <div class="corretor-meta" style="grid-template-columns: 1fr;">
@@ -698,27 +764,27 @@
 <section class="section section-teal" id="contato">
   <div class="form-inner">
     <div data-reveal>
-      <span class="label" style="color: var(--gold-light);">Análise Gratuita</span>
-      <h2 class="section-title">Veja se você aprova no MCMV</h2>
-      <p class="section-sub">Responda algumas perguntas rápidas e receba sua análise personalizada em até 2 horas via WhatsApp.</p>
+      <span class="label" style="color: var(--gold-light);">Contato com Paulo</span>
+      <h2 class="section-title">Veja suas opções com clareza</h2>
+      <p class="section-sub">Informe o básico para Paulo indicar plantas compatíveis, uso de FGTS e uma estimativa inicial de financiamento.</p>
 
       <!-- CORREÇÃO DA COR DE TEXTO DOS BENEFÍCIOS -->
       <div class="form-benefits">
-        <div class="form-benefits-title">O que você recebe na análise:</div>
+        <div class="form-benefits-title">Você recebe:</div>
         <ul class="form-benefits-list">
-          <li class="form-benefits-item">Simulação gratuita e personalizada</li>
-          <li class="form-benefits-item">Orientação completa sobre FGTS</li>
-          <li class="form-benefits-item">Descubra seu subsídio exato</li>
-          <li class="form-benefits-item">Atendimento 100% sem compromisso</li>
+          <li class="form-benefits-item">Opções de planta compatíveis com seu perfil</li>
+          <li class="form-benefits-item">Orientação sobre uso do FGTS</li>
+          <li class="form-benefits-item">Estimativa inicial de subsídio e parcela</li>
+          <li class="form-benefits-item">Retorno direto pelo WhatsApp</li>
         </ul>
       </div>
     </div>
 
     <!-- FORM CARD -->
-    <div class="form-card" data-reveal data-delay="1">
+    <div class="form-card" id="formulario" data-reveal data-delay="1">
       <div class="form-card-header">
-        <h3 class="form-card-title">Pré-Qualificação MCMV</h3>
-        <p class="form-card-sub">4 etapas rápidas · 100% seguro</p>
+        <h3 class="form-card-title">Dados para atendimento</h3>
+        <p class="form-card-sub">Resposta pelo WhatsApp</p>
       </div>
       
       <div class="form-card-body">
@@ -742,7 +808,7 @@
           <div class="form-section active" id="sec-1">
             <div class="form-section-heading">
               <div class="form-section-number">1</div>
-              <div class="form-section-title">Dados Pessoais</div>
+              <div class="form-section-title">Contato</div>
             </div>
             <div class="form-group">
               <label>Nome completo *</label>
@@ -751,14 +817,14 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label>CPF *</label>
-                <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14" required>
-                <div class="error-message">Campo obrigatório</div>
-              </div>
-              <div class="form-group">
                 <label>WhatsApp *</label>
                 <input type="tel" id="f-tel" placeholder="(11) 90000-0000" required>
                 <div class="error-message">Campo obrigatório</div>
+              </div>
+              <div class="form-group">
+                <label>CPF (opcional)</label>
+                <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14">
+                <p class="form-hint">Pode ser informado depois, no atendimento.</p>
               </div>
             </div>
             <div class="form-row">
@@ -773,7 +839,7 @@
               </div>
             </div>
             <div class="form-nav">
-              <button type="button" class="btn-form-next" onclick="nextStep(1)">
+              <button type="button" class="btn-form-next" data-next-step="1">
                 Continuar <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
@@ -818,8 +884,8 @@
               </div>
             </div>
             <div class="form-nav">
-              <button type="button" class="btn-form-back" onclick="prevStep(2)"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-              <button type="button" class="btn-form-next" onclick="nextStep(2)">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+              <button type="button" class="btn-form-back" data-prev-step="2"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+              <button type="button" class="btn-form-next" data-next-step="2">Continuar <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
 
@@ -849,7 +915,7 @@
               <div class="form-group">
                 <label>Valor estimado do FGTS (opcional)</label>
                 <input type="text" id="f-fgts-valor" placeholder="R$ 0,00">
-                <p class="form-hint">Aproximado — melhora a simulação de entrada</p>
+                <p class="form-hint">Aproximado — melhora o cálculo de entrada</p>
               </div>
             </div>
             <div class="form-group">
@@ -910,7 +976,7 @@
               <div class="form-group">
                 <label>Entrada disponível (opcional)</label>
                 <input type="text" id="f-entrada" placeholder="R$ 0,00">
-                <p class="form-hint">Estimativa — ajuda na simulação</p>
+                <p class="form-hint">Estimativa — ajuda no cálculo de entrada</p>
               </div>
             </div>
             <div class="form-group">
@@ -923,8 +989,8 @@
               </select>
             </div>
             <div class="form-nav">
-              <button type="button" class="btn-form-back" onclick="prevStep(3)"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-              <button type="button" class="btn-form-next" onclick="nextStep(3)">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+              <button type="button" class="btn-form-back" data-prev-step="3"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+              <button type="button" class="btn-form-next" data-next-step="3">Continuar <i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
 
@@ -973,7 +1039,7 @@
               <label>Consentimento *</label>
               <label class="form-checkbox-wrap">
                 <input type="checkbox" id="f-lgpd-contato" required>
-                <span class="form-checkbox-text">Autorizo o uso dos meus dados para contato e análise imobiliária (LGPD).<small>Obrigatório para enviar</small></span>
+                <span class="form-checkbox-text">Autorizo o uso dos meus dados para contato imobiliário (LGPD).<small>Obrigatório para enviar</small></span>
               </label>
               <div class="error-message">É necessário autorizar o contato</div>
             </div>
@@ -984,9 +1050,9 @@
               </label>
             </div>
             <div class="form-nav">
-              <button type="button" class="btn-form-back" onclick="prevStep(4)"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-              <button type="button" class="btn-form-next" onclick="submitForm()" style="background: #25D366; color: white;">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Enviar Simulação
+              <button type="button" class="btn-form-back" data-prev-step="4"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+              <button type="button" class="btn-form-next" data-submit-form style="background: #25D366; color: white;">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Enviar para Paulo
               </button>
             </div>
             <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--teal-light); font-weight: 700;">🔒 Seus dados estão seguros e não enviamos spam.</p>
@@ -1010,7 +1076,7 @@
       <li><a href="#mcmv">MCMV</a></li>
       <li><a href="#localizacao">Localização</a></li>
     </ul>
-    <div class="footer-copy">CRECI-SP 315.337 · © 2024 Paulo Paixão</div>
+    <div class="footer-copy">CRECI-SP 315.337 · © 2026 Paulo Paixão</div>
   </div>
 </footer>
 
@@ -1021,48 +1087,54 @@
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  // ── HERO VÍDEO (loop + fallback se arquivo não carregar) ──
+  // ── HERO VÍDEO (loop + fallback visual para mobile/rede lenta) ──
   const heroVideo = document.getElementById('hero-video');
-  if (heroVideo) {
+  const videoWrapper = document.getElementById('video-wrapper');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (heroVideo && videoWrapper) {
     heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.playsInline = true;
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
-    
+
+    const showVideoFrame = () => {
+      videoWrapper.classList.add('video-ready');
+      videoWrapper.classList.remove('video-error');
+    };
+
+    const keepFallback = () => {
+      videoWrapper.classList.add('video-error');
+      videoWrapper.classList.remove('video-ready');
+      heroVideo.pause();
+    };
+
     const playHero = () => {
+      if (document.hidden) return;
       const playPromise = heroVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Auto-play was prevented, try again on user interaction
-          document.addEventListener('touchstart', function playOnTouch() {
-            heroVideo.play();
-            document.removeEventListener('touchstart', playOnTouch);
-          }, { once: true });
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.then(showVideoFrame).catch(() => {
+          videoWrapper.classList.remove('video-ready');
         });
       }
     };
-    
-    // Try to play immediately
-    playHero();
-    
-    // Also try when loaded
-    heroVideo.addEventListener('loadeddata', playHero);
+
+    if (heroVideo.readyState >= 2) showVideoFrame();
+    heroVideo.addEventListener('loadeddata', showVideoFrame);
     heroVideo.addEventListener('canplay', playHero);
-    
-    heroVideo.addEventListener('error', () => {
-      document.querySelector('.hero').style.background = 'linear-gradient(160deg, var(--teal-dark), var(--teal))';
-      heroVideo.style.display = 'none';
+    heroVideo.addEventListener('playing', showVideoFrame);
+    heroVideo.addEventListener('error', keepFallback);
+    document.addEventListener('touchstart', playHero, { once: true, passive: true });
+    document.addEventListener('click', playHero, { once: true });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) playHero();
     });
-    
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      heroVideo.pause();
-      heroVideo.style.display = 'none';
-      document.querySelector('.hero').style.background = 'linear-gradient(160deg, var(--teal-dark), var(--teal))';
-    }
+    playHero();
   }
 
   // ── PARALLAX suave no vídeo (desktop, sem conflitar com zoom) ──
-  const videoWrapper = document.getElementById('video-wrapper');
-  if (videoWrapper && window.innerWidth >= 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (videoWrapper && window.innerWidth >= 768 && !reducedMotion) {
     document.addEventListener('mousemove', (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * -18;
       const y = (e.clientY / window.innerHeight - 0.5) * -18;
@@ -1081,6 +1153,14 @@
     });
   }, { threshold: 0.1 });
   revealEls.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('img[data-fallback-src]').forEach(img => {
+    img.addEventListener('error', () => {
+      if (img.dataset.fallbackApplied === 'true') return;
+      img.dataset.fallbackApplied = 'true';
+      img.src = img.dataset.fallbackSrc;
+    });
+  });
 
   // ── MASKS ──
   const cpfInput = document.getElementById('f-cpf');
@@ -1198,11 +1278,12 @@
 
   function scrollToFormCard() {
     const card = document.querySelector('.form-card');
-    const cardRect = card.getBoundingClientRect();
-    if (cardRect.top < 0 || cardRect.top > window.innerHeight / 2) {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      window.scrollTo({ top: cardRect.top + scrollTop - 100, behavior: 'smooth' });
-    }
+    if (!card) return;
+    requestAnimationFrame(() => {
+      const navHeight = document.getElementById('nav')?.getBoundingClientRect().height || 0;
+      const cardTop = card.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: Math.max(0, cardTop - navHeight - 44), behavior: 'smooth' });
+    });
   }
 
   function nextStep(section) {
@@ -1222,6 +1303,39 @@
     scrollToFormCard();
   }
 
+  document.querySelectorAll('a[href="#formulario"]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      history.pushState(null, '', '#formulario');
+      scrollToFormCard();
+    });
+  });
+
+  document.querySelectorAll('[data-next-step]').forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      nextStep(Number(button.dataset.nextStep));
+    });
+  });
+
+  document.querySelectorAll('[data-prev-step]').forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      prevStep(Number(button.dataset.prevStep));
+    });
+  });
+
+  document.querySelectorAll('[data-submit-form]').forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      submitForm();
+    });
+  });
+
+  if (location.hash === '#formulario') {
+    setTimeout(scrollToFormCard, 100);
+  }
+
   function sanitizeInput(str) {
     return str.replace(/[<>'"\\;()]/g, '');
   }
@@ -1230,7 +1344,7 @@
     if (!validateSection(4)) return;
 
     const nome = sanitizeInput(document.getElementById('f-nome').value.trim());
-    const cpf = sanitizeInput(document.getElementById('f-cpf').value.trim());
+    const cpf = sanitizeInput(document.getElementById('f-cpf').value.trim()) || 'Não informado';
     const tel = sanitizeInput(document.getElementById('f-tel').value.trim());
     const nascimentoRaw = document.getElementById('f-nascimento').value;
     const nascimento = nascimentoRaw ? nascimentoRaw.split('-').reverse().join('/') : 'N\u00e3o informado';
@@ -1267,7 +1381,7 @@
     const lgpdOfertas = document.getElementById('f-lgpd-ofertas').checked ? 'Sim' : 'Não';
 
     const msg = encodeURIComponent(
-      `Ol\u00e1 Paulo! Preenchi o formul\u00e1rio no site e gostaria de uma simula\u00e7\u00e3o para o Residencial Maro. Seguem meus dados:\n\n` +
+      `Ol\u00e1 Paulo! Preenchi o formul\u00e1rio no site e quero entender minhas op\u00e7\u00f5es para o Residencial Maro. Seguem meus dados:\n\n` +
       `--- *DADOS PESSOAIS* ---\n` +
       `- Nome: ${nome}\n` +
       `- CPF: ${cpf}\n` +
@@ -1296,7 +1410,8 @@
       (msgAdicional ? `- Mensagem extra: ${msgAdicional}\n` : '')
     );
 
-    window.open(`https://wa.me/5511984042039?text=${msg}`, '_blank');
+    const whatsappWindow = window.open(`https://wa.me/5511984042039?text=${msg}`, '_blank', 'noopener,noreferrer');
+    if (whatsappWindow) whatsappWindow.opener = null;
   }
 
   updateProgress(1);

@@ -110,17 +110,18 @@
 
     /* ── HERO SECTION (VÍDEO 3D FULLSCREEN) ── */
     .hero {
-      position: relative; height: 100vh; height: 100svh;
+      position: relative; min-height: 100vh; min-height: 100svh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       padding: 0 2rem; overflow: hidden; color: var(--white); text-align: center;
     }
     
     .hero-video-wrapper {
-      position: absolute; top: -5%; left: -5%; width: 110%; height: 110%; z-index: 0;
+      position: absolute; inset: -4%; width: 108%; height: 108%; z-index: 0;
       background:
         linear-gradient(160deg, rgba(4,42,45,0.75), rgba(8,75,81,0.55)),
         url("assets/foto residencial.jpeg") center / cover no-repeat;
       transition: transform 0.1s ease-out;
+      will-change: transform;
     }
     .hero-video-wrapper video {
       width: 100%; height: 100%; object-fit: cover;
@@ -244,38 +245,83 @@
 
     /* ── TIPOLOGIAS ── */
     .tipo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; align-items: center; }
-    .tipo-card { background: var(--white); padding: 4rem 2rem; display: flex; flex-direction: column; border-right: 1px solid rgba(8,75,81,0.1); }
+    .tipo-card {
+      --tipo-bg: url("assets/foto residencial.jpeg");
+      --tipo-bg-color: var(--teal-dark);
+      --tipo-bg-size: cover;
+      --tipo-bg-position: center;
+      --tipo-gradient: linear-gradient(180deg, rgba(4,42,45,0.20) 0%, rgba(4,42,45,0.72) 48%, rgba(4,42,45,0.95) 100%);
+      position: relative; isolation: isolate; overflow: hidden;
+      min-height: 430px; padding: 4rem 2rem;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      color: var(--white); border-right: 1px solid rgba(255,255,255,0.16);
+      background: var(--tipo-bg-color); box-shadow: 0 18px 42px rgba(8,75,81,0.14);
+    }
+    .tipo-card::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background-image:
+        var(--tipo-gradient),
+        var(--tipo-bg);
+      background-size: cover, var(--tipo-bg-size);
+      background-position: center, var(--tipo-bg-position);
+      background-repeat: no-repeat, no-repeat;
+      transform: scale(1.03);
+      transition: transform .45s var(--ease-out), filter .45s var(--ease-out);
+    }
+    .tipo-card::after {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(135deg, rgba(8,75,81,0.55), rgba(201,147,47,0.16));
+    }
+    .tipo-card:hover::before { transform: scale(1.08); filter: saturate(1.1); }
     .tipo-card:last-child { border-right: none; }
+
+    .tipo-card.planta-card {
+      --tipo-bg-color: #050707;
+      --tipo-bg-size: contain;
+      --tipo-bg-position: center 1rem;
+      --tipo-gradient: linear-gradient(180deg, rgba(4,42,45,0.02) 0%, rgba(4,42,45,0.10) 45%, rgba(4,42,45,0.94) 100%);
+    }
+
+    .tipo-card.planta-card::after {
+      background:
+        linear-gradient(180deg, rgba(8,75,81,0.02) 0%, rgba(8,75,81,0.20) 50%, rgba(201,147,47,0.14) 100%);
+    }
     
-    .tipo-card.destaque { background: var(--teal); color: var(--white); transform: scaleY(1.05); box-shadow: 0 20px 50px rgba(8,75,81,0.2); z-index: 2; position: relative; }
+    .tipo-card.destaque {
+      color: var(--white); transform: scaleY(1.05);
+      box-shadow: 0 24px 60px rgba(8,75,81,0.28); z-index: 2;
+    }
+    .tipo-card.destaque::after {
+      background: linear-gradient(135deg, rgba(4,42,45,0.50), rgba(201,147,47,0.34));
+    }
     
-    .tipo-tag { font-family: var(--sans); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .tipo-name { font-family: var(--sans); font-size: 2.05rem; font-weight: 700; color: var(--teal); line-height: 1.08; margin-bottom: 0.5rem; }
+    .tipo-tag { font-family: var(--sans); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+    .tipo-name { font-family: var(--sans); font-size: 2.05rem; font-weight: 700; color: var(--white); line-height: 1.08; margin-bottom: 0.5rem; text-shadow: 0 3px 14px rgba(0,0,0,0.65); }
     .tipo-card.destaque .tipo-name { color: var(--white); }
-    .tipo-area { font-family: var(--sans); font-size: 0.9rem; color: var(--teal-light); margin-bottom: 2.5rem; font-weight: 600; }
-    .tipo-card.destaque .tipo-area { color: rgba(255,255,255,.6); }
+    .tipo-area { font-family: var(--sans); font-size: 0.9rem; color: rgba(255,255,255,.78); margin-bottom: 2.5rem; font-weight: 600; }
+    .tipo-card.destaque .tipo-area { color: rgba(255,255,255,.82); }
     
-    .tipo-price-label { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.5rem; }
-    .tipo-card.destaque .tipo-price-label { color: rgba(255,255,255,.6); }
-    .tipo-price { font-family: var(--sans); font-size: 2.35rem; font-weight: 800; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; }
+    .tipo-price-label { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,.72); margin-bottom: 0.5rem; }
+    .tipo-card.destaque .tipo-price-label { color: rgba(255,255,255,.76); }
+    .tipo-price { font-family: var(--sans); font-size: 2.35rem; font-weight: 800; color: var(--gold-light); line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 3px 14px rgba(0,0,0,0.6); }
     .tipo-card.destaque .tipo-price { color: var(--gold-light); }
-    .tipo-avaliacao { font-family: var(--sans); font-size: 0.85rem; color: var(--teal-light); margin-bottom: auto; }
-    .tipo-card.destaque .tipo-avaliacao { color: rgba(255,255,255,.6); }
+    .tipo-avaliacao { font-family: var(--sans); font-size: 0.85rem; color: rgba(255,255,255,.72); margin-bottom: auto; }
+    .tipo-card.destaque .tipo-avaliacao { color: rgba(255,255,255,.76); }
     
     .tipo-cta {
       display: block; text-align: center; font-family: var(--sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 1.2rem; margin-top: 3rem; border: 1px solid var(--teal); color: var(--teal); transition: all .25s; cursor: pointer;
+      padding: 1.2rem; margin-top: 3rem; border: 1px solid rgba(255,255,255,0.58); color: var(--white); background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); transition: all .25s; cursor: pointer;
     }
     .tipo-card.destaque .tipo-cta { background: var(--gold); border-color: var(--gold); color: var(--white); }
-    .tipo-cta:hover { background: var(--teal); color: var(--white); }
-    .tipo-card.destaque .tipo-cta:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .tipo-cta:hover { background: var(--white); border-color: var(--white); color: var(--teal); }
+    .tipo-card.destaque .tipo-cta:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--teal-dark); }
     
     .tipo-badge {
       position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--white);
       font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 4px; width: max-content;
     }
 
-    /* ── MCMV ── */
+    /* ── MINHA CASA MINHA VIDA ── */
     .mcmv-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
     .mcmv-list { list-style: none; display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem; }
     .mcmv-list-item { display: flex; gap: 1.5rem; align-items: flex-start; }
@@ -309,7 +355,15 @@
     .loc-detail-item { border-bottom: 1px solid rgba(8,75,81,0.1); padding-bottom: 1.5rem; }
     .loc-detail-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
     .loc-detail-val { font-family: var(--sans); font-size: 1.1rem; color: var(--teal); line-height: 1.5; font-weight: 500; }
+    .loc-map-wrap { display: flex; flex-direction: column; gap: 1.25rem; align-items: center; width: 100%; }
     .loc-map { aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(8,75,81,0.15); }
+    .loc-map-button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+      width: min(100%, 320px); padding: 1rem 1.5rem; background: var(--teal); color: white;
+      font-weight: 800; border-radius: 4px; text-transform: uppercase; font-size: 0.78rem;
+      letter-spacing: 0.08em; transition: background .25s, transform .25s, box-shadow .25s;
+    }
+    .loc-map-button:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(8,75,81,0.18); }
 
     /* ── CORRETOR ── */
     .corretor-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 7rem; align-items: start; }
@@ -444,10 +498,10 @@
     @media (max-width: 1024px) {
       .hero-container, .emp-grid, .mcmv-inner, .corretor-inner, .loc-inner, .form-inner { grid-template-columns: 1fr; gap: 4rem; }
       .tipo-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; gap: 2rem; background: transparent; }
-      .tipo-card { border-right: none; border: 1px solid rgba(8,75,81,0.1); border-radius: 8px; }
+      .tipo-card { border-right: none; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; }
       .tipo-card.destaque { transform: scale(1.03); }
       .tipo-badge { left: auto; right: 1rem; transform: none; top: 1rem;}
-      .emp-img-wrap, .corretor-img-wrap, .form-card, .loc-map, .mcmv-steps-box { max-width: 450px; margin: 0 auto; width: 100%; }
+      .emp-img-wrap, .corretor-img-wrap, .form-card, .loc-map-wrap, .mcmv-steps-box { max-width: 450px; margin: 0 auto; width: 100%; }
       .emp-img-tag, .corretor-creci { position: relative; margin: -2rem auto 0 auto; width: max-content; z-index: 10; text-align: center; }
     }
     @media (max-width: 768px) {
@@ -476,6 +530,45 @@
       .tipo-card { max-width: 380px; width: 100%; margin: 0 auto; }
       .footer-inner { flex-direction: column; text-align: center; }
       .footer-links { flex-direction: column; gap: 1rem; align-items: center; }
+    }
+
+    @media (max-height: 520px) and (orientation: landscape) {
+      .nav { padding: 0.65rem 1rem; gap: 0.75rem; }
+      .nav.scrolled { padding: 0.65rem 1rem; }
+      .nav-logo { font-size: 1.1rem; }
+      .nav-logo em { font-size: 0.5rem; letter-spacing: 0.1em; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 0.62rem 1rem; font-size: 0.64rem; letter-spacing: 0.06em; }
+
+      .hero { min-height: 100svh; padding: 4.75rem 1rem 1.25rem; }
+      .hero-content { max-width: min(94vw, 44rem); }
+      .hero-eyebrow { margin-bottom: 0.55rem; padding: 0.35rem 0.9rem; font-size: 0.64rem; }
+      .hero-title { font-size: clamp(1.55rem, 5.4vw, 2.2rem) !important; line-height: 1.03 !important; margin-bottom: 0.45rem; }
+      .hero-subtitle { max-width: 42rem; font-size: 0.82rem; line-height: 1.35; margin-bottom: 0.25rem; }
+      .hero-quote { max-width: 42rem; font-size: 0.86rem; line-height: 1.3; margin-bottom: 0.7rem; }
+      .hero-author, .hero-social { display: none; }
+      .hero-facts { margin-top: 0.55rem; gap: 0.35rem; }
+      .hero-fact { min-height: 30px; padding: 0.42rem 0.6rem; font-size: 0.61rem; }
+      .hero-actions { margin-top: 0.65rem !important; gap: 0.5rem; }
+      .hero-actions .btn-gold, .hero-actions .btn-ghost { padding: 0.7rem 1rem; font-size: 0.68rem; }
+
+      .section { padding: 3rem 1rem; }
+      .section-head { margin-bottom: 2rem; }
+      .emp-grid, .mcmv-inner, .corretor-inner, .loc-inner, .form-inner { gap: 2rem; }
+
+      .tipo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; gap: 1rem; }
+      .tipo-card { max-width: none; min-height: 300px; padding: 2.2rem 1rem 1.2rem; }
+      .tipo-badge { top: 0.75rem; right: 0.75rem; font-size: 0.55rem; }
+      .tipo-tag { margin-bottom: 0.85rem; font-size: 0.58rem; }
+      .tipo-name { font-size: 1.45rem; }
+      .tipo-area { margin-bottom: 1.2rem; }
+      .tipo-price { font-size: 1.7rem; }
+      .tipo-cta { margin-top: 1.5rem; padding: 0.85rem; font-size: 0.68rem; }
+
+      .loc-map { aspect-ratio: 16/7; min-height: 220px; }
+      .form-benefits { margin-top: 1.5rem; padding: 1.25rem; }
+      .form-card-body { padding: 1.5rem; }
+      .wa-float { width: 48px; height: 48px; right: 1rem; bottom: 1rem; font-size: 26px; }
     }
 
     @media (max-width: 420px) {
@@ -512,7 +605,7 @@
   <ul class="nav-links">
     <li><a href="#empreendimento">O Projeto</a></li>
     <li><a href="#tipologias">Plantas</a></li>
-    <li><a href="#mcmv">MCMV</a></li>
+    <li><a href="#mcmv">Financiamento</a></li>
     <li><a href="#localizacao">Localização</a></li>
   </ul>
   <a href="#formulario" class="nav-cta"><span class="nav-cta-full">Contato</span><span class="nav-cta-short">Contato</span></a>
@@ -523,7 +616,7 @@
   <!-- Vídeo Background com Parallax Mouse -->
   <div class="hero-video-wrapper" id="video-wrapper">
     <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="assets/foto%20residencial.jpeg" disablepictureinpicture aria-hidden="true">
-      <source src="assets/hero-video.mp4" type="video/mp4">
+      <source src="assets/hero-video.mp4.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -595,7 +688,7 @@
   <div class="tipo-grid" data-reveal>
     
     <!-- Studio -->
-    <div class="tipo-card">
+    <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-studio.jpg"); --tipo-bg-position: center 0.75rem;'>
       <div class="tipo-tag">Studio</div>
       <div class="tipo-name">Studio</div>
       <div class="tipo-area">27,58 m²</div>
@@ -607,7 +700,7 @@
     </div>
     
     <!-- 2 Dorms S/ Vaga -->
-    <div class="tipo-card">
+    <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-sem-vaga.jpg");'>
       <div class="tipo-tag">2 Dormitórios</div>
       <div class="tipo-name">Sem Vaga</div>
       <div class="tipo-area">39,53 m²</div>
@@ -619,7 +712,7 @@
     </div>
 
     <!-- 2 Dorms C/ Vaga (DESTAQUE) -->
-    <div class="tipo-card destaque">
+    <div class="tipo-card destaque planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-com-vaga.jpg");'>
       <div class="tipo-badge">Mais vendido</div>
       <div class="tipo-tag">2 Dormitórios</div>
       <div class="tipo-name">Com Vaga</div>
@@ -632,7 +725,7 @@
     </div>
     
     <!-- Suíte -->
-    <div class="tipo-card">
+    <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-suite.jpg");'>
       <div class="tipo-tag">2 Dorms + Suíte</div>
       <div class="tipo-name">Com Suíte</div>
       <div class="tipo-area">46,40 m²</div>
@@ -646,7 +739,7 @@
   </div>
 </section>
 
-<!-- MCMV -->
+<!-- MINHA CASA MINHA VIDA -->
 <section class="section section-teal" id="mcmv">
   <div class="mcmv-inner">
     <div data-reveal>
@@ -693,7 +786,7 @@
         <div class="mcmv-step-num">3</div>
         <div class="mcmv-step-text">
           <strong>Visite o Residencial Maro</strong>
-          <span>Conheça o empreendimento em Guarulhos e tire todas as dúvidas com quem entende de MCMV.</span>
+          <span>Conheça o empreendimento em Guarulhos e tire todas as dúvidas sobre o programa.</span>
         </div>
       </div>
       <a href="#formulario" class="mcmv-cta">Ver minhas opções</a>
@@ -709,14 +802,6 @@
       <h2 class="section-title">No coração<br>de Guarulhos</h2>
       <div class="loc-details">
         <div class="loc-detail-item">
-          <div class="loc-detail-label">Endereço (Clique para abrir)</div>
-          <div class="loc-detail-val">
-            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" rel="noopener noreferrer" style="color: var(--teal); text-decoration: underline; text-underline-offset: 4px;">
-              Rua Eng. Camilo Olivetti, s/nº
-            </a>
-          </div>
-        </div>
-        <div class="loc-detail-item">
           <div class="loc-detail-label">Referências</div>
           <div class="loc-detail-val">Em frente ao Shopping Internacional de Guarulhos</div>
         </div>
@@ -724,11 +809,15 @@
           <div class="loc-detail-label">Mobilidade</div>
           <div class="loc-detail-val">Acesso direto à Via Dutra e Metrô Dutra a 5 min.</div>
         </div>
-        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 1rem 2rem; background: var(--teal); color: white; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Abrir no Google Maps</a>
       </div>
     </div>
-    <div class="loc-map" data-reveal data-delay="1">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.48!2d-46.531!3d-23.463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI3JzQ2LjgiUyA0NsKwMzEnNTEuNiJX!5e0!3m2!1spt-BR!2sbr!4v1684800000000" loading="lazy" allowfullscreen style="width: 100%; height: 100%; border: 0;"></iframe>
+    <div class="loc-map-wrap" data-reveal data-delay="1">
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.48!2d-46.531!3d-23.463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI3JzQ2LjgiUyA0NsKwMzEnNTEuNiJX!5e0!3m2!1spt-BR!2sbr!4v1684800000000" loading="lazy" allowfullscreen style="width: 100%; height: 100%; border: 0;"></iframe>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" rel="noopener noreferrer" class="loc-map-button">
+        <i class="fa-solid fa-location-dot"></i> Abrir no Google Maps
+      </a>
     </div>
   </div>
 </section>
@@ -752,8 +841,8 @@
       <!-- Correção na seção CORRETOR (Removido os itens indesejados) -->
       <div class="corretor-meta" style="grid-template-columns: 1fr;">
         <div>
-          <div class="corretor-meta-val">MCMV</div>
-          <div class="corretor-meta-label">Especialista em Financiamento</div>
+          <div class="corretor-meta-val">Minha Casa Minha Vida</div>
+          <div class="corretor-meta-label">Especialista em financiamentos pelo programa</div>
         </div>
       </div>
     </div>
@@ -766,15 +855,15 @@
     <div data-reveal>
       <span class="label" style="color: var(--gold-light);">Contato com Paulo</span>
       <h2 class="section-title">Veja suas opções com clareza</h2>
-      <p class="section-sub">Informe o básico para Paulo indicar plantas compatíveis, uso de FGTS e uma estimativa inicial de financiamento.</p>
+      <p class="section-sub">Fale direto com Paulo para entender disponibilidade, valores e próximos passos com clareza.</p>
 
       <!-- CORREÇÃO DA COR DE TEXTO DOS BENEFÍCIOS -->
       <div class="form-benefits">
         <div class="form-benefits-title">Você recebe:</div>
         <ul class="form-benefits-list">
-          <li class="form-benefits-item">Opções de planta compatíveis com seu perfil</li>
+          <li class="form-benefits-item">Comparação das plantas disponíveis</li>
           <li class="form-benefits-item">Orientação sobre uso do FGTS</li>
-          <li class="form-benefits-item">Estimativa inicial de subsídio e parcela</li>
+          <li class="form-benefits-item">Condições de financiamento explicadas de forma objetiva</li>
           <li class="form-benefits-item">Retorno direto pelo WhatsApp</li>
         </ul>
       </div>
@@ -783,8 +872,8 @@
     <!-- FORM CARD -->
     <div class="form-card" id="formulario" data-reveal data-delay="1">
       <div class="form-card-header">
-        <h3 class="form-card-title">Dados para atendimento</h3>
-        <p class="form-card-sub">Resposta pelo WhatsApp</p>
+        <h3 class="form-card-title">Converse conosco</h3>
+        <p class="form-card-sub">Atendimento direto pelo WhatsApp</p>
       </div>
       
       <div class="form-card-body">
@@ -798,7 +887,7 @@
           <div class="progress-labels">
             <div class="progress-label active" id="p-label-1">Dados</div>
             <div class="progress-label" id="p-label-2">Renda</div>
-            <div class="progress-label" id="p-label-3">MCMV</div>
+            <div class="progress-label" id="p-label-3">Financ.</div>
             <div class="progress-label" id="p-label-4">Fim</div>
           </div>
         </div>
@@ -893,7 +982,7 @@
           <div class="form-section" id="sec-3">
             <div class="form-section-heading">
               <div class="form-section-number">3</div>
-              <div class="form-section-title">Dados MCMV</div>
+              <div class="form-section-title">Financiamento</div>
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -904,7 +993,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>Já usou MCMV? *</label>
+                <label>Já usou Minha Casa Minha Vida? *</label>
                 <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
                   <label class="form-radio"><input type="radio" name="mcmv" value="Sim" required> Sim</label>
                   <label class="form-radio"><input type="radio" name="mcmv" value="Não" required> Não</label>
@@ -1073,7 +1162,7 @@
     <ul class="footer-links">
       <li><a href="#empreendimento">O Projeto</a></li>
       <li><a href="#tipologias">Plantas</a></li>
-      <li><a href="#mcmv">MCMV</a></li>
+      <li><a href="#mcmv">Financiamento</a></li>
       <li><a href="#localizacao">Localização</a></li>
     </ul>
     <div class="footer-copy">CRECI-SP 315.337 · © 2026 Paulo Paixão</div>
@@ -1131,6 +1220,54 @@
       if (!document.hidden) playHero();
     });
     playHero();
+
+    const heroSection = document.getElementById('home');
+    const canScrubHeroVideo = window.innerWidth >= 768;
+    let scrubFrameRequest = null;
+
+    const syncHeroVideoFrame = () => {
+      scrubFrameRequest = null;
+      if (!heroSection || !Number.isFinite(heroVideo.duration) || heroVideo.duration <= 0) return;
+
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      const heroTop = heroSection.offsetTop || 0;
+      const scrubRange = Math.max(window.innerHeight || 1, heroSection.offsetHeight || 1);
+      const progress = Math.min(1, Math.max(0, (scrollTop - heroTop) / scrubRange));
+      const targetTime = progress * Math.max(0, heroVideo.duration - 0.08);
+
+      if (Math.abs(heroVideo.currentTime - targetTime) > 0.04) {
+        try {
+          heroVideo.currentTime = targetTime;
+        } catch (_) {
+          // Browser can reject seeks before metadata is fully available.
+        }
+      }
+    };
+
+    const requestHeroVideoFrameSync = () => {
+      if (scrubFrameRequest !== null) return;
+      scrubFrameRequest = requestAnimationFrame(syncHeroVideoFrame);
+    };
+
+    if (canScrubHeroVideo && heroSection) {
+      videoWrapper.classList.add('scroll-scrub-ready');
+      heroVideo.addEventListener('loadedmetadata', requestHeroVideoFrameSync);
+      window.addEventListener('scroll', requestHeroVideoFrameSync, { passive: true });
+      document.addEventListener('scroll', requestHeroVideoFrameSync, { passive: true, capture: true });
+      window.addEventListener('wheel', requestHeroVideoFrameSync, { passive: true });
+      window.addEventListener('touchmove', requestHeroVideoFrameSync, { passive: true });
+      window.addEventListener('resize', requestHeroVideoFrameSync);
+      let lastObservedHeroScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+      window.setInterval(() => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+        const heroLimit = (heroSection.offsetTop || 0) + (heroSection.offsetHeight || 0) + (window.innerHeight || 0);
+        if (currentScroll > heroLimit) return;
+        if (Math.abs(currentScroll - lastObservedHeroScroll) < 1) return;
+        lastObservedHeroScroll = currentScroll;
+        syncHeroVideoFrame();
+      }, 120);
+      requestHeroVideoFrameSync();
+    }
   }
 
   // ── PARALLAX suave no vídeo (desktop, sem conflitar com zoom) ──
@@ -1394,7 +1531,7 @@
       `- Pessoas na renda: ${pessoasRenda}\n\n` +
       `--- *FINANCIAMENTO E IM\u00d3VEL* ---\n` +
       `- Possui FGTS: ${fgts} (Valor aprox: ${fgtsValor})\n` +
-      `- J\u00e1 usou MCMV: ${mcmv}\n` +
+      `- J\u00e1 usou Minha Casa Minha Vida: ${mcmv}\n` +
       `- Moradia atual: ${moradia}\n` +
       `- Estado civil: ${civil}\n` +
       `- Dependentes: ${depend}\n` +

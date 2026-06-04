@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Paulo Paixão · Residencial Maro — Guarulhos</title>
-  <meta name="description" content="Residencial Maro em Guarulhos, em frente ao Shopping Internacional. Apartamentos de 27 a 46 m² com orientação para FGTS, subsídio e financiamento.">
-  
+  <meta name="description"
+    content="Residencial Maro em Guarulhos, em frente ao Shopping Internacional. Apartamentos de 27 a 46 m² com orientação para FGTS, subsídio e financiamento.">
+
   <!-- Security Headers (Anti-Fraude e Anti-XSS) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com; media-src 'self'; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com; media-src 'self'; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <!-- Fonte unificada -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
@@ -25,106 +29,277 @@
   <meta name="theme-color" content="#084B51">
 
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     :root {
       /* Paleta Exata */
-      --teal:       #084B51;
-      --teal-dark:  #042a2d;
+      --teal: #084B51;
+      --teal-dark: #042a2d;
       --teal-light: #0b676f;
-      --light:      #E0E7E8;
-      --light-mid:  #cddadb;
-      --white:      #ffffff;
-      --gold:       #c9932f;
+      --light: #E0E7E8;
+      --light-mid: #cddadb;
+      --white: #ffffff;
+      --gold: #c9932f;
       --gold-light: #f0bd62;
-      
-      --sans:  'Outfit', sans-serif;
+
+      --sans: 'Outfit', sans-serif;
       --serif: var(--sans);
 
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    ::selection { background: var(--teal); color: var(--light); }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: var(--sans); background: var(--light); color: var(--teal);
-      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    ::selection {
+      background: var(--teal);
+      color: var(--light);
     }
-    img, video { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--light);
+      color: var(--teal);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     /* ── UTILITIES ── */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .text-center { text-align: center; }
-    .flex { display: flex; }
-    .flex-col { flex-direction: column; }
-    .items-center { align-items: center; }
-    
-    .label {
-      font-family: var(--sans); font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold);
-      display: inline-flex; align-items: center; gap: 8px;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
-    .label::before { content: ''; width: 24px; height: 2px; background: var(--gold); display: inline-block; }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .label {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .label::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      display: inline-block;
+    }
 
     /* ── WHATSAPP FLOAT ── */
     .wa-float {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-      width: 60px; height: 60px; background: #25D366; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 32px;
-      box-shadow: 0 4px 24px rgba(37,211,102,.4); transition: transform .3s var(--ease-out), box-shadow .3s;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 32px;
+      box-shadow: 0 4px 24px rgba(37, 211, 102, .4);
+      transition: transform .3s var(--ease-out), box-shadow .3s;
     }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,.6); }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, .6);
+    }
 
     /* ── NAV BAR ── */
     .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; padding: 1.5rem 3rem; transition: all .4s var(--ease-out);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 3rem;
+      transition: all .4s var(--ease-out);
       border-bottom: 1px solid transparent;
     }
+
     .nav.scrolled {
-      padding: 1rem 3rem; background: rgba(224, 231, 232, 0.98);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom-color: rgba(8, 75, 81, 0.1); box-shadow: 0 4px 30px rgba(8,75,81,0.05);
+      padding: 1rem 3rem;
+      background: rgba(224, 231, 232, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom-color: rgba(8, 75, 81, 0.1);
+      box-shadow: 0 4px 30px rgba(8, 75, 81, 0.05);
     }
-    .nav-logo { min-width: 0; flex: 0 1 auto; font-family: var(--sans); font-size: 1.6rem; font-weight: 700; color: var(--white); line-height: 1; transition: color .4s; }
-    .nav-logo em { display: block; font-style: normal; font-family: var(--sans); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 4px; transition: color .4s; white-space: nowrap; }
-    .nav.scrolled .nav-logo { color: var(--teal); }
-    .nav.scrolled .nav-logo em { color: var(--teal-light); opacity: 0.8; }
-    
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; color: rgba(255,255,255,0.8); transition: color .25s; text-transform: uppercase; }
-    .nav-links a:hover { color: var(--white); }
-    .nav.scrolled .nav-links a { color: var(--teal); opacity: 0.7; }
-    .nav.scrolled .nav-links a:hover { opacity: 1; }
-    
+
+    .nav-logo {
+      min-width: 0;
+      flex: 0 1 auto;
+      font-family: var(--sans);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      transition: color .4s;
+    }
+
+    .nav-logo em {
+      display: block;
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+      transition: color .4s;
+      white-space: nowrap;
+    }
+
+    .nav.scrolled .nav-logo {
+      color: var(--teal);
+    }
+
+    .nav.scrolled .nav-logo em {
+      color: var(--teal-light);
+      opacity: 0.8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color .25s;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav.scrolled .nav-links a {
+      color: var(--teal);
+      opacity: 0.7;
+    }
+
+    .nav.scrolled .nav-links a:hover {
+      opacity: 1;
+    }
+
     .nav-cta {
-      font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--teal); background: var(--white); padding: 0.8rem 1.8rem; border-radius: 40px;
-      transition: all .3s; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; white-space: nowrap;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--white);
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      transition: all .3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      white-space: nowrap;
     }
-    .nav-cta-short { display: none; }
-    .nav.scrolled .nav-cta { background: var(--teal); color: var(--white); }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+
+    .nav-cta-short {
+      display: none;
+    }
+
+    .nav.scrolled .nav-cta {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
 
     /* ── HERO SECTION (VÍDEO 3D FULLSCREEN) ── */
     .hero {
-      position: relative; min-height: 100vh; min-height: 100svh;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      padding: 0 2rem; overflow: hidden; color: var(--white); text-align: center;
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
+      overflow: hidden;
+      color: var(--white);
+      text-align: center;
     }
-    
+
     .hero-video-wrapper {
-      position: absolute; inset: -4%; width: 108%; height: 108%; z-index: 0;
+      position: absolute;
+      inset: -4%;
+      width: 108%;
+      height: 108%;
+      z-index: 0;
       background:
-        linear-gradient(160deg, rgba(4,42,45,0.75), rgba(8,75,81,0.55)),
+        linear-gradient(160deg, rgba(4, 42, 45, 0.75), rgba(8, 75, 81, 0.55)),
         url("assets/foto residencial.jpeg") center / cover no-repeat;
       transition: transform 0.1s ease-out;
       will-change: transform;
     }
+
     .hero-video-wrapper video {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       object-position: center;
       filter: saturate(1.16) contrast(1.08) brightness(1.08);
       animation: slowZoom 25s infinite alternate linear;
@@ -135,16 +310,36 @@
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
-    .hero-video-wrapper.video-ready video { opacity: 1; }
+
+    .hero-video-wrapper.video-ready video {
+      opacity: 1;
+    }
+
     .hero-video-wrapper.video-error video,
-    .hero-video-wrapper.video-disabled video { display: none; }
-    @keyframes slowZoom { 0% { transform: scale(1); } 100% { transform: scale(1.06); } }
-    
+    .hero-video-wrapper.video-disabled video {
+      display: none;
+    }
+
+    @keyframes slowZoom {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.06);
+      }
+    }
+
     /* Video mobile fix */
     @media (max-width: 768px) {
       .hero-video-wrapper {
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
+
       .hero-video-wrapper video {
         animation: none;
         min-width: 100%;
@@ -153,112 +348,302 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-video-wrapper video { animation: none; }
+      .hero-video-wrapper video {
+        animation: none;
+      }
     }
-    
+
     .hero-overlay {
-      position: absolute; inset: 0; z-index: 1;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
       background:
-        radial-gradient(circle at 50% 38%, rgba(8,75,81,0.12) 0%, rgba(4,42,45,0.44) 48%, rgba(4,42,45,0.72) 100%),
-        linear-gradient(to bottom, rgba(4,42,45,0.52) 0%, rgba(8,75,81,0.32) 48%, rgba(4,42,45,0.66) 100%);
+        radial-gradient(circle at 50% 38%, rgba(8, 75, 81, 0.12) 0%, rgba(4, 42, 45, 0.44) 48%, rgba(4, 42, 45, 0.72) 100%),
+        linear-gradient(to bottom, rgba(4, 42, 45, 0.52) 0%, rgba(8, 75, 81, 0.32) 48%, rgba(4, 42, 45, 0.66) 100%);
     }
-    
-    .hero-content { position: relative; z-index: 10; width: 100%; max-width: 900px; display: flex; flex-direction: column; align-items: center; }
-    
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .hero-eyebrow {
-      display: inline-block; padding: 0.5rem 1.5rem; border: 1px solid rgba(255,255,255,0.42);
-      border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       margin-bottom: 2rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
       background: rgba(4, 42, 45, 0.32);
     }
+
     .hero-title {
-      font-family: var(--sans); font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: 0;
-      text-shadow: 0 4px 18px rgba(0,0,0,0.68);
+      font-family: var(--sans);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.68);
     }
+
     .hero-subtitle {
-      font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     }
+
     .hero-quote {
-      font-family: var(--sans); font-size: 1.25rem; font-style: normal; font-weight: 700; color: var(--gold-light);
+      font-family: var(--sans);
+      font-size: 1.25rem;
+      font-style: normal;
+      font-weight: 700;
+      color: var(--gold-light);
       margin-bottom: 2.5rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     }
-    .hero-author { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
-    .hero-social { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
+
+    .hero-author {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-social {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 3rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
 
     .hero-facts {
-      display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
-      margin: 1.75rem 0 0; max-width: 760px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 1.75rem 0 0;
+      max-width: 760px;
     }
-    .hero-fact {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      min-height: 42px; padding: 0.7rem 1rem; border-radius: 999px;
-      background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.28);
-      color: var(--white); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.55);
-    }
-    .hero-fact i { color: var(--gold-light); }
 
-    .hero-actions { display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap; }
-    .btn-gold {
-      background: var(--gold); color: var(--white); font-size: 0.85rem; font-weight: 800;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 1.2rem 2.5rem; border-radius: 50px;
-      transition: all .3s; display: inline-block;
+    .hero-fact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 42px;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
     }
-    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(184,136,58,.4); }
+
+    .hero-fact i {
+      color: var(--gold-light);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      transition: all .3s;
+      display: inline-block;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(184, 136, 58, .4);
+    }
 
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 1.2rem 2rem; border-radius: 50px;
-      border: 1px solid rgba(255,255,255,0.45); color: var(--white);
-      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;
-      transition: all .25s; background: rgba(255,255,255,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1.2rem 2rem;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all .25s;
+      background: rgba(255, 255, 255, 0.08);
     }
+
     .btn-ghost:hover {
-      background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.7);
       transform: translateY(-2px);
     }
 
     /* ── SECTIONS ── */
-    .section { padding: 7rem 2rem; position: relative; z-index: 1; }
-    .section-light { background: var(--light); }
-    .section-white { background: var(--white); }
-    .section-teal { background: var(--teal); color: var(--white); }
+    .section {
+      padding: 7rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
 
-    .section-head { margin-bottom: 4rem; text-align: center; }
-    .section-title { font-family: var(--sans); font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 700; line-height: 1.08; letter-spacing: 0; color: var(--teal); margin-top: 1rem; }
-    .section-teal .section-title { color: var(--white); }
-    .section-sub { font-family: var(--sans); font-size: 1.1rem; color: var(--teal-light); margin-top: 1rem; font-weight: 400; max-width: 600px; margin-inline: auto; }
-    .section-teal .section-sub { color: rgba(255,255,255,.7); }
-    .section-teal .label { color: var(--gold-light); }
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .section-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .section-head {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--sans);
+      font-size: clamp(2rem, 7vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--teal);
+      margin-top: 1rem;
+    }
+
+    .section-teal .section-title {
+      color: var(--white);
+    }
+
+    .section-sub {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      color: var(--teal-light);
+      margin-top: 1rem;
+      font-weight: 400;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .section-teal .section-sub {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .section-teal .label {
+      color: var(--gold-light);
+    }
 
     /* ── EMPREENDIMENTO ── */
-    .emp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1160px; margin: 0 auto; }
-    .emp-img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 20px 40px rgba(8,75,81,0.15); }
-    
-    .emp-features { list-style: none; margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
-    .emp-feature { display: flex; align-items: center; gap: 1.2rem; font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--teal); }
-    .emp-feature i { color: var(--white); background: var(--gold); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; }
+    .emp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .emp-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 20px 40px rgba(8, 75, 81, 0.15);
+    }
+
+    .emp-features {
+      list-style: none;
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .emp-feature {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    .emp-feature i {
+      color: var(--white);
+      background: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+    }
 
     /* ── TIPOLOGIAS ── */
-    .tipo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; align-items: center; }
+    .tipo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
     .tipo-card {
       --tipo-bg: url("assets/foto residencial.jpeg");
       --tipo-bg-color: var(--teal-dark);
       --tipo-bg-size: cover;
       --tipo-bg-position: center;
-      --tipo-gradient: linear-gradient(180deg, rgba(4,42,45,0.20) 0%, rgba(4,42,45,0.72) 48%, rgba(4,42,45,0.95) 100%);
-      position: relative; isolation: isolate; overflow: hidden;
-      min-height: 430px; padding: 4rem 2rem;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      color: var(--white); border-right: 1px solid rgba(255,255,255,0.16);
-      background: var(--tipo-bg-color); box-shadow: 0 18px 42px rgba(8,75,81,0.14);
+      --tipo-gradient: linear-gradient(180deg, rgba(4, 42, 45, 0.20) 0%, rgba(4, 42, 45, 0.72) 48%, rgba(4, 42, 45, 0.95) 100%);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 430px;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--white);
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--tipo-bg-color);
+      box-shadow: 0 18px 42px rgba(8, 75, 81, 0.14);
     }
+
     .tipo-card::before {
-      content: ""; position: absolute; inset: 0; z-index: -2;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
       background-image:
         var(--tipo-gradient),
         var(--tipo-bg);
@@ -268,1291 +653,2392 @@
       transform: scale(1.03);
       transition: transform .45s var(--ease-out), filter .45s var(--ease-out);
     }
+
     .tipo-card::after {
-      content: ""; position: absolute; inset: 0; z-index: -1;
-      background: linear-gradient(135deg, rgba(8,75,81,0.55), rgba(201,147,47,0.16));
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(135deg, rgba(8, 75, 81, 0.55), rgba(201, 147, 47, 0.16));
     }
-    .tipo-card:hover::before { transform: scale(1.08); filter: saturate(1.1); }
-    .tipo-card:last-child { border-right: none; }
+
+    .tipo-card:hover::before {
+      transform: scale(1.08);
+      filter: saturate(1.1);
+    }
+
+    .tipo-card:last-child {
+      border-right: none;
+    }
 
     .tipo-card.planta-card {
       --tipo-bg-color: #050707;
       --tipo-bg-size: contain;
       --tipo-bg-position: center 1rem;
-      --tipo-gradient: linear-gradient(180deg, rgba(4,42,45,0.02) 0%, rgba(4,42,45,0.10) 45%, rgba(4,42,45,0.94) 100%);
+      --tipo-gradient: linear-gradient(180deg, rgba(4, 42, 45, 0.02) 0%, rgba(4, 42, 45, 0.10) 45%, rgba(4, 42, 45, 0.94) 100%);
     }
 
     .tipo-card.planta-card::after {
       background:
-        linear-gradient(180deg, rgba(8,75,81,0.02) 0%, rgba(8,75,81,0.20) 50%, rgba(201,147,47,0.14) 100%);
+        linear-gradient(180deg, rgba(8, 75, 81, 0.02) 0%, rgba(8, 75, 81, 0.20) 50%, rgba(201, 147, 47, 0.14) 100%);
     }
-    
+
     .tipo-card.destaque {
-      color: var(--white); transform: scaleY(1.05);
-      box-shadow: 0 24px 60px rgba(8,75,81,0.28); z-index: 2;
+      color: var(--white);
+      transform: scaleY(1.05);
+      box-shadow: 0 24px 60px rgba(8, 75, 81, 0.28);
+      z-index: 2;
     }
+
     .tipo-card.destaque::after {
-      background: linear-gradient(135deg, rgba(4,42,45,0.50), rgba(201,147,47,0.34));
+      background: linear-gradient(135deg, rgba(4, 42, 45, 0.50), rgba(201, 147, 47, 0.34));
     }
-    
-    .tipo-tag { font-family: var(--sans); font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
-    .tipo-name { font-family: var(--sans); font-size: 2.05rem; font-weight: 700; color: var(--white); line-height: 1.08; margin-bottom: 0.5rem; text-shadow: 0 3px 14px rgba(0,0,0,0.65); }
-    .tipo-card.destaque .tipo-name { color: var(--white); }
-    .tipo-area { font-family: var(--sans); font-size: 0.9rem; color: rgba(255,255,255,.78); margin-bottom: 2.5rem; font-weight: 600; }
-    .tipo-card.destaque .tipo-area { color: rgba(255,255,255,.82); }
-    
-    .tipo-price-label { font-family: var(--sans); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,.72); margin-bottom: 0.5rem; }
-    .tipo-card.destaque .tipo-price-label { color: rgba(255,255,255,.76); }
-    .tipo-price { font-family: var(--sans); font-size: 2.35rem; font-weight: 800; color: var(--gold-light); line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 3px 14px rgba(0,0,0,0.6); }
-    .tipo-card.destaque .tipo-price { color: var(--gold-light); }
-    .tipo-avaliacao { font-family: var(--sans); font-size: 0.85rem; color: rgba(255,255,255,.72); margin-bottom: auto; }
-    .tipo-card.destaque .tipo-avaliacao { color: rgba(255,255,255,.76); }
-    
+
+    .tipo-tag {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .tipo-name {
+      font-family: var(--sans);
+      font-size: 2.05rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.65);
+    }
+
+    .tipo-card.destaque .tipo-name {
+      color: var(--white);
+    }
+
+    .tipo-area {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, .78);
+      margin-bottom: 2.5rem;
+      font-weight: 600;
+    }
+
+    .tipo-card.destaque .tipo-area {
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .tipo-price-label {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .72);
+      margin-bottom: 0.5rem;
+    }
+
+    .tipo-card.destaque .tipo-price-label {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .tipo-price {
+      font-family: var(--sans);
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    .tipo-card.destaque .tipo-price {
+      color: var(--gold-light);
+    }
+
+    .tipo-avaliacao {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, .72);
+      margin-bottom: auto;
+    }
+
+    .tipo-card.destaque .tipo-avaliacao {
+      color: rgba(255, 255, 255, .76);
+    }
+
     .tipo-cta {
-      display: block; text-align: center; font-family: var(--sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 1.2rem; margin-top: 3rem; border: 1px solid rgba(255,255,255,0.58); color: var(--white); background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); transition: all .25s; cursor: pointer;
+      display: block;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1.2rem;
+      margin-top: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      transition: all .25s;
+      cursor: pointer;
     }
-    .tipo-card.destaque .tipo-cta { background: var(--gold); border-color: var(--gold); color: var(--white); }
-    .tipo-cta:hover { background: var(--white); border-color: var(--white); color: var(--teal); }
-    .tipo-card.destaque .tipo-cta:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--teal-dark); }
-    
+
+    .tipo-card.destaque .tipo-cta {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+
+    .tipo-cta:hover {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--teal);
+    }
+
+    .tipo-card.destaque .tipo-cta:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      color: var(--teal-dark);
+    }
+
     .tipo-badge {
-      position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--white);
-      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; border-radius: 4px; width: max-content;
+      position: absolute;
+      top: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      width: max-content;
     }
 
     /* ── MINHA CASA MINHA VIDA ── */
-    .mcmv-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
-    .mcmv-list { list-style: none; display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem; }
-    .mcmv-list-item { display: flex; gap: 1.5rem; align-items: flex-start; }
-    .mcmv-list-icon { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid rgba(201,169,107,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .mcmv-list-text { font-family: var(--sans); font-size: 0.95rem; color: rgba(255,255,255,.7); line-height: 1.6; }
-    .mcmv-list-text strong { color: var(--white); font-weight: 600; display: block; font-size: 1.1rem; margin-bottom: 4px; }
-    
+    .mcmv-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: center;
+    }
+
+    .mcmv-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .mcmv-list-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .mcmv-list-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border: 1px solid rgba(201, 169, 107, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mcmv-list-text {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.6;
+    }
+
+    .mcmv-list-text strong {
+      color: var(--white);
+      font-weight: 600;
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
     .mcmv-steps-box {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px; padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 2.5rem;
     }
-    .mcmv-steps-title { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 2rem; }
-    .mcmv-step { display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 1.75rem; }
-    .mcmv-step:last-of-type { margin-bottom: 2rem; }
+
+    .mcmv-steps-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+    }
+
+    .mcmv-step {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 1.75rem;
+    }
+
+    .mcmv-step:last-of-type {
+      margin-bottom: 2rem;
+    }
+
     .mcmv-step-num {
-      width: 36px; height: 36px; border-radius: 50%; background: var(--gold); color: var(--white);
-      font-weight: 800; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
-    .mcmv-step-text strong { display: block; color: var(--white); font-size: 1.05rem; margin-bottom: 4px; }
-    .mcmv-step-text span { font-size: 0.9rem; color: rgba(255,255,255,.65); line-height: 1.5; }
+
+    .mcmv-step-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .mcmv-step-text span {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.5;
+    }
+
     .mcmv-cta {
-      display: block; text-align: center; background: var(--gold); color: var(--white);
-      font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      padding: 1.2rem 2rem; border-radius: 50px; transition: all .3s;
+      display: block;
+      text-align: center;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1.2rem 2rem;
+      border-radius: 50px;
+      transition: all .3s;
     }
-    .mcmv-cta:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(184,136,58,.35); }
+
+    .mcmv-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(184, 136, 58, .35);
+    }
 
     /* ── LOCALIZAÇÃO ── */
-    .loc-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-    .loc-details { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
-    .loc-detail-item { border-bottom: 1px solid rgba(8,75,81,0.1); padding-bottom: 1.5rem; }
-    .loc-detail-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    .loc-detail-val { font-family: var(--sans); font-size: 1.1rem; color: var(--teal); line-height: 1.5; font-weight: 500; }
-    .loc-map-wrap { display: flex; flex-direction: column; gap: 1.25rem; align-items: center; width: 100%; }
-    .loc-map { aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(8,75,81,0.15); }
-    .loc-map-button {
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
-      width: min(100%, 320px); padding: 1rem 1.5rem; background: var(--teal); color: white;
-      font-weight: 800; border-radius: 4px; text-transform: uppercase; font-size: 0.78rem;
-      letter-spacing: 0.08em; transition: background .25s, transform .25s, box-shadow .25s;
+    .loc-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
     }
-    .loc-map-button:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(8,75,81,0.18); }
+
+    .loc-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .loc-detail-item {
+      border-bottom: 1px solid rgba(8, 75, 81, 0.1);
+      padding-bottom: 1.5rem;
+    }
+
+    .loc-detail-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .loc-detail-val {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      color: var(--teal);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .loc-map-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .loc-map {
+      aspect-ratio: 4/3;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(8, 75, 81, 0.15);
+    }
+
+    .loc-map-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      width: min(100%, 320px);
+      padding: 1rem 1.5rem;
+      background: var(--teal);
+      color: white;
+      font-weight: 800;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      transition: background .25s, transform .25s, box-shadow .25s;
+    }
+
+    .loc-map-button:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(8, 75, 81, 0.18);
+    }
 
     /* ── CORRETOR ── */
-    .corretor-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 7rem; align-items: start; }
-    .corretor-img-wrap { position: relative; }
-    .corretor-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; border-radius: 8px; box-shadow: 0 20px 50px rgba(8,75,81,0.2); }
-    .corretor-creci { position: absolute; bottom: -2rem; left: -2rem; background: var(--gold); color: var(--white); padding: 1.5rem 2rem; border-radius: 4px; box-shadow: 0 10px 20px rgba(184,136,58,.3); }
-    .corretor-creci-num { font-family: var(--sans); font-size: 1.5rem; font-weight: 800; line-height: 1;}
-    .corretor-creci-text { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; }
-    
-    .corretor-bio { font-family: var(--sans); font-size: clamp(1.25rem, 2.5vw, 1.55rem); font-style: normal; font-weight: 500; line-height: 1.55; color: var(--teal); margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(8,75,81,0.1); }
-    
-    .corretor-meta { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .corretor-meta-val { font-family: var(--sans); font-size: 2.35rem; font-weight: 800; color: var(--teal); }
-    .corretor-meta-label { font-size: 0.75rem; font-weight: 700; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.5rem; }
-    
-    /* ── FORMULÁRIO (2 COLUNAS) ── */
-    .form-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 6rem; align-items: start; }
-    
-    /* CORREÇÃO DO BLOCO DE BENEFÍCIOS PARA FICAR VISÍVEL NO FUNDO TEAL */
-    .form-benefits { margin-top: 3rem; padding: 2.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; }
-    .form-benefits-title { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-    .form-benefits-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
-    .form-benefits-item { display: flex; align-items: flex-start; gap: 1rem; font-family: var(--sans); font-size: 1rem; color: var(--white); font-weight: 500; }
-    .form-benefits-item::before { content: "✓"; color: var(--gold); font-weight: 700; }
+    .corretor-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 7rem;
+      align-items: start;
+    }
 
-    .form-card { background: var(--white); border-radius: 8px; box-shadow: 0 20px 60px rgba(8,75,81,0.1); overflow: hidden; border: 1px solid rgba(8,75,81,0.05); scroll-margin-top: 6rem; }
-    .form-card-header { background: var(--teal); padding: 2.5rem; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .form-card-title { font-family: var(--sans); font-size: 1.65rem; font-weight: 700; }
-    .form-card-sub { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,.6); margin-top: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .form-card-body { padding: 3rem; }
+    .corretor-img-wrap {
+      position: relative;
+    }
+
+    .corretor-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(8, 75, 81, 0.2);
+    }
+
+    .corretor-creci {
+      position: absolute;
+      bottom: -2rem;
+      left: -2rem;
+      background: var(--gold);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(184, 136, 58, .3);
+    }
+
+    .corretor-creci-num {
+      font-family: var(--sans);
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .corretor-creci-text {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .corretor-bio {
+      font-family: var(--sans);
+      font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--teal);
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(8, 75, 81, 0.1);
+    }
+
+    .corretor-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .corretor-meta-val {
+      font-family: var(--sans);
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .corretor-meta-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    /* ── FORMULÁRIO (2 COLUNAS) ── */
+    .form-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    /* CORREÇÃO DO BLOCO DE BENEFÍCIOS PARA FICAR VISÍVEL NO FUNDO TEAL */
+    .form-benefits {
+      margin-top: 3rem;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    .form-benefits-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-benefits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-benefits-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .form-benefits-item::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(8, 75, 81, 0.1);
+      overflow: hidden;
+      border: 1px solid rgba(8, 75, 81, 0.05);
+      scroll-margin-top: 6rem;
+    }
+
+    .form-card-header {
+      background: var(--teal);
+      padding: 2.5rem;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-card-title {
+      font-family: var(--sans);
+      font-size: 1.65rem;
+      font-weight: 700;
+    }
+
+    .form-card-sub {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, .6);
+      margin-top: 0.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .form-card-body {
+      padding: 3rem;
+    }
 
     /* Progress */
-    .form-progress { margin-bottom: 3rem; }
-    .progress-bar-container { display: flex; gap: 6px; margin-bottom: 1rem; }
-    .progress-step { flex: 1; height: 4px; background: var(--light); border-radius: 2px; transition: background .3s; }
-    .progress-step.active, .progress-step.completed { background: var(--gold); }
-    .progress-labels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-    .progress-label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--light-mid); text-align: center; transition: color .3s; }
-    .progress-label.active, .progress-label.completed { color: var(--gold); }
+    .form-progress {
+      margin-bottom: 3rem;
+    }
+
+    .progress-bar-container {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .progress-step {
+      flex: 1;
+      height: 4px;
+      background: var(--light);
+      border-radius: 2px;
+      transition: background .3s;
+    }
+
+    .progress-step.active,
+    .progress-step.completed {
+      background: var(--gold);
+    }
+
+    .progress-labels {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .progress-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--light-mid);
+      text-align: center;
+      transition: color .3s;
+    }
+
+    .progress-label.active,
+    .progress-label.completed {
+      color: var(--gold);
+    }
 
     /* Form Fields */
-    .form-section { display: none; animation: fadeSlide .4s var(--ease-out) forwards; }
-    .form-section.active { display: block; }
-    @keyframes fadeSlide { from { opacity: 0; transform: translateX(15px); } to { opacity: 1; transform: translateX(0); } }
-
-    .form-section-heading { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--light); }
-    .form-section-number { width: 32px; height: 32px; background: var(--teal); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; }
-    .form-section-title { font-weight: 800; font-size: 1.1rem; color: var(--teal); }
-
-    .form-group { margin-bottom: 1.8rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .form-group label { display: block; font-family: var(--sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 0.8rem; }
-    
-    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
-      width: 100%; padding: 1.2rem; border: 1px solid var(--light-mid); border-radius: 6px;
-      font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--teal); background: var(--white);
-      transition: all .25s; appearance: none;
+    .form-section {
+      display: none;
+      animation: fadeSlide .4s var(--ease-out) forwards;
     }
-    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 4px rgba(8,75,81,0.05); }
-    input::placeholder, textarea::placeholder { color: #a0b6b8; }
-    
-    .form-radio-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+
+    .form-section.active {
+      display: block;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateX(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .form-section-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .form-section-number {
+      width: 32px;
+      height: 32px;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .form-section-title {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--teal);
+    }
+
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .form-group label,
+    .form-group .form-group-label {
+      display: block;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+      margin-bottom: 0.8rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 1.2rem;
+      border: 1px solid var(--light-mid);
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--teal);
+      background: var(--white);
+      transition: all .25s;
+      appearance: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(8, 75, 81, 0.05);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #a0b6b8;
+    }
+
+    .form-radio-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+    }
+
     .form-radio {
-      position: relative; display: flex; align-items: center; justify-content: center; gap: 0.4rem;
-      cursor: pointer; padding: 0.85rem 0.6rem; border: 1px solid var(--light-mid); border-radius: 6px;
-      background: var(--white); transition: all .2s; font-family: var(--sans); font-size: 0.9rem; font-weight: 600; color: var(--teal); text-align: center; line-height: 1.25; word-break: break-word;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      padding: 0.85rem 0.6rem;
+      border: 1px solid var(--light-mid);
+      border-radius: 6px;
+      background: var(--white);
+      transition: all .2s;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-align: center;
+      line-height: 1.25;
+      word-break: break-word;
       min-height: 48px;
     }
-    .form-radio:hover { border-color: var(--teal); background: var(--light); }
-    .form-radio input[type="radio"] { display: none; }
-    .form-radio:has(input:checked) { border-color: var(--teal); background: var(--teal); color: var(--white); }
-    
+
+    .form-radio:hover {
+      border-color: var(--teal);
+      background: var(--light);
+    }
+
+    .form-radio input[type="radio"] {
+      display: none;
+    }
+
+    .form-radio:has(input:checked) {
+      border-color: var(--teal);
+      background: var(--teal);
+      color: var(--white);
+    }
+
     /* Radio buttons responsive */
     @media (max-width: 480px) {
-      .form-radio-group { grid-template-columns: 1fr 1fr; gap: 6px; }
-      .form-radio { padding: 0.75rem 0.5rem; font-size: 0.82rem; min-height: 44px; }
+      .form-radio-group {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+
+      .form-radio {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.82rem;
+        min-height: 44px;
+      }
     }
+
     @media (max-width: 360px) {
-      .form-radio-group { grid-template-columns: 1fr; }
-      .form-radio { padding: 0.85rem 0.75rem; font-size: 0.88rem; }
+      .form-radio-group {
+        grid-template-columns: 1fr;
+      }
+
+      .form-radio {
+        padding: 0.85rem 0.75rem;
+        font-size: 0.88rem;
+      }
     }
 
-    .form-nav { display: flex; gap: 1rem; margin-top: 2.5rem; }
+    .form-nav {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
     .btn-form-next {
-      flex: 1; padding: 1.2rem; background: var(--teal); color: var(--white); border: none; border-radius: 6px;
-      font-family: var(--sans); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.8rem; transition: all .25s;
+      flex: 1;
+      padding: 1.2rem;
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      transition: all .25s;
     }
-    .btn-form-next:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(8,75,81,0.2); }
+
+    .btn-form-next:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(8, 75, 81, 0.2);
+    }
+
     .btn-form-back {
-      padding: 1.2rem 2rem; background: transparent; color: var(--teal-light); border: 1px solid var(--light-mid);
-      border-radius: 6px; font-family: var(--sans); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
-      cursor: pointer; transition: all .2s;
+      padding: 1.2rem 2rem;
+      background: transparent;
+      color: var(--teal-light);
+      border: 1px solid var(--light-mid);
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all .2s;
     }
-    .btn-form-back:hover { border-color: var(--teal); color: var(--teal); }
 
-    .form-group.error input, .form-group.error select { border-color: #c0392b; background: #fff5f5; }
-    .form-group.error .form-checkbox-wrap { outline: 2px solid #c0392b; outline-offset: 2px; border-radius: 6px; }
-    .error-message { color: #c0392b; font-size: 0.75rem; margin-top: 0.5rem; font-weight: 700; display: none; }
-    .form-group.error .error-message { display: block; }
+    .btn-form-back:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
 
-    .form-hint { font-size: 0.75rem; color: var(--teal-light); font-weight: 500; margin-top: 0.5rem; margin-bottom: 0.5rem; }
-    .form-conditional { margin-bottom: 1.8rem; }
-    .form-conditional[hidden] { display: none !important; }
+    .form-group.error input,
+    .form-group.error select {
+      border-color: #c0392b;
+      background: #fff5f5;
+    }
+
+    .form-group.error .form-checkbox-wrap {
+      outline: 2px solid #c0392b;
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    .error-message {
+      color: #c0392b;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      font-weight: 700;
+      display: none;
+    }
+
+    .form-group.error .error-message {
+      display: block;
+    }
+
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--teal-light);
+      font-weight: 500;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-conditional {
+      margin-bottom: 1.8rem;
+    }
+
+    .form-conditional[hidden] {
+      display: none !important;
+    }
+
     .form-checkbox-wrap {
-      display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem;
-      border: 1px solid var(--light-mid); border-radius: 6px; background: var(--white); cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      border: 1px solid var(--light-mid);
+      border-radius: 6px;
+      background: var(--white);
+      cursor: pointer;
     }
+
     .form-checkbox-wrap input[type="checkbox"] {
-      width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--teal); cursor: pointer;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--teal);
+      cursor: pointer;
     }
-    .form-checkbox-text { font-family: var(--sans); font-size: 0.9rem; color: var(--teal); line-height: 1.5; font-weight: 500; text-transform: none; letter-spacing: 0; }
-    .form-checkbox-text small { display: block; font-size: 0.75rem; color: var(--teal-light); font-weight: 600; margin-top: 4px; }
-    .form-radio-group.planta-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .form-checkbox-text {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--teal);
+      line-height: 1.5;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .form-checkbox-text small {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--teal-light);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .form-radio-group.planta-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     /* ── FOOTER ── */
-    footer { background: var(--teal-dark); padding: 5rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
-    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
-    .footer-logo { font-family: var(--sans); font-size: 1.5rem; font-weight: 700; color: var(--white); line-height: 1; }
-    .footer-logo em { display: block; font-style: normal; font-family: var(--sans); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 4px; }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,.7); font-weight: 600; letter-spacing: 0.05em; transition: color .2s; text-transform: uppercase; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,.3); font-weight: 500; letter-spacing: 0.05em; }
+    footer {
+      background: var(--teal-dark);
+      padding: 5rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      font-family: var(--sans);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .footer-logo em {
+      display: block;
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-top: 4px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, .7);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: color .2s;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, .3);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
 
     /* ── ANIMATIONS (REVEAL) ── */
-    [data-reveal] { opacity: 0; transform: translateY(30px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
-    [data-reveal].is-visible { opacity: 1; transform: none; }
-    [data-reveal][data-delay="1"] { transition-delay: 0.2s; }
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    [data-reveal][data-delay="1"] {
+      transition-delay: 0.2s;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .hero-container, .emp-grid, .mcmv-inner, .corretor-inner, .loc-inner, .form-inner { grid-template-columns: 1fr; gap: 4rem; }
-      .tipo-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; gap: 2rem; background: transparent; }
-      .tipo-card { border-right: none; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; }
-      .tipo-card.destaque { transform: scale(1.03); }
-      .tipo-badge { left: auto; right: 1rem; transform: none; top: 1rem;}
-      .emp-img-wrap, .corretor-img-wrap, .form-card, .loc-map-wrap, .mcmv-steps-box { max-width: 450px; margin: 0 auto; width: 100%; }
-      .emp-img-tag, .corretor-creci { position: relative; margin: -2rem auto 0 auto; width: max-content; z-index: 10; text-align: center; }
+
+      .hero-container,
+      .emp-grid,
+      .mcmv-inner,
+      .corretor-inner,
+      .loc-inner,
+      .form-inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .tipo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+        gap: 2rem;
+        background: transparent;
+      }
+
+      .tipo-card {
+        border-right: none;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+      }
+
+      .tipo-card.destaque {
+        transform: scale(1.03);
+      }
+
+      .tipo-badge {
+        left: auto;
+        right: 1rem;
+        transform: none;
+        top: 1rem;
+      }
+
+      .emp-img-wrap,
+      .corretor-img-wrap,
+      .form-card,
+      .loc-map-wrap,
+      .mcmv-steps-box {
+        max-width: 450px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .emp-img-tag,
+      .corretor-creci {
+        position: relative;
+        margin: -2rem auto 0 auto;
+        width: max-content;
+        z-index: 10;
+        text-align: center;
+      }
     }
+
     @media (max-width: 768px) {
-      .nav { padding: 0.9rem clamp(0.9rem, 4vw, 1.5rem); gap: 0.75rem; }
-      .nav.scrolled { padding: 0.9rem clamp(0.9rem, 4vw, 1.5rem); }
-      .nav-logo { font-size: clamp(1.15rem, 5.4vw, 1.45rem); }
-      .nav-logo em { font-size: clamp(0.48rem, 2.2vw, 0.56rem); letter-spacing: 0.12em; }
-      .nav-links { display: none; }
-      .nav-cta { max-width: 52vw; padding: 0.72rem clamp(0.85rem, 3.8vw, 1.15rem); font-size: clamp(0.62rem, 2.6vw, 0.72rem); letter-spacing: 0.06em; }
-      .hero { height: auto; min-height: 100svh; padding: 6.5rem 1.25rem 3rem; }
-      .hero-content { max-width: min(100%, 34rem); }
-      .hero-eyebrow { margin-bottom: 1.25rem; padding: 0.45rem 1rem; font-size: 0.72rem; }
-      .hero-title { font-size: clamp(2rem, 9.5vw, 2.8rem); line-height: 1.08; margin-bottom: 1rem; max-width: 100% !important; }
-      .hero-subtitle { max-width: 22rem; font-size: clamp(0.95rem, 4vw, 1.05rem); line-height: 1.45; }
-      .hero-quote { max-width: 22rem; font-size: clamp(1rem, 4.2vw, 1.15rem); line-height: 1.35; margin-bottom: 1.5rem; }
-      .hero-author, .hero-social { font-size: 0.9rem; }
-      .hero-social { margin-bottom: 1.25rem; }
-      .hero-facts { width: 100%; margin-top: 1.25rem; gap: 0.5rem; }
-      .hero-fact { width: 100%; justify-content: center; min-height: 38px; padding: 0.62rem 0.9rem; font-size: 0.72rem; }
-      .hero-actions { width: 100%; max-width: 22rem; gap: 0.75rem; margin-top: 1rem !important; }
-      .hero-actions .btn-gold, .hero-actions .btn-ghost { width: 100%; justify-content: center; padding: 1rem 1.2rem; }
-      .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
-      .form-card-body { padding: 2rem 1.5rem; }
-      .section { padding: 5rem 1.5rem; }
-      .tipo-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .tipo-card { max-width: 380px; width: 100%; margin: 0 auto; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { flex-direction: column; gap: 1rem; align-items: center; }
+      .nav {
+        padding: 0.9rem clamp(0.9rem, 4vw, 1.5rem);
+        gap: 0.75rem;
+      }
+
+      .nav.scrolled {
+        padding: 0.9rem clamp(0.9rem, 4vw, 1.5rem);
+      }
+
+      .nav-logo {
+        font-size: clamp(1.15rem, 5.4vw, 1.45rem);
+      }
+
+      .nav-logo em {
+        font-size: clamp(0.48rem, 2.2vw, 0.56rem);
+        letter-spacing: 0.12em;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        max-width: 52vw;
+        padding: 0.72rem clamp(0.85rem, 3.8vw, 1.15rem);
+        font-size: clamp(0.62rem, 2.6vw, 0.72rem);
+        letter-spacing: 0.06em;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 6.5rem 1.25rem 3rem;
+      }
+
+      .hero-content {
+        max-width: min(100%, 34rem);
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 1.25rem;
+        padding: 0.45rem 1rem;
+        font-size: 0.72rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 9.5vw, 2.8rem);
+        line-height: 1.08;
+        margin-bottom: 1rem;
+        max-width: 100% !important;
+      }
+
+      .hero-subtitle {
+        max-width: 22rem;
+        font-size: clamp(0.95rem, 4vw, 1.05rem);
+        line-height: 1.45;
+      }
+
+      .hero-quote {
+        max-width: 22rem;
+        font-size: clamp(1rem, 4.2vw, 1.15rem);
+        line-height: 1.35;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-author,
+      .hero-social {
+        font-size: 0.9rem;
+      }
+
+      .hero-social {
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-facts {
+        width: 100%;
+        margin-top: 1.25rem;
+        gap: 0.5rem;
+      }
+
+      .hero-fact {
+        width: 100%;
+        justify-content: center;
+        min-height: 38px;
+        padding: 0.62rem 0.9rem;
+        font-size: 0.72rem;
+      }
+
+      .hero-actions {
+        width: 100%;
+        max-width: 22rem;
+        gap: 0.75rem;
+        margin-top: 1rem !important;
+      }
+
+      .hero-actions .btn-gold,
+      .hero-actions .btn-ghost {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .form-card-body {
+        padding: 2rem 1.5rem;
+      }
+
+      .section {
+        padding: 5rem 1.5rem;
+      }
+
+      .tipo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .tipo-card {
+        max-width: 380px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
     }
 
     @media (max-height: 520px) and (orientation: landscape) {
-      .nav { padding: 0.65rem 1rem; gap: 0.75rem; }
-      .nav.scrolled { padding: 0.65rem 1rem; }
-      .nav-logo { font-size: 1.1rem; }
-      .nav-logo em { font-size: 0.5rem; letter-spacing: 0.1em; }
-      .nav-links { display: none; }
-      .nav-cta { padding: 0.62rem 1rem; font-size: 0.64rem; letter-spacing: 0.06em; }
+      .nav {
+        padding: 0.65rem 1rem;
+        gap: 0.75rem;
+      }
 
-      .hero { min-height: 100svh; padding: 4.75rem 1rem 1.25rem; }
-      .hero-content { max-width: min(94vw, 44rem); }
-      .hero-eyebrow { margin-bottom: 0.55rem; padding: 0.35rem 0.9rem; font-size: 0.64rem; }
-      .hero-title { font-size: clamp(1.55rem, 5.4vw, 2.2rem) !important; line-height: 1.03 !important; margin-bottom: 0.45rem; }
-      .hero-subtitle { max-width: 42rem; font-size: 0.82rem; line-height: 1.35; margin-bottom: 0.25rem; }
-      .hero-quote { max-width: 42rem; font-size: 0.86rem; line-height: 1.3; margin-bottom: 0.7rem; }
-      .hero-author, .hero-social { display: none; }
-      .hero-facts { margin-top: 0.55rem; gap: 0.35rem; }
-      .hero-fact { min-height: 30px; padding: 0.42rem 0.6rem; font-size: 0.61rem; }
-      .hero-actions { margin-top: 0.65rem !important; gap: 0.5rem; }
-      .hero-actions .btn-gold, .hero-actions .btn-ghost { padding: 0.7rem 1rem; font-size: 0.68rem; }
+      .nav.scrolled {
+        padding: 0.65rem 1rem;
+      }
 
-      .section { padding: 3rem 1rem; }
-      .section-head { margin-bottom: 2rem; }
-      .emp-grid, .mcmv-inner, .corretor-inner, .loc-inner, .form-inner { gap: 2rem; }
+      .nav-logo {
+        font-size: 1.1rem;
+      }
 
-      .tipo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; gap: 1rem; }
-      .tipo-card { max-width: none; min-height: 300px; padding: 2.2rem 1rem 1.2rem; }
-      .tipo-badge { top: 0.75rem; right: 0.75rem; font-size: 0.55rem; }
-      .tipo-tag { margin-bottom: 0.85rem; font-size: 0.58rem; }
-      .tipo-name { font-size: 1.45rem; }
-      .tipo-area { margin-bottom: 1.2rem; }
-      .tipo-price { font-size: 1.7rem; }
-      .tipo-cta { margin-top: 1.5rem; padding: 0.85rem; font-size: 0.68rem; }
+      .nav-logo em {
+        font-size: 0.5rem;
+        letter-spacing: 0.1em;
+      }
 
-      .loc-map { aspect-ratio: 16/7; min-height: 220px; }
-      .form-benefits { margin-top: 1.5rem; padding: 1.25rem; }
-      .form-card-body { padding: 1.5rem; }
-      .wa-float { width: 48px; height: 48px; right: 1rem; bottom: 1rem; font-size: 26px; }
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 0.62rem 1rem;
+        font-size: 0.64rem;
+        letter-spacing: 0.06em;
+      }
+
+      .hero {
+        min-height: 100svh;
+        padding: 4.75rem 1rem 1.25rem;
+      }
+
+      .hero-content {
+        max-width: min(94vw, 44rem);
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 0.55rem;
+        padding: 0.35rem 0.9rem;
+        font-size: 0.64rem;
+      }
+
+      .hero-title {
+        font-size: clamp(1.55rem, 5.4vw, 2.2rem) !important;
+        line-height: 1.03 !important;
+        margin-bottom: 0.45rem;
+      }
+
+      .hero-subtitle {
+        max-width: 42rem;
+        font-size: 0.82rem;
+        line-height: 1.35;
+        margin-bottom: 0.25rem;
+      }
+
+      .hero-quote {
+        max-width: 42rem;
+        font-size: 0.86rem;
+        line-height: 1.3;
+        margin-bottom: 0.7rem;
+      }
+
+      .hero-author,
+      .hero-social {
+        display: none;
+      }
+
+      .hero-facts {
+        margin-top: 0.55rem;
+        gap: 0.35rem;
+      }
+
+      .hero-fact {
+        min-height: 30px;
+        padding: 0.42rem 0.6rem;
+        font-size: 0.61rem;
+      }
+
+      .hero-actions {
+        margin-top: 0.65rem !important;
+        gap: 0.5rem;
+      }
+
+      .hero-actions .btn-gold,
+      .hero-actions .btn-ghost {
+        padding: 0.7rem 1rem;
+        font-size: 0.68rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .section-head {
+        margin-bottom: 2rem;
+      }
+
+      .emp-grid,
+      .mcmv-inner,
+      .corretor-inner,
+      .loc-inner,
+      .form-inner {
+        gap: 2rem;
+      }
+
+      .tipo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 760px;
+        gap: 1rem;
+      }
+
+      .tipo-card {
+        max-width: none;
+        min-height: 300px;
+        padding: 2.2rem 1rem 1.2rem;
+      }
+
+      .tipo-badge {
+        top: 0.75rem;
+        right: 0.75rem;
+        font-size: 0.55rem;
+      }
+
+      .tipo-tag {
+        margin-bottom: 0.85rem;
+        font-size: 0.58rem;
+      }
+
+      .tipo-name {
+        font-size: 1.45rem;
+      }
+
+      .tipo-area {
+        margin-bottom: 1.2rem;
+      }
+
+      .tipo-price {
+        font-size: 1.7rem;
+      }
+
+      .tipo-cta {
+        margin-top: 1.5rem;
+        padding: 0.85rem;
+        font-size: 0.68rem;
+      }
+
+      .loc-map {
+        aspect-ratio: 16/7;
+        min-height: 220px;
+      }
+
+      .form-benefits {
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+      }
+
+      .form-card-body {
+        padding: 1.5rem;
+      }
+
+      .wa-float {
+        width: 48px;
+        height: 48px;
+        right: 1rem;
+        bottom: 1rem;
+        font-size: 26px;
+      }
     }
 
     @media (max-width: 420px) {
-      .nav { padding: 0.75rem 0.85rem; }
-      .nav.scrolled { padding: 0.75rem 0.85rem; }
-      .nav-logo em { letter-spacing: 0.08em; }
-      .nav-cta { max-width: 48vw; padding: 0.68rem 0.8rem; }
-      .nav-cta-full { display: none; }
-      .nav-cta-short { display: inline; }
-      .hero-title { font-size: clamp(1.85rem, 9vw, 2.35rem); }
+      .nav {
+        padding: 0.75rem 0.85rem;
+      }
+
+      .nav.scrolled {
+        padding: 0.75rem 0.85rem;
+      }
+
+      .nav-logo em {
+        letter-spacing: 0.08em;
+      }
+
+      .nav-cta {
+        max-width: 48vw;
+        padding: 0.68rem 0.8rem;
+      }
+
+      .nav-cta-full {
+        display: none;
+      }
+
+      .nav-cta-short {
+        display: inline;
+      }
+
+      .hero-title {
+        font-size: clamp(1.85rem, 9vw, 2.35rem);
+      }
     }
 
     @media (max-width: 340px) {
-      .nav-logo em { display: none; }
-      .nav-cta { font-size: 0.6rem; letter-spacing: 0.04em; }
+      .nav-logo em {
+        display: none;
+      }
+
+      .nav-cta {
+        font-size: 0.6rem;
+        letter-spacing: 0.04em;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<div class="film-grain"></div>
+  <div class="film-grain"></div>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20seu%20site%20e%20tenho%20interesse%20no%20Residencial%20Maro." class="wa-float" title="Falar no WhatsApp" target="_blank" rel="noopener noreferrer">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <a href="#home" class="nav-logo">
-    Paulo Paixão
-    <em>Creci-SP 315.337</em>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20seu%20site%20e%20tenho%20interesse%20no%20Residencial%20Maro."
+    class="wa-float" title="Falar no WhatsApp" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
   </a>
-  <ul class="nav-links">
-    <li><a href="#empreendimento">O Projeto</a></li>
-    <li><a href="#tipologias">Plantas</a></li>
-    <li><a href="#mcmv">Financiamento</a></li>
-    <li><a href="#localizacao">Localização</a></li>
-  </ul>
-  <a href="#formulario" class="nav-cta"><span class="nav-cta-full">Contato</span><span class="nav-cta-short">Contato</span></a>
-</nav>
 
-<!-- HERO 3D -->
-<section class="hero" id="home">
-  <!-- Vídeo Background com Parallax Mouse -->
-  <div class="hero-video-wrapper" id="video-wrapper">
-    <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="assets/foto%20residencial.jpeg" disablepictureinpicture aria-hidden="true">
-      <source src="assets/hero-video.mp4.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-grain"></div>
-
-  <!-- Texto Centralizado Conforme Print -->
-  <div class="hero-content text-center">
-    <div data-reveal class="flex flex-col items-center">
-      <div class="hero-eyebrow" style="color: var(--white);">
-        Residencial Maro · Guarulhos
-      </div>
-      <h1 class="hero-title" style="font-family: var(--sans); font-weight: 800; max-width: 950px; line-height: 1.15;">
-        Seu novo lar começa em Guarulhos
-      </h1>
-      <p class="hero-subtitle">
-        Apartamentos em frente ao Shopping Internacional, com acesso rápido à Dutra.
-      </p>
-      <p class="hero-quote">
-        Use seu FGTS, veja o subsídio disponível e escolha o caminho mais claro para comprar.
-      </p>
-      <p class="hero-author">Paulo Paixão · CRECI-SP 315.337</p>
-      <p class="hero-social"><a href="https://www.instagram.com/consultorpaixaosp/" target="_blank" rel="noopener noreferrer" style="color:inherit">@consultorpaixaosp</a></p>
-      <div class="hero-facts" aria-label="Destaques do Residencial Maro">
-        <span class="hero-fact"><i class="fa-solid fa-ruler-combined"></i> 27 a 46 m²</span>
-        <span class="hero-fact"><i class="fa-solid fa-building"></i> Studio e 2 dorms</span>
-        <span class="hero-fact"><i class="fa-solid fa-user-tie"></i> Atendimento direto</span>
-      </div>
-      
-      <div class="hero-actions" style="margin-top: 1.5rem;">
-        <a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20o%20site%20do%20Residencial%20Maro%20e%20quero%20entender%20as%20op%C3%A7%C3%B5es." class="btn-gold" target="_blank" rel="noopener noreferrer">
-          Falar com Paulo
-        </a>
-        <a href="#tipologias" class="btn-ghost">
-          <i class="fa-solid fa-table-cells-large"></i> Ver plantas
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EMPREENDIMENTO -->
-<section class="section section-white" id="empreendimento">
-  <div class="emp-grid">
-    <div class="emp-img-wrap" data-reveal>
-      <img src="assets/foto%20residencial.jpeg" alt="Fachada Residencial Maro" class="emp-img">
-    </div>
-    <div data-reveal data-delay="1">
-      <span class="label">O Empreendimento</span>
-      <h2 class="section-title">Residencial Maro<br>Guarulhos</h2>
-      <p class="section-sub">Apartamentos de 27 a 46 m², com opções de studio e 2 dormitórios, em uma localização prática para morar, trabalhar e se deslocar por Guarulhos.</p>
-      <ul class="emp-features">
-        <li class="emp-feature"><i class="fa-solid fa-bag-shopping"></i> Em frente ao Shopping Internacional de Guarulhos</li>
-        <li class="emp-feature"><i class="fa-solid fa-train"></i> A poucos minutos da Estação Metrô Dutra</li>
-        <li class="emp-feature"><i class="fa-solid fa-building"></i> Plantas compactas com bom aproveitamento</li>
-        <li class="emp-feature"><i class="fa-solid fa-shield-halved"></i> Estrutura pensada para a rotina diária</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- TIPOLOGIAS (4 Plantas, com Destaque na "Com Vaga") -->
-<section class="section section-light" id="tipologias">
-  <div class="container text-center">
-    <div class="section-head" data-reveal>
-      <span class="label">Plantas disponíveis</span>
-      <h2 class="section-title">Escolha seu apartamento</h2>
-    </div>
-  </div>
-  <div class="tipo-grid" data-reveal>
-    
-    <!-- Studio -->
-    <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-studio.jpg"); --tipo-bg-position: center 0.75rem;'>
-      <div class="tipo-tag">Studio</div>
-      <div class="tipo-name">Studio</div>
-      <div class="tipo-area">27,58 m²</div>
-      
-      <div class="tipo-price-label">Preço Base</div>
-      <div class="tipo-price">R$ 238.000</div>
-      <div class="tipo-avaliacao">Avaliado em R$ 262.000</div>
-      <a href="#formulario" class="tipo-cta" data-planta="Studio">Quero esta planta</a>
-    </div>
-    
-    <!-- 2 Dorms S/ Vaga -->
-    <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-sem-vaga.jpg");'>
-      <div class="tipo-tag">2 Dormitórios</div>
-      <div class="tipo-name">Sem Vaga</div>
-      <div class="tipo-area">39,53 m²</div>
-      
-      <div class="tipo-price-label">Preço Base</div>
-      <div class="tipo-price">R$ 357.000</div>
-      <div class="tipo-avaliacao">Avaliado em R$ 390.500</div>
-      <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Sem Vaga">Quero esta planta</a>
-    </div>
-
-    <!-- 2 Dorms C/ Vaga (DESTAQUE) -->
-    <div class="tipo-card destaque planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-com-vaga.jpg");'>
-      <div class="tipo-badge">Mais vendido</div>
-      <div class="tipo-tag">2 Dormitórios</div>
-      <div class="tipo-name">Com Vaga</div>
-      <div class="tipo-area">39,53 m²</div>
-      
-      <div class="tipo-price-label">Preço Base</div>
-      <div class="tipo-price">R$ 377.000</div>
-      <div class="tipo-avaliacao">Avaliado em R$ 415.000</div>
-      <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Com Vaga">Quero esta planta</a>
-    </div>
-    
-    <!-- Suíte -->
-    <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-suite.jpg");'>
-      <div class="tipo-tag">2 Dorms + Suíte</div>
-      <div class="tipo-name">Com Suíte</div>
-      <div class="tipo-area">46,40 m²</div>
-      
-      <div class="tipo-price-label">Preço Base</div>
-      <div class="tipo-price">R$ 440.000</div>
-      <div class="tipo-avaliacao">Avaliado em R$ 484.000</div>
-      <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Com Suíte">Quero esta planta</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- MINHA CASA MINHA VIDA -->
-<section class="section section-teal" id="mcmv">
-  <div class="mcmv-inner">
-    <div data-reveal>
-      <span class="label">Minha Casa Minha Vida</span>
-      <h2 class="section-title">O programa que torna<br><em>possível</em></h2>
-      <p class="section-sub">Entenda o que pode entrar no seu financiamento antes de escolher a planta.</p>
-      
-      <ul class="mcmv-list">
-        <li class="mcmv-list-item">
-          <div class="mcmv-list-icon"><i class="fa-solid fa-briefcase" style="color: var(--gold-light);"></i></div>
-          <div class="mcmv-list-text"><strong>CLT, autônomo, MEI ou sócio/empresário</strong>Todas as formas de renda são aceitas no programa federal.</div>
-        </li>
-        <li class="mcmv-list-item">
-          <div class="mcmv-list-icon"><i class="fa-solid fa-users" style="color: var(--gold-light);"></i></div>
-          <div class="mcmv-list-text"><strong>Composição de renda</strong>Junte renda com até 3 pessoas para aumentar seu poder de compra.</div>
-        </li>
-        <li class="mcmv-list-item">
-          <div class="mcmv-list-icon"><i class="fa-solid fa-piggy-bank" style="color: var(--gold-light);"></i></div>
-          <div class="mcmv-list-text"><strong>FGTS como entrada</strong>Use o saldo acumulado para reduzir o valor financiado.</div>
-        </li>
-        <li class="mcmv-list-item">
-          <div class="mcmv-list-icon"><i class="fa-solid fa-clock" style="color: var(--gold-light);"></i></div>
-          <div class="mcmv-list-text"><strong>Estimativa pelo WhatsApp</strong>Paulo confere renda, FGTS e planta de interesse para orientar o próximo passo.</div>
-        </li>
-      </ul>
-    </div>
-    <div class="mcmv-steps-box" data-reveal data-delay="1">
-      <div class="mcmv-steps-title">Como funciona</div>
-      <div class="mcmv-step">
-        <div class="mcmv-step-num">1</div>
-        <div class="mcmv-step-text">
-          <strong>Informe seu perfil</strong>
-          <span>Leva cerca de 2 minutos. Renda, FGTS e planta de interesse já bastam para começar.</span>
-        </div>
-      </div>
-      <div class="mcmv-step">
-        <div class="mcmv-step-num">2</div>
-        <div class="mcmv-step-text">
-          <strong>Receba no WhatsApp</strong>
-          <span>Paulo analisa seu perfil e envia subsídio estimado, parcela e orientação sobre documentos.</span>
-        </div>
-      </div>
-      <div class="mcmv-step">
-        <div class="mcmv-step-num">3</div>
-        <div class="mcmv-step-text">
-          <strong>Visite o Residencial Maro</strong>
-          <span>Conheça o empreendimento em Guarulhos e tire todas as dúvidas sobre o programa.</span>
-        </div>
-      </div>
-      <a href="#formulario" class="mcmv-cta">Ver minhas opções</a>
-    </div>
-  </div>
-</section>
-
-<!-- LOCALIZAÇÃO -->
-<section class="section section-white" id="localizacao">
-  <div class="loc-inner">
-    <div data-reveal>
-      <span class="label">Localização</span>
-      <h2 class="section-title">No coração<br>de Guarulhos</h2>
-      <div class="loc-details">
-        <div class="loc-detail-item">
-          <div class="loc-detail-label">Referências</div>
-          <div class="loc-detail-val">Em frente ao Shopping Internacional de Guarulhos</div>
-        </div>
-        <div class="loc-detail-item">
-          <div class="loc-detail-label">Mobilidade</div>
-          <div class="loc-detail-val">Acesso direto à Via Dutra e Metrô Dutra a 5 min.</div>
-        </div>
-      </div>
-    </div>
-    <div class="loc-map-wrap" data-reveal data-delay="1">
-      <div class="loc-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.48!2d-46.531!3d-23.463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI3JzQ2LjgiUyA0NsKwMzEnNTEuNiJX!5e0!3m2!1spt-BR!2sbr!4v1684800000000" loading="lazy" allowfullscreen style="width: 100%; height: 100%; border: 0;"></iframe>
-      </div>
-      <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank" rel="noopener noreferrer" class="loc-map-button">
-        <i class="fa-solid fa-location-dot"></i> Abrir no Google Maps
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CORRETOR (Sem dados de anos/famílias) -->
-<section class="section section-light" id="corretor">
-  <div class="corretor-inner">
-    <div class="corretor-img-wrap" data-reveal>
-      <img src="assets/corretor.png" data-fallback-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85&auto=format&fit=crop" alt="Paulo Paixão" class="corretor-img">
-      <div class="corretor-creci">
-        <div class="corretor-creci-num">315.337</div>
-        <div class="corretor-creci-text">CRECI-SP</div>
-      </div>
-    </div>
-    <div data-reveal data-delay="1">
-      <span class="label">Quem vai te atender</span>
-      <h2 class="section-title">Paulo Paixão</h2>
-      <p class="corretor-bio">
-        Atendimento direto com Paulo para comparar plantas, entender FGTS, estimar subsídio e organizar o caminho até a visita.
-      </p>
-      <!-- Correção na seção CORRETOR (Removido os itens indesejados) -->
-      <div class="corretor-meta" style="grid-template-columns: 1fr;">
-        <div>
-          <div class="corretor-meta-val">Minha Casa Minha Vida</div>
-          <div class="corretor-meta-label">Especialista em financiamentos pelo programa</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMULÁRIO -->
-<section class="section section-teal" id="contato">
-  <div class="form-inner">
-    <div data-reveal>
-      <span class="label" style="color: var(--gold-light);">Contato com Paulo</span>
-      <h2 class="section-title">Veja suas opções com clareza</h2>
-      <p class="section-sub">Fale direto com Paulo para entender disponibilidade, valores e próximos passos com clareza.</p>
-
-      <!-- CORREÇÃO DA COR DE TEXTO DOS BENEFÍCIOS -->
-      <div class="form-benefits">
-        <div class="form-benefits-title">Você recebe:</div>
-        <ul class="form-benefits-list">
-          <li class="form-benefits-item">Comparação das plantas disponíveis</li>
-          <li class="form-benefits-item">Orientação sobre uso do FGTS</li>
-          <li class="form-benefits-item">Condições de financiamento explicadas de forma objetiva</li>
-          <li class="form-benefits-item">Retorno direto pelo WhatsApp</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- FORM CARD -->
-    <div class="form-card" id="formulario" data-reveal data-delay="1">
-      <div class="form-card-header">
-        <h3 class="form-card-title">Converse conosco</h3>
-        <p class="form-card-sub">Atendimento direto pelo WhatsApp</p>
-      </div>
-      
-      <div class="form-card-body">
-        <div class="form-progress">
-          <div class="progress-bar-container">
-            <div class="progress-step active" id="p-step-1"></div>
-            <div class="progress-step" id="p-step-2"></div>
-            <div class="progress-step" id="p-step-3"></div>
-            <div class="progress-step" id="p-step-4"></div>
-          </div>
-          <div class="progress-labels">
-            <div class="progress-label active" id="p-label-1">Dados</div>
-            <div class="progress-label" id="p-label-2">Renda</div>
-            <div class="progress-label" id="p-label-3">Financ.</div>
-            <div class="progress-label" id="p-label-4">Fim</div>
-          </div>
-        </div>
-
-        <form id="qualForm">
-          <!-- SEC 1 -->
-          <div class="form-section active" id="sec-1">
-            <div class="form-section-heading">
-              <div class="form-section-number">1</div>
-              <div class="form-section-title">Contato</div>
-            </div>
-            <div class="form-group">
-              <label>Nome completo *</label>
-              <input type="text" id="f-nome" placeholder="Ex: João da Silva" required>
-              <div class="error-message">Campo obrigatório</div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>WhatsApp *</label>
-                <input type="tel" id="f-tel" placeholder="(11) 90000-0000" required>
-                <div class="error-message">Campo obrigatório</div>
-              </div>
-              <div class="form-group">
-                <label>CPF (opcional)</label>
-                <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14">
-                <p class="form-hint">Pode ser informado depois, no atendimento.</p>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Data de nascimento (opcional)</label>
-                <input type="date" id="f-nascimento">
-                <p class="form-hint">Ajuda a calcular faixa e prazo do financiamento</p>
-              </div>
-              <div class="form-group">
-                <label>E-mail (opcional)</label>
-                <input type="email" id="f-email" placeholder="seu@email.com">
-              </div>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-form-next" data-next-step="1">
-                Continuar <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- SEC 2 -->
-          <div class="form-section" id="sec-2">
-            <div class="form-section-heading">
-              <div class="form-section-number">2</div>
-              <div class="form-section-title">Profissional & Renda</div>
-            </div>
-            <div class="form-group">
-              <label>Tipo de Renda Principal *</label>
-              <div class="form-radio-group">
-                <label class="form-radio"><input type="radio" name="trabalho" value="CLT" required> CLT</label>
-                <label class="form-radio"><input type="radio" name="trabalho" value="Autônomo" required> Autônomo</label>
-                <label class="form-radio"><input type="radio" name="trabalho" value="MEI" required> MEI</label>
-                <label class="form-radio"><input type="radio" name="trabalho" value="Sócio / Empresário" required> Sócio / Empresário</label>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Renda familiar bruta *</label>
-                <select id="f-renda" required>
-                  <option value="">Selecione sua faixa</option>
-                  <option value="Até R$ 2.640">Até R$ 2.640</option>
-                  <option value="R$ 2.640 a R$ 4.400">R$ 2.640 a R$ 4.400</option>
-                  <option value="R$ 4.400 a R$ 8.000">R$ 4.400 a R$ 8.000</option>
-                  <option value="Acima de R$ 8.000">Acima de R$ 8.000</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Pessoas na renda *</label>
-                <select id="f-pessoas-renda" required>
-                  <option value="">Selecione</option>
-                  <option value="1 pessoa (só eu)">1 pessoa (só eu)</option>
-                  <option value="2 pessoas">2 pessoas</option>
-                  <option value="3 pessoas">3 pessoas</option>
-                  <option value="4 ou mais">4 ou mais</option>
-                </select>
-                <p class="form-hint">Inclui você e quem vai compor renda</p>
-              </div>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-form-back" data-prev-step="2"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-              <button type="button" class="btn-form-next" data-next-step="2">Continuar <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-
-          <!-- SEC 3 -->
-          <div class="form-section" id="sec-3">
-            <div class="form-section-heading">
-              <div class="form-section-number">3</div>
-              <div class="form-section-title">Financiamento</div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Possui FGTS? *</label>
-                <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
-                  <label class="form-radio"><input type="radio" name="fgts" value="Sim" required> Sim</label>
-                  <label class="form-radio"><input type="radio" name="fgts" value="Não" required> Não</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Já usou Minha Casa Minha Vida? *</label>
-                <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
-                  <label class="form-radio"><input type="radio" name="mcmv" value="Sim" required> Sim</label>
-                  <label class="form-radio"><input type="radio" name="mcmv" value="Não" required> Não</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-conditional" id="fgts-valor-wrap" hidden>
-              <div class="form-group">
-                <label>Valor estimado do FGTS (opcional)</label>
-                <input type="text" id="f-fgts-valor" placeholder="R$ 0,00">
-                <p class="form-hint">Aproximado — melhora o cálculo de entrada</p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Onde você mora hoje? *</label>
-              <select id="f-moradia" required>
-                <option value="">Selecione</option>
-                <option value="Alugado">Alugado</option>
-                <option value="Casa própria">Casa própria (quitada ou financiada)</option>
-                <option value="Com familiares">Com familiares / cedido</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Estado civil *</label>
-                <select id="f-civil" required>
-                  <option value="">Selecione</option>
-                  <option value="Solteiro(a)">Solteiro(a)</option>
-                  <option value="Casado(a)">Casado(a) / União</option>
-                  <option value="Divorciado(a)">Divorciado(a)</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Dependentes? *</label>
-                <select id="f-dependentes" required>
-                  <option value="">Selecione</option>
-                  <option value="Nenhum">Nenhum</option>
-                  <option value="Sim">Sim (1 ou mais)</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-conditional" id="conjuge-wrap" hidden>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label class="form-checkbox-wrap" style="cursor: pointer;">
-                  <input type="checkbox" id="f-conjuge-renda">
-                  <span class="form-checkbox-text">Cônjuge ou companheiro(a) vai compor renda?</span>
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Planta de interesse *</label>
-              <div class="form-radio-group planta-grid">
-                <label class="form-radio"><input type="radio" name="planta" value="Studio" required> Studio</label>
-                <label class="form-radio"><input type="radio" name="planta" value="2 Dorms Sem Vaga" required> 2 Dorms s/ vaga</label>
-                <label class="form-radio"><input type="radio" name="planta" value="2 Dorms Com Vaga" required> 2 Dorms c/ vaga</label>
-                <label class="form-radio"><input type="radio" name="planta" value="2 Dorms Com Suíte" required> Com suíte</label>
-              </div>
-              <div class="error-message">Selecione uma planta</div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Primeiro imóvel? *</label>
-                <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
-                  <label class="form-radio"><input type="radio" name="primeiro-imovel" value="Sim" required> Sim</label>
-                  <label class="form-radio"><input type="radio" name="primeiro-imovel" value="Não" required> Não</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Entrada disponível (opcional)</label>
-                <input type="text" id="f-entrada" placeholder="R$ 0,00">
-                <p class="form-hint">Estimativa — ajuda no cálculo de entrada</p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Restrição no nome (SPC/Serasa)?</label>
-              <select id="f-restricao">
-                <option value="">Selecione (opcional)</option>
-                <option value="Não">Não</option>
-                <option value="Sim">Sim</option>
-                <option value="Não sei">Não sei</option>
-              </select>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-form-back" data-prev-step="3"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-              <button type="button" class="btn-form-next" data-next-step="3">Continuar <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-          </div>
-
-          <!-- SEC 4 -->
-          <div class="form-section" id="sec-4">
-            <div class="form-section-heading">
-              <div class="form-section-number">4</div>
-              <div class="form-section-title">Conclusão</div>
-            </div>
-            <div class="form-group">
-              <label>Previsão de compra *</label>
-              <div class="form-radio-group">
-                <label class="form-radio"><input type="radio" name="prazo" value="Imediatamente" required> Imediatamente</label>
-                <label class="form-radio"><input type="radio" name="prazo" value="Até 3 meses" required> Até 3 meses</label>
-                <label class="form-radio"><input type="radio" name="prazo" value="Pesquisando" required> Pesquisando</label>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Melhor horário para contato</label>
-              <select id="f-horario">
-                <option value="">Qualquer horário</option>
-                <option value="Manhã (8h–12h)">Manhã (8h–12h)</option>
-                <option value="Tarde (12h–18h)">Tarde (12h–18h)</option>
-                <option value="Noite (18h–21h)">Noite (18h–21h)</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Como nos encontrou?</label>
-              <select id="f-origem">
-                <option value="">Selecione (opcional)</option>
-                <option value="Google">Google</option>
-                <option value="Instagram">Instagram</option>
-                <option value="Facebook">Facebook</option>
-                <option value="Indicação">Indicação de amigo/familiar</option>
-                <option value="Portais">Portais (ZAP, Viva Real, OLX)</option>
-                <option value="Placa / outdoor">Placa / outdoor</option>
-                <option value="Já sou cliente">Já sou cliente</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Mensagem (Opcional)</label>
-              <textarea id="f-mensagem" placeholder="Alguma dúvida específica?" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <label>Consentimento *</label>
-              <label class="form-checkbox-wrap">
-                <input type="checkbox" id="f-lgpd-contato" required>
-                <span class="form-checkbox-text">Autorizo o uso dos meus dados para contato imobiliário (LGPD).<small>Obrigatório para enviar</small></span>
-              </label>
-              <div class="error-message">É necessário autorizar o contato</div>
-            </div>
-            <div class="form-group">
-              <label class="form-checkbox-wrap">
-                <input type="checkbox" id="f-lgpd-ofertas">
-                <span class="form-checkbox-text">Desejo receber novidades e ofertas por WhatsApp/e-mail<small>Opcional</small></span>
-              </label>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-form-back" data-prev-step="4"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
-              <button type="button" class="btn-form-next" data-submit-form style="background: #25D366; color: white;">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Enviar para Paulo
-              </button>
-            </div>
-            <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--teal-light); font-weight: 700;">🔒 Seus dados estão seguros e não enviamos spam.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">Paulo <em>Paixão</em></div>
-      <p class="footer-copy" style="margin-top: 5px;">Consultor Imobiliário Oficial</p>
-    </div>
-    <ul class="footer-links">
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-logo">
+      Paulo Paixão
+      <em>Creci-SP 315.337</em>
+    </a>
+    <ul class="nav-links">
       <li><a href="#empreendimento">O Projeto</a></li>
       <li><a href="#tipologias">Plantas</a></li>
       <li><a href="#mcmv">Financiamento</a></li>
       <li><a href="#localizacao">Localização</a></li>
     </ul>
-    <div class="footer-copy">CRECI-SP 315.337 · © 2026 Paulo Paixão</div>
-  </div>
-</footer>
+    <a href="#formulario" class="nav-cta"><span class="nav-cta-full">Contato</span><span
+        class="nav-cta-short">Contato</span></a>
+  </nav>
 
-<script>
-  // ── NAV SCROLL ──
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  }, { passive: true });
+  <!-- HERO 3D -->
+  <section class="hero" id="home">
+    <!-- Vídeo Background com Parallax Mouse -->
+    <div class="hero-video-wrapper" id="video-wrapper">
+      <video id="hero-video" autoplay loop muted playsinline webkit-playsinline preload="auto"
+        poster="assets/foto%20residencial.jpeg" disablepictureinpicture aria-hidden="true">
+        <source src="assets/hero-video.mp4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grain"></div>
 
-  // ── HERO VÍDEO (loop + fallback visual para mobile/rede lenta) ──
-  const heroVideo = document.getElementById('hero-video');
-  const videoWrapper = document.getElementById('video-wrapper');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    <!-- Texto Centralizado Conforme Print -->
+    <div class="hero-content text-center">
+      <div data-reveal class="flex flex-col items-center">
+        <br>
+        <div class="hero-eyebrow" style="color: var(--white);">
+          Residencial Maro · Guarulhos
+        </div>
+        <h1 class="hero-title" style="font-family: var(--sans); font-weight: 800; max-width: 950px; line-height: 1.15;">
+          Seu novo lar começa em Guarulhos
+        </h1>
+        <p class="hero-subtitle">
+          Apartamentos em frente ao Shopping Internacional, com acesso rápido à Dutra.
+        </p>
+        <p class="hero-quote">
+          Use seu FGTS, veja o subsídio disponível e escolha o caminho mais claro para comprar.
+        </p>
+        <p class="hero-author">Paulo Paixão · CRECI-SP 315.337</p>
+        <p class="hero-social"><a href="https://www.instagram.com/consultorpaixaosp/" target="_blank"
+            rel="noopener noreferrer" style="color:inherit">@consultorpaixaosp</a></p>
+        <div class="hero-facts" aria-label="Destaques do Residencial Maro">
+          <span class="hero-fact"><i class="fa-solid fa-ruler-combined"></i> 27 a 46 m²</span>
+          <span class="hero-fact"><i class="fa-solid fa-building"></i> Studio e 2 dorms</span>
+          <span class="hero-fact"><i class="fa-solid fa-user-tie"></i> Atendimento direto</span>
+        </div>
 
-  if (heroVideo && videoWrapper) {
-    heroVideo.muted = true;
-    heroVideo.defaultMuted = true;
-    heroVideo.playsInline = true;
-    heroVideo.setAttribute('playsinline', '');
-    heroVideo.setAttribute('webkit-playsinline', '');
+        <div class="hero-actions" style="margin-top: 1.5rem;">
+          <a href="https://wa.me/5511984042039?text=Ol%C3%A1%20Paulo!%20Vi%20o%20site%20do%20Residencial%20Maro%20e%20quero%20entender%20as%20op%C3%A7%C3%B5es."
+            class="btn-gold" target="_blank" rel="noopener noreferrer">
+            Falar com Paulo
+          </a>
+          <a href="#tipologias" class="btn-ghost">
+            <i class="fa-solid fa-table-cells-large"></i> Ver plantas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const showVideoFrame = () => {
-      videoWrapper.classList.add('video-ready');
-      videoWrapper.classList.remove('video-error');
-    };
+  <!-- EMPREENDIMENTO -->
+  <section class="section section-white" id="empreendimento">
+    <div class="emp-grid">
+      <div class="emp-img-wrap" data-reveal>
+        <img src="assets/foto%20residencial.jpeg" alt="Fachada Residencial Maro" class="emp-img">
+      </div>
+      <div data-reveal data-delay="1">
+        <span class="label">O Empreendimento</span>
+        <h2 class="section-title">Residencial Maro<br>Guarulhos</h2>
+        <p class="section-sub">Apartamentos de 27 a 46 m², com opções de studio e 2 dormitórios, em uma localização
+          prática para morar, trabalhar e se deslocar por Guarulhos.</p>
+        <ul class="emp-features">
+          <li class="emp-feature"><i class="fa-solid fa-bag-shopping"></i> Em frente ao Shopping Internacional de
+            Guarulhos</li>
+          <li class="emp-feature"><i class="fa-solid fa-train"></i> A poucos minutos da Estação Metrô Dutra</li>
+          <li class="emp-feature"><i class="fa-solid fa-building"></i> Plantas compactas com bom aproveitamento</li>
+          <li class="emp-feature"><i class="fa-solid fa-shield-halved"></i> Estrutura pensada para a rotina diária</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    const keepFallback = () => {
-      videoWrapper.classList.add('video-error');
-      videoWrapper.classList.remove('video-ready');
-      heroVideo.pause();
-    };
+  <!-- TIPOLOGIAS (4 Plantas, com Destaque na "Com Vaga") -->
+  <section class="section section-light" id="tipologias">
+    <div class="container text-center">
+      <div class="section-head" data-reveal>
+        <span class="label">Plantas disponíveis</span>
+        <h2 class="section-title">Escolha seu apartamento</h2>
+      </div>
+    </div>
+    <div class="tipo-grid" data-reveal>
 
-    const playHero = () => {
-      if (document.hidden) return;
-      const playPromise = heroVideo.play();
-      if (playPromise && typeof playPromise.then === 'function') {
-        playPromise.then(showVideoFrame).catch(() => {
-          videoWrapper.classList.remove('video-ready');
-        });
+      <!-- Studio -->
+      <div class="tipo-card planta-card"
+        style='--tipo-bg: url("assets/plantas/planta-studio.jpg"); --tipo-bg-position: center 0.75rem;'>
+        <div class="tipo-tag">Studio</div>
+        <div class="tipo-name">Studio</div>
+        <div class="tipo-area">27,58 m²</div>
+
+        <div class="tipo-price-label">Preço Base</div>
+        <div class="tipo-price">R$ 238.000</div>
+        <div class="tipo-avaliacao">Avaliado em R$ 262.000</div>
+        <a href="#formulario" class="tipo-cta" data-planta="Studio">Quero esta planta</a>
+      </div>
+
+      <!-- 2 Dorms S/ Vaga -->
+      <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-sem-vaga.jpg");'>
+        <div class="tipo-tag">2 Dormitórios</div>
+        <div class="tipo-name">Sem Vaga</div>
+        <div class="tipo-area">39,53 m²</div>
+
+        <div class="tipo-price-label">Preço Base</div>
+        <div class="tipo-price">R$ 357.000</div>
+        <div class="tipo-avaliacao">Avaliado em R$ 390.500</div>
+        <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Sem Vaga">Quero esta planta</a>
+      </div>
+
+      <!-- 2 Dorms C/ Vaga (DESTAQUE) -->
+      <div class="tipo-card destaque planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-com-vaga.jpg");'>
+        <div class="tipo-badge">Mais vendido</div>
+        <div class="tipo-tag">2 Dormitórios</div>
+        <div class="tipo-name">Com Vaga</div>
+        <div class="tipo-area">39,53 m²</div>
+
+        <div class="tipo-price-label">Preço Base</div>
+        <div class="tipo-price">R$ 377.000</div>
+        <div class="tipo-avaliacao">Avaliado em R$ 415.000</div>
+        <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Com Vaga">Quero esta planta</a>
+      </div>
+
+      <!-- Suíte -->
+      <div class="tipo-card planta-card" style='--tipo-bg: url("assets/plantas/planta-2-dorms-suite.jpg");'>
+        <div class="tipo-tag">2 Dorms + Suíte</div>
+        <div class="tipo-name">Com Suíte</div>
+        <div class="tipo-area">46,40 m²</div>
+
+        <div class="tipo-price-label">Preço Base</div>
+        <div class="tipo-price">R$ 440.000</div>
+        <div class="tipo-avaliacao">Avaliado em R$ 484.000</div>
+        <a href="#formulario" class="tipo-cta" data-planta="2 Dorms Com Suíte">Quero esta planta</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MINHA CASA MINHA VIDA -->
+  <section class="section section-teal" id="mcmv">
+    <div class="mcmv-inner">
+      <div data-reveal>
+        <span class="label">Minha Casa Minha Vida</span>
+        <h2 class="section-title">O programa que torna<br><em>possível</em></h2>
+        <p class="section-sub">Entenda o que pode entrar no seu financiamento antes de escolher a planta.</p>
+
+        <ul class="mcmv-list">
+          <li class="mcmv-list-item">
+            <div class="mcmv-list-icon"><i class="fa-solid fa-briefcase" style="color: var(--gold-light);"></i></div>
+            <div class="mcmv-list-text"><strong>CLT, autônomo, MEI ou sócio/empresário</strong>Todas as formas de renda
+              são aceitas no programa federal.</div>
+          </li>
+          <li class="mcmv-list-item">
+            <div class="mcmv-list-icon"><i class="fa-solid fa-users" style="color: var(--gold-light);"></i></div>
+            <div class="mcmv-list-text"><strong>Composição de renda</strong>Junte renda com até 3 pessoas para aumentar
+              seu poder de compra.</div>
+          </li>
+          <li class="mcmv-list-item">
+            <div class="mcmv-list-icon"><i class="fa-solid fa-piggy-bank" style="color: var(--gold-light);"></i></div>
+            <div class="mcmv-list-text"><strong>FGTS como entrada</strong>Use o saldo acumulado para reduzir o valor
+              financiado.</div>
+          </li>
+          <li class="mcmv-list-item">
+            <div class="mcmv-list-icon"><i class="fa-solid fa-clock" style="color: var(--gold-light);"></i></div>
+            <div class="mcmv-list-text"><strong>Estimativa pelo WhatsApp</strong>Paulo confere renda, FGTS e planta de
+              interesse para orientar o próximo passo.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="mcmv-steps-box" data-reveal data-delay="1">
+        <div class="mcmv-steps-title">Como funciona</div>
+        <div class="mcmv-step">
+          <div class="mcmv-step-num">1</div>
+          <div class="mcmv-step-text">
+            <strong>Informe seu perfil</strong>
+            <span>Leva cerca de 2 minutos. Renda, FGTS e planta de interesse já bastam para começar.</span>
+          </div>
+        </div>
+        <div class="mcmv-step">
+          <div class="mcmv-step-num">2</div>
+          <div class="mcmv-step-text">
+            <strong>Receba no WhatsApp</strong>
+            <span>Paulo analisa seu perfil e envia subsídio estimado, parcela e orientação sobre documentos.</span>
+          </div>
+        </div>
+        <div class="mcmv-step">
+          <div class="mcmv-step-num">3</div>
+          <div class="mcmv-step-text">
+            <strong>Visite o Residencial Maro</strong>
+            <span>Conheça o empreendimento em Guarulhos e tire todas as dúvidas sobre o programa.</span>
+          </div>
+        </div>
+        <a href="#formulario" class="mcmv-cta">Ver minhas opções</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="section section-white" id="localizacao">
+    <div class="loc-inner">
+      <div data-reveal>
+        <span class="label">Localização</span>
+        <h2 class="section-title">No coração<br>de Guarulhos</h2>
+        <div class="loc-details">
+          <div class="loc-detail-item">
+            <div class="loc-detail-label">Referências</div>
+            <div class="loc-detail-val">Em frente ao Shopping Internacional de Guarulhos</div>
+          </div>
+          <div class="loc-detail-item">
+            <div class="loc-detail-label">Mobilidade</div>
+            <div class="loc-detail-val">Acesso direto à Via Dutra e Metrô Dutra a 5 min.</div>
+          </div>
+        </div>
+      </div>
+      <div class="loc-map-wrap" data-reveal data-delay="1">
+        <div class="loc-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.48!2d-46.531!3d-23.463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI3JzQ2LjgiUyA0NsKwMzEnNTEuNiJX!5e0!3m2!1spt-BR!2sbr!4v1684800000000"
+            loading="lazy" allowfullscreen style="width: 100%; height: 100%; border: 0;"></iframe>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Eng.+Camilo+Olivetti,+Guarulhos" target="_blank"
+          rel="noopener noreferrer" class="loc-map-button">
+          <i class="fa-solid fa-location-dot"></i> Abrir no Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORRETOR (Sem dados de anos/famílias) -->
+  <section class="section section-light" id="corretor">
+    <div class="corretor-inner">
+      <div class="corretor-img-wrap" data-reveal>
+        <img src="assets/corretor.png"
+          data-fallback-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85&auto=format&fit=crop"
+          alt="Paulo Paixão" class="corretor-img">
+        <div class="corretor-creci">
+          <div class="corretor-creci-num">315.337</div>
+          <div class="corretor-creci-text">CRECI-SP</div>
+        </div>
+      </div>
+      <div data-reveal data-delay="1">
+        <span class="label">Quem vai te atender</span>
+        <h2 class="section-title">Paulo Paixão</h2>
+        <p class="corretor-bio">
+          Atendimento direto com Paulo para comparar plantas, entender FGTS, estimar subsídio e organizar o caminho até
+          a visita.
+        </p>
+        <!-- Correção na seção CORRETOR (Removido os itens indesejados) -->
+        <div class="corretor-meta" style="grid-template-columns: 1fr;">
+          <div>
+            <div class="corretor-meta-val">Minha Casa Minha Vida</div>
+            <div class="corretor-meta-label">Especialista em financiamentos pelo programa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="section section-teal" id="contato">
+    <div class="form-inner">
+      <div data-reveal>
+        <span class="label" style="color: var(--gold-light);">Contato com Paulo</span>
+        <h2 class="section-title">Veja suas opções com clareza</h2>
+        <p class="section-sub">Fale direto com Paulo para entender disponibilidade, valores e próximos passos com
+          clareza.</p>
+
+        <!-- CORREÇÃO DA COR DE TEXTO DOS BENEFÍCIOS -->
+        <div class="form-benefits">
+          <div class="form-benefits-title">Você recebe:</div>
+          <ul class="form-benefits-list">
+            <li class="form-benefits-item">Comparação das plantas disponíveis</li>
+            <li class="form-benefits-item">Orientação sobre uso do FGTS</li>
+            <li class="form-benefits-item">Condições de financiamento explicadas de forma objetiva</li>
+            <li class="form-benefits-item">Retorno direto pelo WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FORM CARD -->
+      <div class="form-card" id="formulario" data-reveal data-delay="1">
+        <div class="form-card-header">
+          <h3 class="form-card-title">Converse conosco</h3>
+          <p class="form-card-sub">Atendimento direto pelo WhatsApp</p>
+        </div>
+
+        <div class="form-card-body">
+          <div class="form-progress">
+            <div class="progress-bar-container">
+              <div class="progress-step active" id="p-step-1"></div>
+              <div class="progress-step" id="p-step-2"></div>
+              <div class="progress-step" id="p-step-3"></div>
+              <div class="progress-step" id="p-step-4"></div>
+            </div>
+            <div class="progress-labels">
+              <div class="progress-label active" id="p-label-1">Dados</div>
+              <div class="progress-label" id="p-label-2">Renda</div>
+              <div class="progress-label" id="p-label-3">Financ.</div>
+              <div class="progress-label" id="p-label-4">Fim</div>
+            </div>
+          </div>
+
+          <form id="qualForm">
+            <!-- SEC 1 -->
+            <div class="form-section active" id="sec-1">
+              <div class="form-section-heading">
+                <div class="form-section-number">1</div>
+                <div class="form-section-title">Contato</div>
+              </div>
+              <div class="form-group">
+                <label for="f-nome">Nome completo *</label>
+                <input type="text" id="f-nome" placeholder="Ex: João da Silva" required>
+                <div class="error-message">Campo obrigatório</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-tel">WhatsApp *</label>
+                  <input type="tel" id="f-tel" placeholder="(11) 90000-0000" required>
+                  <div class="error-message">Campo obrigatório</div>
+                </div>
+                <div class="form-group">
+                  <label for="f-cpf">CPF (opcional)</label>
+                  <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14">
+                  <p class="form-hint">Pode ser informado depois, no atendimento.</p>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-nascimento">Data de nascimento (opcional)</label>
+                  <input type="date" id="f-nascimento">
+                  <p class="form-hint">Ajuda a calcular faixa e prazo do financiamento</p>
+                </div>
+                <div class="form-group">
+                  <label for="f-email">E-mail (opcional)</label>
+                  <input type="email" id="f-email" placeholder="seu@email.com">
+                </div>
+              </div>
+              <div class="form-nav">
+                <button type="button" class="btn-form-next" data-next-step="1">
+                  Continuar <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- SEC 2 -->
+            <div class="form-section" id="sec-2">
+              <div class="form-section-heading">
+                <div class="form-section-number">2</div>
+                <div class="form-section-title">Profissional & Renda</div>
+              </div>
+              <div class="form-group">
+                <span class="form-group-label">Tipo de Renda Principal *</span>
+                <div class="form-radio-group">
+                  <label class="form-radio"><input type="radio" name="trabalho" value="CLT" required> CLT</label>
+                  <label class="form-radio"><input type="radio" name="trabalho" value="Autônomo" required>
+                    Autônomo</label>
+                  <label class="form-radio"><input type="radio" name="trabalho" value="MEI" required> MEI</label>
+                  <label class="form-radio"><input type="radio" name="trabalho" value="Sócio / Empresário" required>
+                    Sócio / Empresário</label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-renda">Renda familiar bruta *</label>
+                  <select id="f-renda" required>
+                    <option value="">Selecione sua faixa</option>
+                    <option value="Até R$ 2.640">Até R$ 2.640</option>
+                    <option value="R$ 2.640 a R$ 4.400">R$ 2.640 a R$ 4.400</option>
+                    <option value="R$ 4.400 a R$ 8.000">R$ 4.400 a R$ 8.000</option>
+                    <option value="Acima de R$ 8.000">Acima de R$ 8.000</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="f-pessoas-renda">Pessoas na renda *</label>
+                  <select id="f-pessoas-renda" required>
+                    <option value="">Selecione</option>
+                    <option value="1 pessoa (só eu)">1 pessoa (só eu)</option>
+                    <option value="2 pessoas">2 pessoas</option>
+                    <option value="3 pessoas">3 pessoas</option>
+                    <option value="4 ou mais">4 ou mais</option>
+                  </select>
+                  <p class="form-hint">Inclui você e quem vai compor renda</p>
+                </div>
+              </div>
+              <div class="form-nav">
+                <button type="button" class="btn-form-back" data-prev-step="2"><i class="fa-solid fa-arrow-left"></i>
+                  Voltar</button>
+                <button type="button" class="btn-form-next" data-next-step="2">Continuar <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- SEC 3 -->
+            <div class="form-section" id="sec-3">
+              <div class="form-section-heading">
+                <div class="form-section-number">3</div>
+                <div class="form-section-title">Financiamento</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <span class="form-group-label">Possui FGTS? *</span>
+                  <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
+                    <label class="form-radio"><input type="radio" name="fgts" value="Sim" required> Sim</label>
+                    <label class="form-radio"><input type="radio" name="fgts" value="Não" required> Não</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <span class="form-group-label">Já usou Minha Casa Minha Vida? *</span>
+                  <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
+                    <label class="form-radio"><input type="radio" name="mcmv" value="Sim" required> Sim</label>
+                    <label class="form-radio"><input type="radio" name="mcmv" value="Não" required> Não</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-conditional" id="fgts-valor-wrap" hidden>
+                <div class="form-group">
+                  <label for="f-fgts-valor">Valor estimado do FGTS (opcional)</label>
+                  <input type="text" id="f-fgts-valor" placeholder="R$ 0,00">
+                  <p class="form-hint">Aproximado — melhora o cálculo de entrada</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="f-moradia">Onde você mora hoje? *</label>
+                <select id="f-moradia" required>
+                  <option value="">Selecione</option>
+                  <option value="Alugado">Alugado</option>
+                  <option value="Casa própria">Casa própria (quitada ou financiada)</option>
+                  <option value="Com familiares">Com familiares / cedido</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-civil">Estado civil *</label>
+                  <select id="f-civil" required>
+                    <option value="">Selecione</option>
+                    <option value="Solteiro(a)">Solteiro(a)</option>
+                    <option value="Casado(a)">Casado(a) / União</option>
+                    <option value="Divorciado(a)">Divorciado(a)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="f-dependentes">Dependentes? *</label>
+                  <select id="f-dependentes" required>
+                    <option value="">Selecione</option>
+                    <option value="Nenhum">Nenhum</option>
+                    <option value="Sim">Sim (1 ou mais)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-conditional" id="conjuge-wrap" hidden>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-checkbox-wrap" style="cursor: pointer;">
+                    <input type="checkbox" id="f-conjuge-renda">
+                    <span class="form-checkbox-text">Cônjuge ou companheiro(a) vai compor renda?</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <span class="form-group-label">Planta de interesse *</span>
+                <div class="form-radio-group planta-grid">
+                  <label class="form-radio"><input type="radio" name="planta" value="Studio" required> Studio</label>
+                  <label class="form-radio"><input type="radio" name="planta" value="2 Dorms Sem Vaga" required> 2 Dorms
+                    s/ vaga</label>
+                  <label class="form-radio"><input type="radio" name="planta" value="2 Dorms Com Vaga" required> 2 Dorms
+                    c/ vaga</label>
+                  <label class="form-radio"><input type="radio" name="planta" value="2 Dorms Com Suíte" required> Com
+                    suíte</label>
+                </div>
+                <div class="error-message">Selecione uma planta</div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <span class="form-group-label">Primeiro imóvel? *</span>
+                  <div class="form-radio-group" style="grid-template-columns: 1fr 1fr;">
+                    <label class="form-radio"><input type="radio" name="primeiro-imovel" value="Sim" required>
+                      Sim</label>
+                    <label class="form-radio"><input type="radio" name="primeiro-imovel" value="Não" required>
+                      Não</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="f-entrada">Entrada disponível (opcional)</label>
+                  <input type="text" id="f-entrada" placeholder="R$ 0,00">
+                  <p class="form-hint">Estimativa — ajuda no cálculo de entrada</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="f-restricao">Restrição no nome (SPC/Serasa)?</label>
+                <select id="f-restricao">
+                  <option value="">Selecione (opcional)</option>
+                  <option value="Não">Não</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não sei">Não sei</option>
+                </select>
+              </div>
+              <div class="form-nav">
+                <button type="button" class="btn-form-back" data-prev-step="3"><i class="fa-solid fa-arrow-left"></i>
+                  Voltar</button>
+                <button type="button" class="btn-form-next" data-next-step="3">Continuar <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- SEC 4 -->
+            <div class="form-section" id="sec-4">
+              <div class="form-section-heading">
+                <div class="form-section-number">4</div>
+                <div class="form-section-title">Conclusão</div>
+              </div>
+              <div class="form-group">
+                <span class="form-group-label">Previsão de compra *</span>
+                <div class="form-radio-group">
+                  <label class="form-radio"><input type="radio" name="prazo" value="Imediatamente" required>
+                    Imediatamente</label>
+                  <label class="form-radio"><input type="radio" name="prazo" value="Até 3 meses" required> Até 3
+                    meses</label>
+                  <label class="form-radio"><input type="radio" name="prazo" value="Pesquisando" required>
+                    Pesquisando</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="f-horario">Melhor horário para contato</label>
+                <select id="f-horario">
+                  <option value="">Qualquer horário</option>
+                  <option value="Manhã (8h–12h)">Manhã (8h–12h)</option>
+                  <option value="Tarde (12h–18h)">Tarde (12h–18h)</option>
+                  <option value="Noite (18h–21h)">Noite (18h–21h)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="f-origem">Como nos encontrou?</label>
+                <select id="f-origem">
+                  <option value="">Selecione (opcional)</option>
+                  <option value="Google">Google</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Indicação">Indicação de amigo/familiar</option>
+                  <option value="Portais">Portais (ZAP, Viva Real, OLX)</option>
+                  <option value="Placa / outdoor">Placa / outdoor</option>
+                  <option value="Já sou cliente">Já sou cliente</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="f-mensagem">Mensagem (Opcional)</label>
+                <textarea id="f-mensagem" placeholder="Alguma dúvida específica?" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <span class="form-group-label">Consentimento *</span>
+                <label class="form-checkbox-wrap">
+                  <input type="checkbox" id="f-lgpd-contato" required>
+                  <span class="form-checkbox-text">Autorizo o uso dos meus dados para contato imobiliário
+                    (LGPD).<small>Obrigatório para enviar</small></span>
+                </label>
+                <div class="error-message">É necessário autorizar o contato</div>
+              </div>
+              <div class="form-group">
+                <label class="form-checkbox-wrap">
+                  <input type="checkbox" id="f-lgpd-ofertas">
+                  <span class="form-checkbox-text">Desejo receber novidades e ofertas por
+                    WhatsApp/e-mail<small>Opcional</small></span>
+                </label>
+              </div>
+              <div class="form-nav">
+                <button type="button" class="btn-form-back" data-prev-step="4"><i class="fa-solid fa-arrow-left"></i>
+                  Voltar</button>
+                <button type="button" class="btn-form-next" data-submit-form style="background: #25D366; color: white;">
+                  <i class="fa-brands fa-whatsapp text-lg"></i> Enviar para Paulo
+                </button>
+              </div>
+              <p
+                style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--teal-light); font-weight: 700;">
+                🔒 Seus dados estão seguros e não enviamos spam.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Paulo <em>Paixão</em></div>
+        <p class="footer-copy" style="margin-top: 5px;">Consultor Imobiliário Oficial</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#empreendimento">O Projeto</a></li>
+        <li><a href="#tipologias">Plantas</a></li>
+        <li><a href="#mcmv">Financiamento</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+      </ul>
+      <div class="footer-copy">CRECI-SP 315.337 · © 2026 Paulo Paixão</div>
+    </div>
+  </footer>
+
+  <script>
+    // ── NAV SCROLL ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── HERO VÍDEO (loop + fallback visual para mobile/rede lenta) ──
+    const heroVideo = document.getElementById('hero-video');
+    const videoWrapper = document.getElementById('video-wrapper');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (heroVideo && videoWrapper) {
+      heroVideo.muted = true;
+      heroVideo.defaultMuted = true;
+      heroVideo.playsInline = true;
+      heroVideo.setAttribute('playsinline', '');
+      heroVideo.setAttribute('webkit-playsinline', '');
+
+      const showVideoFrame = () => {
+        videoWrapper.classList.add('video-ready');
+        videoWrapper.classList.remove('video-error');
+      };
+
+      const keepFallback = () => {
+        videoWrapper.classList.add('video-error');
+        videoWrapper.classList.remove('video-ready');
+        heroVideo.pause();
+      };
+
+      const playHero = () => {
+        if (document.hidden) return;
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise.then(showVideoFrame).catch(() => {
+            videoWrapper.classList.remove('video-ready');
+          });
+        }
+      };
+
+      if (heroVideo.readyState >= 2) showVideoFrame();
+      heroVideo.addEventListener('loadeddata', showVideoFrame);
+      heroVideo.addEventListener('canplay', playHero);
+      heroVideo.addEventListener('playing', showVideoFrame);
+      heroVideo.addEventListener('error', keepFallback);
+      document.addEventListener('touchstart', playHero, { once: true, passive: true });
+      document.addEventListener('click', playHero, { once: true });
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) playHero();
+      });
+      playHero();
+
+      const heroSection = document.getElementById('home');
+      const canScrubHeroVideo = window.innerWidth >= 768;
+      let scrubFrameRequest = null;
+
+      const syncHeroVideoFrame = () => {
+        scrubFrameRequest = null;
+        if (!heroSection || !Number.isFinite(heroVideo.duration) || heroVideo.duration <= 0) return;
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        const heroTop = heroSection.offsetTop || 0;
+        const scrubRange = Math.max(window.innerHeight || 1, heroSection.offsetHeight || 1);
+        const progress = Math.min(1, Math.max(0, (scrollTop - heroTop) / scrubRange));
+        const targetTime = progress * Math.max(0, heroVideo.duration - 0.08);
+
+        if (Math.abs(heroVideo.currentTime - targetTime) > 0.04) {
+          try {
+            heroVideo.currentTime = targetTime;
+          } catch (_) {
+            // Browser can reject seeks before metadata is fully available.
+          }
+        }
+      };
+
+      const requestHeroVideoFrameSync = () => {
+        if (scrubFrameRequest !== null) return;
+        scrubFrameRequest = requestAnimationFrame(syncHeroVideoFrame);
+      };
+
+      if (canScrubHeroVideo && heroSection) {
+        videoWrapper.classList.add('scroll-scrub-ready');
+        heroVideo.addEventListener('loadedmetadata', requestHeroVideoFrameSync);
+        window.addEventListener('scroll', requestHeroVideoFrameSync, { passive: true });
+        document.addEventListener('scroll', requestHeroVideoFrameSync, { passive: true, capture: true });
+        window.addEventListener('wheel', requestHeroVideoFrameSync, { passive: true });
+        window.addEventListener('touchmove', requestHeroVideoFrameSync, { passive: true });
+        window.addEventListener('resize', requestHeroVideoFrameSync);
+        let lastObservedHeroScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+        window.setInterval(() => {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          const heroLimit = (heroSection.offsetTop || 0) + (heroSection.offsetHeight || 0) + (window.innerHeight || 0);
+          if (currentScroll > heroLimit) return;
+          if (Math.abs(currentScroll - lastObservedHeroScroll) < 1) return;
+          lastObservedHeroScroll = currentScroll;
+          syncHeroVideoFrame();
+        }, 120);
+        requestHeroVideoFrameSync();
       }
-    };
+    }
 
-    if (heroVideo.readyState >= 2) showVideoFrame();
-    heroVideo.addEventListener('loadeddata', showVideoFrame);
-    heroVideo.addEventListener('canplay', playHero);
-    heroVideo.addEventListener('playing', showVideoFrame);
-    heroVideo.addEventListener('error', keepFallback);
-    document.addEventListener('touchstart', playHero, { once: true, passive: true });
-    document.addEventListener('click', playHero, { once: true });
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) playHero();
+    // ── PARALLAX suave no vídeo (desktop, sem conflitar com zoom) ──
+    if (videoWrapper && window.innerWidth >= 768 && !reducedMotion) {
+      document.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * -18;
+        const y = (e.clientY / window.innerHeight - 0.5) * -18;
+        videoWrapper.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+
+    // ── REVEAL ON SCROLL ──
+    const revealEls = document.querySelectorAll('[data-reveal]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('img[data-fallback-src]').forEach(img => {
+      img.addEventListener('error', () => {
+        if (img.dataset.fallbackApplied === 'true') return;
+        img.dataset.fallbackApplied = 'true';
+        img.src = img.dataset.fallbackSrc;
+      });
     });
-    playHero();
 
-    const heroSection = document.getElementById('home');
-    const canScrubHeroVideo = window.innerWidth >= 768;
-    let scrubFrameRequest = null;
+    // ── MASKS ──
+    const cpfInput = document.getElementById('f-cpf');
+    cpfInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 3) v = v.slice(0, 3) + '.' + v.slice(3);
+      if (v.length > 7) v = v.slice(0, 7) + '.' + v.slice(7);
+      if (v.length > 11) v = v.slice(0, 11) + '-' + v.slice(11);
+      e.target.value = v;
+    });
 
-    const syncHeroVideoFrame = () => {
-      scrubFrameRequest = null;
-      if (!heroSection || !Number.isFinite(heroVideo.duration) || heroVideo.duration <= 0) return;
+    const telInput = document.getElementById('f-tel');
+    telInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+      if (v.length > 10) v = v.slice(0, 10) + '-' + v.slice(10);
+      e.target.value = v;
+    });
 
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-      const heroTop = heroSection.offsetTop || 0;
-      const scrubRange = Math.max(window.innerHeight || 1, heroSection.offsetHeight || 1);
-      const progress = Math.min(1, Math.max(0, (scrollTop - heroTop) / scrubRange));
-      const targetTime = progress * Math.max(0, heroVideo.duration - 0.08);
+    function maskMoneyInput(input) {
+      if (!input) return;
+      input.addEventListener('input', (e) => {
+        const digits = e.target.value.replace(/\D/g, '');
+        if (!digits) { e.target.value = ''; return; }
+        const num = parseInt(digits, 10) / 100;
+        e.target.value = 'R$ ' + num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      });
+    }
+    maskMoneyInput(document.getElementById('f-entrada'));
+    maskMoneyInput(document.getElementById('f-fgts-valor'));
 
-      if (Math.abs(heroVideo.currentTime - targetTime) > 0.04) {
-        try {
-          heroVideo.currentTime = targetTime;
-        } catch (_) {
-          // Browser can reject seeks before metadata is fully available.
+    const fgtsValorWrap = document.getElementById('fgts-valor-wrap');
+    document.querySelectorAll('input[name="fgts"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const temFgts = document.querySelector('input[name="fgts"]:checked')?.value === 'Sim';
+        fgtsValorWrap.hidden = !temFgts;
+        if (!temFgts) document.getElementById('f-fgts-valor').value = '';
+      });
+    });
+
+    const civilSelect = document.getElementById('f-civil');
+    const conjugeWrap = document.getElementById('conjuge-wrap');
+    function updateConjugeVisibility() {
+      const casado = civilSelect.value === 'Casado(a)';
+      conjugeWrap.hidden = !casado;
+      if (!casado) document.getElementById('f-conjuge-renda').checked = false;
+    }
+    civilSelect.addEventListener('change', updateConjugeVisibility);
+
+    function applyPlantaInteresse(planta) {
+      if (!planta) return;
+      document.querySelectorAll('input[name="planta"]').forEach(r => {
+        if (r.value === planta) r.checked = true;
+      });
+    }
+    document.querySelectorAll('.tipo-cta[data-planta]').forEach(link => {
+      link.addEventListener('click', () => {
+        sessionStorage.setItem('plantaInteresse', link.dataset.planta);
+        applyPlantaInteresse(link.dataset.planta);
+      });
+    });
+    const plantaFromUrl = new URLSearchParams(location.search).get('planta');
+    const plantaFromStore = sessionStorage.getItem('plantaInteresse');
+    applyPlantaInteresse(plantaFromUrl || plantaFromStore);
+
+    // ── FORM LOGIC ──
+    let currentSection = 1;
+
+    function updateProgress(section) {
+      for (let i = 1; i <= 4; i++) {
+        const step = document.getElementById(`p-step-${i}`);
+        const label = document.getElementById(`p-label-${i}`);
+        step.classList.remove('active', 'completed');
+        label.classList.remove('active', 'completed');
+
+        if (i < section) {
+          step.classList.add('completed'); label.classList.add('completed');
+        } else if (i === section) {
+          step.classList.add('active'); label.classList.add('active');
         }
       }
-    };
-
-    const requestHeroVideoFrameSync = () => {
-      if (scrubFrameRequest !== null) return;
-      scrubFrameRequest = requestAnimationFrame(syncHeroVideoFrame);
-    };
-
-    if (canScrubHeroVideo && heroSection) {
-      videoWrapper.classList.add('scroll-scrub-ready');
-      heroVideo.addEventListener('loadedmetadata', requestHeroVideoFrameSync);
-      window.addEventListener('scroll', requestHeroVideoFrameSync, { passive: true });
-      document.addEventListener('scroll', requestHeroVideoFrameSync, { passive: true, capture: true });
-      window.addEventListener('wheel', requestHeroVideoFrameSync, { passive: true });
-      window.addEventListener('touchmove', requestHeroVideoFrameSync, { passive: true });
-      window.addEventListener('resize', requestHeroVideoFrameSync);
-      let lastObservedHeroScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
-      window.setInterval(() => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
-        const heroLimit = (heroSection.offsetTop || 0) + (heroSection.offsetHeight || 0) + (window.innerHeight || 0);
-        if (currentScroll > heroLimit) return;
-        if (Math.abs(currentScroll - lastObservedHeroScroll) < 1) return;
-        lastObservedHeroScroll = currentScroll;
-        syncHeroVideoFrame();
-      }, 120);
-      requestHeroVideoFrameSync();
     }
-  }
 
-  // ── PARALLAX suave no vídeo (desktop, sem conflitar com zoom) ──
-  if (videoWrapper && window.innerWidth >= 768 && !reducedMotion) {
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * -18;
-      const y = (e.clientY / window.innerHeight - 0.5) * -18;
-      videoWrapper.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  }
+    function validateSection(section) {
+      const form = document.getElementById('qualForm');
+      const inputs = form.querySelectorAll(`#sec-${section} input, #sec-${section} select`);
+      let isValid = true;
+      const validatedRadios = new Set();
 
-  // ── REVEAL ON SCROLL ──
-  const revealEls = document.querySelectorAll('[data-reveal]');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
+      inputs.forEach(input => {
+        if (input.closest('.form-conditional[hidden]')) return;
 
-  document.querySelectorAll('img[data-fallback-src]').forEach(img => {
-    img.addEventListener('error', () => {
-      if (img.dataset.fallbackApplied === 'true') return;
-      img.dataset.fallbackApplied = 'true';
-      img.src = img.dataset.fallbackSrc;
-    });
-  });
+        const group = input.closest('.form-group');
+        if (!input.hasAttribute('required')) return;
 
-  // ── MASKS ──
-  const cpfInput = document.getElementById('f-cpf');
-  cpfInput.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-    if (v.length > 3) v = v.slice(0, 3) + '.' + v.slice(3);
-    if (v.length > 7) v = v.slice(0, 7) + '.' + v.slice(7);
-    if (v.length > 11) v = v.slice(0, 11) + '-' + v.slice(11);
-    e.target.value = v;
-  });
-
-  const telInput = document.getElementById('f-tel');
-  telInput.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-    if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
-    if (v.length > 10) v = v.slice(0, 10) + '-' + v.slice(10);
-    e.target.value = v;
-  });
-
-  function maskMoneyInput(input) {
-    if (!input) return;
-    input.addEventListener('input', (e) => {
-      const digits = e.target.value.replace(/\D/g, '');
-      if (!digits) { e.target.value = ''; return; }
-      const num = parseInt(digits, 10) / 100;
-      e.target.value = 'R$ ' + num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    });
-  }
-  maskMoneyInput(document.getElementById('f-entrada'));
-  maskMoneyInput(document.getElementById('f-fgts-valor'));
-
-  const fgtsValorWrap = document.getElementById('fgts-valor-wrap');
-  document.querySelectorAll('input[name="fgts"]').forEach(radio => {
-    radio.addEventListener('change', () => {
-      const temFgts = document.querySelector('input[name="fgts"]:checked')?.value === 'Sim';
-      fgtsValorWrap.hidden = !temFgts;
-      if (!temFgts) document.getElementById('f-fgts-valor').value = '';
-    });
-  });
-
-  const civilSelect = document.getElementById('f-civil');
-  const conjugeWrap = document.getElementById('conjuge-wrap');
-  function updateConjugeVisibility() {
-    const casado = civilSelect.value === 'Casado(a)';
-    conjugeWrap.hidden = !casado;
-    if (!casado) document.getElementById('f-conjuge-renda').checked = false;
-  }
-  civilSelect.addEventListener('change', updateConjugeVisibility);
-
-  function applyPlantaInteresse(planta) {
-    if (!planta) return;
-    document.querySelectorAll('input[name="planta"]').forEach(r => {
-      if (r.value === planta) r.checked = true;
-    });
-  }
-  document.querySelectorAll('.tipo-cta[data-planta]').forEach(link => {
-    link.addEventListener('click', () => {
-      sessionStorage.setItem('plantaInteresse', link.dataset.planta);
-      applyPlantaInteresse(link.dataset.planta);
-    });
-  });
-  const plantaFromUrl = new URLSearchParams(location.search).get('planta');
-  const plantaFromStore = sessionStorage.getItem('plantaInteresse');
-  applyPlantaInteresse(plantaFromUrl || plantaFromStore);
-
-  // ── FORM LOGIC ──
-  let currentSection = 1;
-
-  function updateProgress(section) {
-    for (let i = 1; i <= 4; i++) {
-      const step = document.getElementById(`p-step-${i}`);
-      const label = document.getElementById(`p-label-${i}`);
-      step.classList.remove('active', 'completed');
-      label.classList.remove('active', 'completed');
-      
-      if (i < section) {
-        step.classList.add('completed'); label.classList.add('completed');
-      } else if (i === section) {
-        step.classList.add('active'); label.classList.add('active');
-      }
+        if (input.type === 'radio') {
+          if (validatedRadios.has(input.name)) return;
+          validatedRadios.add(input.name);
+          const radioGroup = form.querySelectorAll(`#sec-${section} input[name="${input.name}"]`);
+          const isChecked = Array.from(radioGroup).some(r => r.checked && !r.closest('.form-conditional[hidden]'));
+          if (!isChecked && group) { group.classList.add('error'); isValid = false; }
+          else if (group) { group.classList.remove('error'); }
+        } else if (input.type === 'checkbox') {
+          if (!input.checked && group) { group.classList.add('error'); isValid = false; }
+          else if (group) { group.classList.remove('error'); }
+        } else if (!input.value.trim()) {
+          if (group) { group.classList.add('error'); }
+          isValid = false;
+        } else if (group) {
+          group.classList.remove('error');
+        }
+      });
+      return isValid;
     }
-  }
 
-  function validateSection(section) {
-    const form = document.getElementById('qualForm');
-    const inputs = form.querySelectorAll(`#sec-${section} input, #sec-${section} select`);
-    let isValid = true;
-    const validatedRadios = new Set();
+    function scrollToFormCard() {
+      const card = document.querySelector('.form-card');
+      if (!card) return;
+      requestAnimationFrame(() => {
+        const navHeight = document.getElementById('nav')?.getBoundingClientRect().height || 0;
+        const cardTop = card.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: Math.max(0, cardTop - navHeight - 44), behavior: 'smooth' });
+      });
+    }
 
-    inputs.forEach(input => {
-      if (input.closest('.form-conditional[hidden]')) return;
-
-      const group = input.closest('.form-group');
-      if (!input.hasAttribute('required')) return;
-
-      if (input.type === 'radio') {
-        if (validatedRadios.has(input.name)) return;
-        validatedRadios.add(input.name);
-        const radioGroup = form.querySelectorAll(`#sec-${section} input[name="${input.name}"]`);
-        const isChecked = Array.from(radioGroup).some(r => r.checked && !r.closest('.form-conditional[hidden]'));
-        if (!isChecked && group) { group.classList.add('error'); isValid = false; }
-        else if (group) { group.classList.remove('error'); }
-      } else if (input.type === 'checkbox') {
-        if (!input.checked && group) { group.classList.add('error'); isValid = false; }
-        else if (group) { group.classList.remove('error'); }
-      } else if (!input.value.trim()) {
-        if (group) { group.classList.add('error'); }
-        isValid = false;
-      } else if (group) {
-        group.classList.remove('error');
-      }
-    });
-    return isValid;
-  }
-
-  function scrollToFormCard() {
-    const card = document.querySelector('.form-card');
-    if (!card) return;
-    requestAnimationFrame(() => {
-      const navHeight = document.getElementById('nav')?.getBoundingClientRect().height || 0;
-      const cardTop = card.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({ top: Math.max(0, cardTop - navHeight - 44), behavior: 'smooth' });
-    });
-  }
-
-  function nextStep(section) {
-    if (!validateSection(section)) return;
-    document.getElementById(`sec-${section}`).classList.remove('active');
-    currentSection = section + 1;
-    document.getElementById(`sec-${currentSection}`).classList.add('active');
-    updateProgress(currentSection);
-    scrollToFormCard(); 
-  }
-
-  function prevStep(section) {
-    document.getElementById(`sec-${section}`).classList.remove('active');
-    currentSection = section - 1;
-    document.getElementById(`sec-${currentSection}`).classList.add('active');
-    updateProgress(currentSection);
-    scrollToFormCard();
-  }
-
-  document.querySelectorAll('a[href="#formulario"]').forEach(link => {
-    link.addEventListener('click', event => {
-      event.preventDefault();
-      history.pushState(null, '', '#formulario');
+    function nextStep(section) {
+      if (!validateSection(section)) return;
+      document.getElementById(`sec-${section}`).classList.remove('active');
+      currentSection = section + 1;
+      document.getElementById(`sec-${currentSection}`).classList.add('active');
+      updateProgress(currentSection);
       scrollToFormCard();
-    });
-  });
-
-  document.querySelectorAll('[data-next-step]').forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      nextStep(Number(button.dataset.nextStep));
-    });
-  });
-
-  document.querySelectorAll('[data-prev-step]').forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      prevStep(Number(button.dataset.prevStep));
-    });
-  });
-
-  document.querySelectorAll('[data-submit-form]').forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      submitForm();
-    });
-  });
-
-  if (location.hash === '#formulario') {
-    setTimeout(scrollToFormCard, 100);
-  }
-
-  function sanitizeInput(str) {
-    return str.replace(/[<>'"\\;()]/g, '');
-  }
-
-  function submitForm() {
-    if (!validateSection(4)) return;
-
-    const nome = sanitizeInput(document.getElementById('f-nome').value.trim());
-    const cpf = sanitizeInput(document.getElementById('f-cpf').value.trim()) || 'Não informado';
-    const tel = sanitizeInput(document.getElementById('f-tel').value.trim());
-    const nascimentoRaw = document.getElementById('f-nascimento').value;
-    const nascimento = nascimentoRaw ? nascimentoRaw.split('-').reverse().join('/') : 'N\u00e3o informado';
-    const email = sanitizeInput(document.getElementById('f-email').value.trim()) || 'Não informado';
-    const msgAdicional = sanitizeInput(document.getElementById('f-mensagem').value.trim());
-
-    // Anti-spam check
-    if (nome.length > 100 || msgAdicional.length > 500) {
-      alert("Comportamento suspeito detectado.");
-      return;
     }
 
-    const trab = document.querySelector('input[name="trabalho"]:checked')?.value || '';
-    const renda = document.getElementById('f-renda').value;
-    const pessoasRenda = document.getElementById('f-pessoas-renda').value;
+    function prevStep(section) {
+      document.getElementById(`sec-${section}`).classList.remove('active');
+      currentSection = section - 1;
+      document.getElementById(`sec-${currentSection}`).classList.add('active');
+      updateProgress(currentSection);
+      scrollToFormCard();
+    }
 
-    const fgts = document.querySelector('input[name="fgts"]:checked')?.value || '';
-    const fgtsValor = document.getElementById('f-fgts-valor').value.trim() || 'Não informado';
-    const mcmv = document.querySelector('input[name="mcmv"]:checked')?.value || '';
-    const moradia = document.getElementById('f-moradia').value;
-    const civil = document.getElementById('f-civil').value;
-    const depend = document.getElementById('f-dependentes').value;
-    const conjugeRenda = civil === 'Casado(a)'
-      ? (document.getElementById('f-conjuge-renda').checked ? 'Sim' : 'Não')
-      : '—';
-    const planta = document.querySelector('input[name="planta"]:checked')?.value || '';
-    const primeiroImovel = document.querySelector('input[name="primeiro-imovel"]:checked')?.value || '';
-    const entrada = document.getElementById('f-entrada').value.trim() || 'Não informado';
-    const restricao = document.getElementById('f-restricao').value || 'Não informado';
+    document.querySelectorAll('a[href="#formulario"]').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        history.pushState(null, '', '#formulario');
+        scrollToFormCard();
+      });
+    });
 
-    const prazo = document.querySelector('input[name="prazo"]:checked')?.value || '';
-    const horario = document.getElementById('f-horario').value || 'Qualquer horário';
-    const origem = document.getElementById('f-origem').value || 'Não informado';
-    const lgpdOfertas = document.getElementById('f-lgpd-ofertas').checked ? 'Sim' : 'Não';
+    document.querySelectorAll('[data-next-step]').forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        nextStep(Number(button.dataset.nextStep));
+      });
+    });
 
-    const msg = encodeURIComponent(
-      `Ol\u00e1 Paulo! Preenchi o formul\u00e1rio no site e quero entender minhas op\u00e7\u00f5es para o Residencial Maro. Seguem meus dados:\n\n` +
-      `--- *DADOS PESSOAIS* ---\n` +
-      `- Nome: ${nome}\n` +
-      `- CPF: ${cpf}\n` +
-      `- WhatsApp: ${tel}\n` +
-      `- Nascimento: ${nascimento}\n` +
-      `- E-mail: ${email}\n\n` +
-      `--- *PERFIL PROFISSIONAL* ---\n` +
-      `- Tipo de renda: ${trab}\n` +
-      `- Renda familiar: ${renda}\n` +
-      `- Pessoas na renda: ${pessoasRenda}\n\n` +
-      `--- *FINANCIAMENTO E IM\u00d3VEL* ---\n` +
-      `- Possui FGTS: ${fgts} (Valor aprox: ${fgtsValor})\n` +
-      `- J\u00e1 usou Minha Casa Minha Vida: ${mcmv}\n` +
-      `- Moradia atual: ${moradia}\n` +
-      `- Estado civil: ${civil}\n` +
-      `- Dependentes: ${depend}\n` +
-      `- C\u00f4njuge comp\u00f5e renda: ${conjugeRenda}\n` +
-      `- Planta de interesse: ${planta}\n` +
-      `- 1\u00ba Im\u00f3vel: ${primeiroImovel}\n` +
-      `- Entrada dispon\u00edvel: ${entrada}\n` +
-      `- Restri\u00e7\u00e3o CPF: ${restricao}\n\n` +
-      `--- *PREFER\u00caNCIAS DE CONTATO* ---\n` +
-      `- Prazo p/ compra: ${prazo}\n` +
-      `- Melhor hor\u00e1rio: ${horario}\n` +
-      `- Como encontrou: ${origem}\n` +
-      (msgAdicional ? `- Mensagem extra: ${msgAdicional}\n` : '')
-    );
+    document.querySelectorAll('[data-prev-step]').forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        prevStep(Number(button.dataset.prevStep));
+      });
+    });
 
-    const whatsappWindow = window.open(`https://wa.me/5511984042039?text=${msg}`, '_blank', 'noopener,noreferrer');
-    if (whatsappWindow) whatsappWindow.opener = null;
-  }
+    document.querySelectorAll('[data-submit-form]').forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        submitForm();
+      });
+    });
 
-  updateProgress(1);
-</script>
+    if (location.hash === '#formulario') {
+      setTimeout(scrollToFormCard, 100);
+    }
+
+    function sanitizeInput(str) {
+      return str.replace(/[<>'"\\;()]/g, '');
+    }
+
+    function submitForm() {
+      if (!validateSection(4)) return;
+
+      const nome = sanitizeInput(document.getElementById('f-nome').value.trim());
+      const cpf = sanitizeInput(document.getElementById('f-cpf').value.trim()) || 'Não informado';
+      const tel = sanitizeInput(document.getElementById('f-tel').value.trim());
+      const nascimentoRaw = document.getElementById('f-nascimento').value;
+      const nascimento = nascimentoRaw ? nascimentoRaw.split('-').reverse().join('/') : 'N\u00e3o informado';
+      const email = sanitizeInput(document.getElementById('f-email').value.trim()) || 'Não informado';
+      const msgAdicional = sanitizeInput(document.getElementById('f-mensagem').value.trim());
+
+      // Anti-spam check
+      if (nome.length > 100 || msgAdicional.length > 500) {
+        alert("Comportamento suspeito detectado.");
+        return;
+      }
+
+      const trab = document.querySelector('input[name="trabalho"]:checked')?.value || '';
+      const renda = document.getElementById('f-renda').value;
+      const pessoasRenda = document.getElementById('f-pessoas-renda').value;
+
+      const fgts = document.querySelector('input[name="fgts"]:checked')?.value || '';
+      const fgtsValor = document.getElementById('f-fgts-valor').value.trim() || 'Não informado';
+      const mcmv = document.querySelector('input[name="mcmv"]:checked')?.value || '';
+      const moradia = document.getElementById('f-moradia').value;
+      const civil = document.getElementById('f-civil').value;
+      const depend = document.getElementById('f-dependentes').value;
+      const conjugeRenda = civil === 'Casado(a)'
+        ? (document.getElementById('f-conjuge-renda').checked ? 'Sim' : 'Não')
+        : '—';
+      const planta = document.querySelector('input[name="planta"]:checked')?.value || '';
+      const primeiroImovel = document.querySelector('input[name="primeiro-imovel"]:checked')?.value || '';
+      const entrada = document.getElementById('f-entrada').value.trim() || 'Não informado';
+      const restricao = document.getElementById('f-restricao').value || 'Não informado';
+
+      const prazo = document.querySelector('input[name="prazo"]:checked')?.value || '';
+      const horario = document.getElementById('f-horario').value || 'Qualquer horário';
+      const origem = document.getElementById('f-origem').value || 'Não informado';
+      const lgpdOfertas = document.getElementById('f-lgpd-ofertas').checked ? 'Sim' : 'Não';
+
+      const msg = encodeURIComponent(
+        `Ol\u00e1 Paulo! Preenchi o formul\u00e1rio no site e quero entender minhas op\u00e7\u00f5es para o Residencial Maro. Seguem meus dados:\n\n` +
+        `--- *DADOS PESSOAIS* ---\n` +
+        `- Nome: ${nome}\n` +
+        `- CPF: ${cpf}\n` +
+        `- WhatsApp: ${tel}\n` +
+        `- Nascimento: ${nascimento}\n` +
+        `- E-mail: ${email}\n\n` +
+        `--- *PERFIL PROFISSIONAL* ---\n` +
+        `- Tipo de renda: ${trab}\n` +
+        `- Renda familiar: ${renda}\n` +
+        `- Pessoas na renda: ${pessoasRenda}\n\n` +
+        `--- *FINANCIAMENTO E IM\u00d3VEL* ---\n` +
+        `- Possui FGTS: ${fgts} (Valor aprox: ${fgtsValor})\n` +
+        `- J\u00e1 usou Minha Casa Minha Vida: ${mcmv}\n` +
+        `- Moradia atual: ${moradia}\n` +
+        `- Estado civil: ${civil}\n` +
+        `- Dependentes: ${depend}\n` +
+        `- C\u00f4njuge comp\u00f5e renda: ${conjugeRenda}\n` +
+        `- Planta de interesse: ${planta}\n` +
+        `- 1\u00ba Im\u00f3vel: ${primeiroImovel}\n` +
+        `- Entrada dispon\u00edvel: ${entrada}\n` +
+        `- Restri\u00e7\u00e3o CPF: ${restricao}\n\n` +
+        `--- *PREFER\u00caNCIAS DE CONTATO* ---\n` +
+        `- Prazo p/ compra: ${prazo}\n` +
+        `- Melhor hor\u00e1rio: ${horario}\n` +
+        `- Como encontrou: ${origem}\n` +
+        (msgAdicional ? `- Mensagem extra: ${msgAdicional}\n` : '')
+      );
+
+      const whatsappWindow = window.open(`https://wa.me/5511984042039?text=${msg}`, '_blank', 'noopener,noreferrer');
+      if (whatsappWindow) whatsappWindow.opener = null;
+    }
+
+    updateProgress(1);
+  </script>
 
 </body>
+
 </html>

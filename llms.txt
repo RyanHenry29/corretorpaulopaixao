@@ -1,0 +1,26 @@
+# Paulo Paixão — Corretor Imobiliário
+
+> Site oficial do corretor de imóveis Paulo Paixão (CRECI-SP 315.337), especialista em Minha Casa Minha Vida e financiamento imobiliário em Guarulhos-SP. Apresenta o empreendimento Residencial Maro, com apartamentos de 27 a 46 m².
+
+## Sobre
+
+Paulo Paixão é consultor imobiliário com atuação em Guarulhos, São Paulo. Atende clientes CLT, autônomos, MEI e empresários que buscam financiamento pelo programa Minha Casa Minha Vida. O site é focado no lançamento Residencial Maro, localizado em frente ao Shopping Internacional de Guarulhos.
+
+- [Home](https://paulopaixaoimoveis.com.br/): Página inicial com apresentação do corretor e do empreendimento
+- [O Empreendimento](https://paulopaixaoimoveis.com.br/#empreendimento): Detalhes do Residencial Maro
+- [Plantas](https://paulopaixaoimoveis.com.br/#tipologias): Studio (27,58 m²), 2 Dorms sem vaga (39,53 m²), 2 Dorms com vaga (39,53 m²), 2 Dorms com suíte (46,40 m²)
+- [Minha Casa Minha Vida](https://paulopaixaoimoveis.com.br/#mcmv): Informações sobre financiamento e subsídio habitacional
+- [Localização](https://paulopaixaoimoveis.com.br/#localizacao): Mapa e referências do Residencial Maro em Guarulhos
+- [Corretor](https://paulopaixaoimoveis.com.br/#corretor): Sobre Paulo Paixão, CRECI-SP 315.337
+- [Contato](https://paulopaixaoimoveis.com.br/#contato): Formulário de contato para simulação de financiamento
+
+## Contato
+
+- WhatsApp: https://wa.me/5511984042039
+- Instagram: https://instagram.com/consultorpaixaosp
+- CRECI-SP: 315.337
+- Atendimento: Guarulhos e região metropolitana de São Paulo
+
+## Optional
+
+- [Política de Privacidade](https://paulopaixaoimoveis.com.br/politica-de-privacidade.html): Termos LGPD e tratamento de dados pessoais

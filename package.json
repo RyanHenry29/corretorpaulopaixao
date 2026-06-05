@@ -2,6 +2,7 @@
   "name": "corretor-paulopaixao",
   "private": true,
   "scripts": {
-    "dev": "npx serve . -l 3000 --no-clipboard"
+    "dev": "npx serve . -l 3000 --no-clipboard",
+    "build": "echo 'No build step needed — static site'"
   }
 }

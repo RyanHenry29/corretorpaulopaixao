@@ -1,6 +1,10 @@
 {
-  "name": "Paulo Paixao Corretor",
-  "short_name": "Paulo Paixao",
+  "name": "Paulo Paixão Corretor — Residencial Maro",
+  "short_name": "Paulo Paixão",
+  "description": "Site oficial do corretor de imóveis Paulo Paixão — Residencial Maro Guarulhos",
+  "start_url": "/",
+  "scope": "/",
+  "categories": ["real estate", "imobiliaria"],
   "icons": [
     {
       "src": "assets/favicon-192.png",

@@ -71,17 +71,9 @@ if (heroVideo && videoWrapper) {
   }
   heroVideo.load();
 
-  var iosPlayAttempted = false;
-  function tryPlayOnInteraction() {
-    if (iosPlayAttempted) return;
-    iosPlayAttempted = true;
+  document.addEventListener('click', function tryPlayOnClick() {
     tryPlayHeroVideo();
-    if (heroVideo.paused) {
-      heroVideo.play()['catch'](function() {});
-    }
-  }
-  document.addEventListener('touchstart', tryPlayOnInteraction, { once: true, passive: true });
-  document.addEventListener('click', tryPlayOnInteraction, { once: true, passive: true });
+  }, { once: true });
 }
 
 // -- REVEAL ON SCROLL --

@@ -1267,13 +1267,24 @@ const updateArrow = () => {
 };
 
 if (sectionNav) {
-  sectionNav.addEventListener('click', () => {
-    const target = isGoingUp ? scrollSections[0] : scrollSections[Math.min(currentScrollSection + 1, scrollSections.length - 1)];
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      currentScrollSection = isGoingUp ? 0 : Math.min(currentScrollSection + 1, scrollSections.length - 1);
-      updateArrow();
+  sectionNav.addEventListener('click', function scrollNavClick() {
+    if (isGoingUp) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      requestAnimationFrame(function() {
+        if (window.scrollY > 0) window.scroll(0, 0);
+      });
+      setTimeout(function() {
+        if (window.scrollY > 0) window.scroll(0, 0);
+      }, 120);
+      currentScrollSection = 0;
+    } else {
+      const target = scrollSections[currentScrollSection + 1];
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        currentScrollSection = Math.min(currentScrollSection + 1, scrollSections.length - 1);
+      }
     }
+    updateArrow();
   });
 
   scrollSecObserver = new IntersectionObserver((entries) => {

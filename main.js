@@ -1361,7 +1361,7 @@ function renderVideoCarousel() {
   if (!track) return;
 
   track.innerHTML = INST_VIDEOS.map(function(v, i) {
-    var thumbSrc = v.src.replace('video-', 'thumb-').replace('.mp4', '.jpg');
+    var thumbSrc = v.src.replace('video-', 'thumb-video-').replace('.mp4', '.jpg');
     return '<div class="vid-carousel-item" data-video-index="' + i + '">' +
       '<div class="vid-thumb-wrap">' +
         '<div class="vid-carousel-item-bg" id="vid-thumb-' + i + '" style="background-image:url(' + thumbSrc + ')"></div>' +
@@ -1484,7 +1484,7 @@ function generateThumbnailQueue() {
     if (!el) return;
     var img = new Image();
     img.onerror = function() { el.classList.add('vid-fallback'); };
-    img.src = v.src.replace('video-', 'thumb-').replace('.mp4', '.jpg');
+    img.src = v.src.replace('video-', 'thumb-video-').replace('.mp4', '.jpg');
   });
 }
 

@@ -331,7 +331,7 @@ function showPropertyView(id) {
   document.title = `${emp.nome} · Corretor Paulo Paixão`;
   document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${emp.nome} · Corretor Paulo Paixão`);
   document.querySelector('meta[property="og:description"]')?.setAttribute('content', emp.descricaoCurta);
-  document.querySelector('meta[property="og:image"]')?.setAttribute('content', `https://paulopaixaoimoveis.com.br/${emp.fotoCapa}`);
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content', `https://corretorpaulopaixao.vercel.app/${emp.fotoCapa}`);
 
   document.getElementById('f-empreendimento-hidden').value = emp.nome;
   document.getElementById('form-card-title').textContent = `Converse sobre o ${emp.nome}`;
@@ -355,7 +355,7 @@ function showHomeView() {
   document.title = 'Corretor Paulo Paixão';
   document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Corretor Paulo Paixão · Residencial Maro — Guarulhos');
   document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'Apartamentos de 27 a 46 m² em Guarulhos. Financiamento Minha Casa Minha Vida com orientação gratuita.');
-  document.querySelector('meta[property="og:image"]')?.setAttribute('content', 'https://paulopaixaoimoveis.com.br/assets/img/foto-residencial.jpeg');
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content', 'https://corretorpaulopaixao.vercel.app/assets/img/foto-residencial.jpeg');
 
   document.getElementById('f-empreendimento-hidden').value = '';
   document.getElementById('form-card-title').textContent = 'Converse conosco';

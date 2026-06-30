@@ -309,6 +309,11 @@
       transform: scale(1.02);
     }
 
+    .hero-video-wrapper video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+      -webkit-appearance: none;
+    }
+
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -1165,8 +1170,10 @@
       width: max-content;
     }
 
-    .paulo-carousel-track:hover {
-      animation-play-state: paused;
+    @media (hover: hover) {
+      .paulo-carousel-track:hover {
+        animation-play-state: paused;
+      }
     }
 
     @keyframes scrollCarousel {
@@ -2413,6 +2420,31 @@
         display: none;
       }
 
+      .nav-inner {
+        justify-content: space-between;
+      }
+
+      .nav-logo em {
+        font-size: 0.4rem;
+      }
+
+      .nav-right {
+        gap: 0.4rem;
+      }
+
+      .nav-cta {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.55rem;
+      }
+
+      .nav-cta-full {
+        display: none;
+      }
+
+      .nav-cta-short {
+        display: inline;
+      }
+
       .hero-actions {
         flex-direction: column;
         max-width: 22rem;
@@ -2462,6 +2494,19 @@
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2.5rem;
+        justify-items: center;
+      }
+
+      .footer-brand,
+      .footer-col {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-links,
+      .footer-contact {
+        align-items: center;
       }
 
       .footer-social {
@@ -2774,18 +2819,24 @@
 }
 .mobile-nav-close {
   position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
-  background: none;
-  border: none;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   line-height: 1;
-  opacity: 0.7;
-  transition: opacity 0.2s, transform 0.2s;
+  opacity: 0.9;
+  transition: opacity 0.2s, transform 0.2s, background 0.2s;
   z-index: 10;
+  font-family: var(--sans);
 }
 .mobile-nav-close:hover {
   opacity: 1;
@@ -3874,6 +3925,10 @@
 /* ── PROPERTY VIEW ── */
 #property-view {
   padding-top: 88px;
+}
+
+#property-content > .section:first-child {
+  padding-top: clamp(1.5rem, 3vh, 3rem);
 }
 
 /* ── PROPERTY VIEW BACK BAR ── */

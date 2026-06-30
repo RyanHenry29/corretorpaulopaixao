@@ -24,7 +24,12 @@ document.querySelector('.nav-logo')?.addEventListener('click', (e) => {
   if (currentPropertyId) {
     e.preventDefault();
     showHomeView();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    requestAnimationFrame(function() {
+      window.scroll(0, 0);
+    });
+    setTimeout(function() {
+      if (window.scrollY > 0) window.scroll(0, 0);
+    }, 100);
   }
 });
 
@@ -54,6 +59,10 @@ if (heroVideo && videoWrapper) {
   heroVideo.addEventListener('loadedmetadata', function() {
     if (heroVideo.readyState >= 3) tryPlayHeroVideo();
   }, { once: true });
+  heroVideo.addEventListener('ended', function() {
+    heroVideo.currentTime = 0;
+    tryPlayHeroVideo();
+  });
   document.addEventListener('visibilitychange', function() {
     if (!document.hidden) tryPlayHeroVideo();
   }, { passive: true });
@@ -61,6 +70,18 @@ if (heroVideo && videoWrapper) {
     tryPlayHeroVideo();
   }
   heroVideo.load();
+
+  var iosPlayAttempted = false;
+  function tryPlayOnInteraction() {
+    if (iosPlayAttempted) return;
+    iosPlayAttempted = true;
+    tryPlayHeroVideo();
+    if (heroVideo.paused) {
+      heroVideo.play()['catch'](function() {});
+    }
+  }
+  document.addEventListener('touchstart', tryPlayOnInteraction, { once: true, passive: true });
+  document.addEventListener('click', tryPlayOnInteraction, { once: true, passive: true });
 }
 
 // -- REVEAL ON SCROLL --
@@ -1427,7 +1448,15 @@ function openVideoLightbox(index) {
   lightbox.classList.add('is-open');
   document.body.style.overflow = 'hidden';
   player.load();
-  player.play().catch(function() {});
+  player.play().then(function() {
+    if (window.innerWidth < 768) {
+      if (player.webkitEnterFullscreen) {
+        player.webkitEnterFullscreen();
+      } else if (player.requestFullscreen) {
+        player.requestFullscreen().catch(function() {});
+      }
+    }
+  }).catch(function() {});
 }
 
 function closeVideoLightbox() {
@@ -1448,85 +1477,15 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeVideoLightbox();
 });
 
-// -- LAZY THUMBNAILS --
+// -- THUMBNAIL FALLBACK (static .jpg already set inline, just detect load failures) --
 function generateThumbnailQueue() {
-  var queue = INST_VIDEOS.map(function(_, i) { return i; });
-
-  function setFallbackThumb(idx) {
-    var el = document.getElementById('vid-thumb-' + idx);
-    if (el && !el.style.backgroundImage) {
-      el.classList.add('vid-fallback');
-    }
-  }
-
-  function processNext() {
-    if (queue.length === 0) return;
-    var idx = queue.shift();
-    var video = document.createElement('video');
-    video.muted = true;
-    video.preload = 'auto';
-    video.playsInline = true;
-    video.src = INST_VIDEOS[idx].src;
-
-    var done = false;
-    var tid = setTimeout(function() {
-      if (!done) {
-        done = true;
-        video.remove();
-        setFallbackThumb(idx);
-        processNext();
-      }
-    }, 20000);
-
-    function onSeeked() {
-      if (done) return;
-      done = true;
-      clearTimeout(tid);
-      try {
-        var vw = video.videoWidth || 640;
-        var vh = video.videoHeight || 360;
-        var maxDim = 640;
-        var scale = Math.min(maxDim / vw, maxDim / vh, 1);
-        var cw = Math.round(vw * scale);
-        var ch = Math.round(vh * scale);
-        var canvas = document.createElement('canvas');
-        canvas.width = cw;
-        canvas.height = ch;
-        var ctx = canvas.getContext('2d', { willReadFrequently: true });
-        ctx.drawImage(video, 0, 0, cw, ch);
-        var dataUrl = canvas.toDataURL('image/jpeg', 0.85);
-        var el = document.getElementById('vid-thumb-' + idx);
-        if (el) {
-          el.style.backgroundImage = 'url(' + dataUrl + ')';
-          el.style.backgroundSize = 'cover';
-          el.style.backgroundPosition = 'center';
-        }
-      } catch(e) {
-        setFallbackThumb(idx);
-      }
-      video.remove();
-      processNext();
-    }
-
-    video.addEventListener('loadeddata', function() {
-      video.currentTime = 0.1;
-    }, { once: true });
-
-    video.addEventListener('seeked', onSeeked, { once: true });
-    video.addEventListener('error', function() {
-      if (!done) {
-        done = true;
-        clearTimeout(tid);
-        video.remove();
-        setFallbackThumb(idx);
-        processNext();
-      }
-    }, { once: true });
-
-    video.load();
-  }
-
-  setTimeout(processNext, 500);
+  INST_VIDEOS.forEach(function(v, i) {
+    var el = document.getElementById('vid-thumb-' + i);
+    if (!el) return;
+    var img = new Image();
+    img.onerror = function() { el.classList.add('vid-fallback'); };
+    img.src = v.src.replace('video-', 'thumb-').replace('.mp4', '.jpg');
+  });
 }
 
 renderVideoCarousel();

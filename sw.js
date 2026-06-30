@@ -66,16 +66,22 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Demais assets: stale-while-revalidate
+  // Cross-origin: passthrough (CSP não permite fetch de CDNs no SW)
+  if (url.origin !== self.location.origin) {
+    event.respondWith(fetch(event.request).catch(function() { return new Response('', { status: 408 }); }));
+    return;
+  }
+
+  // Same-origin: stale-while-revalidate
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      const fetched = fetch(event.request).then(response => {
-        if (response && response.status === 200 && response.type === 'basic') {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(event.request, copy));
+    caches.match(event.request).then(function(cached) {
+      var fetched = fetch(event.request).then(function(response) {
+        if (response && response.status === 200) {
+          var copy = response.clone();
+          caches.open(CACHE).then(function(cache) { cache.put(event.request, copy); });
         }
         return response;
-      }).catch(() => cached);
+      }).catch(function() { return cached; });
       return cached || fetched;
     })
   );

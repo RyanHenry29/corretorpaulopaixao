@@ -57,9 +57,9 @@ const EMPREENDIMENTOS = [
     plantas: [
       {
         nome: 'Tipo D - Studio',
-        area: '27,58 m²',
-        preco: 'R$ 238.000',
-        avaliacao: 'R$ 262.000',
+        area: '27 m²',
+        preco: 'R$ 239.418,48',
+        avaliacao: 'R$ 268.905,00',
         imagem: 'assets/plantas/maro/planta-studio.jpg',
         destaque: false,
         tag: 'Studio',
@@ -78,8 +78,8 @@ const EMPREENDIMENTOS = [
       {
         nome: 'Tipo C - 2 Dorms',
         area: '39,16 m²',
-        preco: 'R$ 377.000',
-        avaliacao: 'R$ 415.000',
+        preco: 'R$ 376.584,56',
+        avaliacao: 'R$ 380.946,00',
         imagem: 'assets/plantas/maro/planta-2-dorms-com-vaga.jpg',
         destaque: true,
         tag: '2 Dormitórios',
@@ -89,8 +89,8 @@ const EMPREENDIMENTOS = [
       {
         nome: 'Tipo E - 2 Dorms',
         area: '39,16 m²',
-        preco: 'R$ 367.000',
-        avaliacao: 'R$ 402.000',
+        preco: 'R$ 320.178,08',
+        avaliacao: 'R$ 337.755,00',
         imagem: 'assets/plantas/maro/planta-2-dorms-sem-vaga.jpg',
         destaque: false,
         tag: '2 Dormitórios',
@@ -99,8 +99,8 @@ const EMPREENDIMENTOS = [
       {
         nome: 'Tipo B - 2 Dormitórios',
         area: '46,40 m²',
-        preco: 'R$ 440.000',
-        avaliacao: 'R$ 484.000',
+        preco: 'R$ 381.246,72',
+        avaliacao: 'R$ 425.280,00',
         imagem: 'assets/plantas/maro/planta-2-dorms-suite.jpg',
         destaque: false,
         tag: '2 Dormitórios',
@@ -187,9 +187,9 @@ const EMPREENDIMENTOS = [
     plantas: [
       {
         nome: 'Tipo D - Studio',
-        area: '27,58 m²',
-        preco: 'R$ 238.000',
-        avaliacao: 'R$ 262.000',
+        area: '27 m²',
+        preco: 'R$ 239.418,48',
+        avaliacao: 'R$ 268.905,00',
         imagem: 'assets/plantas/momi/planta-tipo-d.webp',
         destaque: false,
         tag: 'Studio',
@@ -208,8 +208,8 @@ const EMPREENDIMENTOS = [
       {
         nome: 'Tipo C - 2 Dorms',
         area: '39,16 m²',
-        preco: 'R$ 367.000',
-        avaliacao: 'R$ 402.000',
+        preco: 'R$ 376.584,56',
+        avaliacao: 'R$ 380.946,00',
         imagem: 'assets/plantas/momi/planta-tipo-c.webp',
         destaque: true,
         tag: '2 Dormitórios',
@@ -219,8 +219,8 @@ const EMPREENDIMENTOS = [
       {
         nome: 'Tipo E - 2 Dorms',
         area: '39,16 m²',
-        preco: 'R$ 367.000',
-        avaliacao: 'R$ 402.000',
+        preco: 'R$ 320.178,08',
+        avaliacao: 'R$ 337.755,00',
         imagem: 'assets/plantas/momi/planta-tipo-e.webp',
         destaque: false,
         tag: '2 Dormitórios',
@@ -229,8 +229,8 @@ const EMPREENDIMENTOS = [
       {
         nome: 'Tipo B - 2 Dormitórios',
         area: '46,40 m²',
-        preco: 'R$ 460.000',
-        avaliacao: 'R$ 506.000',
+        preco: 'R$ 381.246,72',
+        avaliacao: 'R$ 425.280,00',
         imagem: 'assets/plantas/momi/planta-tipo-b.webp',
         destaque: false,
         tag: '2 Dormitórios',

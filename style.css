@@ -308,6 +308,7 @@
       opacity: 1;
       transition: opacity .6s ease;
       transform: scale(1.02);
+      pointer-events: none;
     }
 
     .hero-video-wrapper video::-webkit-media-controls-start-playback-button {
@@ -3948,7 +3949,7 @@
 
 /* ── PROPERTY VIEW ── */
 #property-view {
-  padding-top: 88px;
+  padding-top: var(--nav-h, 88px);
 }
 
 #property-content > .section:first-child {
@@ -3960,7 +3961,7 @@
   background: var(--teal-dark);
   padding: 1rem clamp(1rem, 4vw, 2rem);
   position: sticky;
-  top: 0;
+  top: var(--nav-h, 88px);
   z-index: 90;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: padding .3s var(--ease-out);

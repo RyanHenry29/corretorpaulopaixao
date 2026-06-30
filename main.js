@@ -12,6 +12,18 @@ const sanitizeInput = (str) => {
 // -- NAV SCROLL --
 const nav = document.getElementById('nav');
 const propertyBackBar = document.getElementById('property-back-bar');
+
+function syncNavHeight() {
+  if (!nav) return;
+  document.documentElement.style.setProperty('--nav-h', nav.getBoundingClientRect().height + 'px');
+}
+syncNavHeight();
+window.addEventListener('resize', syncNavHeight, { passive: true });
+window.addEventListener('orientationchange', syncNavHeight, { passive: true });
+// nav height also changes when the .scrolled class toggles (padding shrinks slightly)
+const navHeightObserver = new ResizeObserver(syncNavHeight);
+if (nav) navHeightObserver.observe(nav);
+
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
   if (propertyBackBar) {
@@ -19,32 +31,119 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+// -- ROBUST SMOOTH SCROLL --
+// iOS Safari/Chrome (same WebKit engine) resize the viewport while the address
+// bar collapses/expands during a scroll. Native `scroll-behavior: smooth` and
+// `scrollIntoView()` calculate their target once and don't account for that
+// shift, so the page often lands short — frequently still inside the hero.
+// This animates the scroll ourselves and re-checks/corrects the final position
+// for a short window after the animation ends, so it always lands exactly.
+function robustScrollTo(targetY, duration) {
+  targetY = Math.max(0, Math.round(targetY));
+  duration = duration || 500;
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function settle() {
+    let checks = 0;
+    const iv = setInterval(function() {
+      checks++;
+      if (Math.abs(window.scrollY - targetY) > 1) {
+        window.scrollTo({ top: targetY, left: 0, behavior: 'instant' });
+      } else {
+        clearInterval(iv);
+      }
+      if (checks >= 6) clearInterval(iv);
+    }, 80);
+  }
+
+  if (Math.abs(distance) < 2) {
+    window.scrollTo({ top: targetY, left: 0, behavior: 'instant' });
+    settle();
+    return;
+  }
+
+  function step(ts) {
+    if (startTime === null) startTime = ts;
+    const elapsed = ts - startTime;
+    const t = Math.min(1, elapsed / duration);
+    window.scrollTo({ top: startY + distance * easeOutCubic(t), left: 0, behavior: 'instant' });
+    if (t < 1) {
+      requestAnimationFrame(step);
+    } else {
+      settle();
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function getScrollOffset() {
+  return (nav ? nav.getBoundingClientRect().height : 0) + 12;
+}
+
+function scrollToElement(el, extra) {
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY - getScrollOffset() - (extra || 0);
+  robustScrollTo(y);
+}
+
+// Intercept every in-page anchor link so they all go through robustScrollTo
+// instead of the native (CSS scroll-behavior / scrollIntoView) scroll, which
+// is what was landing short on iOS.
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  const hash = link.getAttribute('href');
+  if (!hash || hash === '#') return;
+  e.preventDefault();
+  if (hash === '#formulario') {
+    history.pushState(null, '', hash);
+    scrollToFormCard();
+    return;
+  }
+  const targetEl = document.querySelector(hash);
+  if (!targetEl) return;
+  scrollToElement(targetEl);
+  if (history.pushState) {
+    history.pushState(null, '', hash);
+  }
+});
+
 // -- LOGO CLICK (voltar ao topo da home) --
 document.querySelector('.nav-logo')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
   if (currentPropertyId) {
-    e.preventDefault();
-    showHomeView();
-    requestAnimationFrame(function() {
-      window.scroll(0, 0);
-    });
-    setTimeout(function() {
-      if (window.scrollY > 0) window.scroll(0, 0);
-    }, 100);
+    showHomeView(); // showHomeView() already scrolls to top
+  } else {
+    robustScrollTo(0);
   }
 });
 
 // -- HERO VIDEO --
 const heroVideo = document.getElementById('hero-video');
 const videoWrapper = document.getElementById('video-wrapper');
+let heroVideoStarted = false;
 
 function showHeroVideo() {
+  heroVideoStarted = true;
   videoWrapper.classList.add('video-ready');
 }
 
 function tryPlayHeroVideo() {
+  if (!heroVideo || heroVideoStarted) return;
   if (document.hidden) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (navigator.connection && (navigator.connection.effectiveType === '2g' || navigator.connection.effectiveType === 'slow-2g')) return;
+  // iOS (Safari and Chrome, both WebKit) only honors the muted attribute reliably
+  // when it's also set as a JS property — without this, Low Power Mode and some
+  // WebKit builds silently block autoplay and leave the native "tap to play" button.
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
   var p = heroVideo.play();
   if (p && typeof p.then === 'function') {
     p.then(showHeroVideo).catch(function() {});
@@ -54,6 +153,10 @@ function tryPlayHeroVideo() {
 }
 
 if (heroVideo && videoWrapper) {
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.playsInline = true;
+
   heroVideo.addEventListener('canplay', tryPlayHeroVideo, { once: true });
   heroVideo.addEventListener('playing', showHeroVideo, { once: true });
   heroVideo.addEventListener('loadedmetadata', function() {
@@ -66,14 +169,32 @@ if (heroVideo && videoWrapper) {
   document.addEventListener('visibilitychange', function() {
     if (!document.hidden) tryPlayHeroVideo();
   }, { passive: true });
+  // iOS Safari/Chrome freeze the video on the bfcache restore (swipe-back, tab switch).
+  window.addEventListener('pageshow', function() {
+    if (!heroVideoStarted) tryPlayHeroVideo();
+  });
   if (heroVideo.readyState >= 2) {
     tryPlayHeroVideo();
   }
   heroVideo.load();
 
-  document.addEventListener('click', function tryPlayOnClick() {
+  // When Low Power Mode (or a strict autoplay policy) blocks silent autoplay,
+  // iOS only allows play() to succeed inside a real user-gesture handler.
+  // Listen for the first touch/scroll/click — whichever happens first — and
+  // retry synchronously inside that handler so it still counts as a gesture.
+  var gestureEvents = ['touchstart', 'pointerdown', 'click', 'scroll'];
+  function gestureRetry() {
+    if (heroVideoStarted) {
+      gestureEvents.forEach(function(evt) {
+        document.removeEventListener(evt, gestureRetry);
+      });
+      return;
+    }
     tryPlayHeroVideo();
-  }, { once: true });
+  }
+  gestureEvents.forEach(function(evt) {
+    document.addEventListener(evt, gestureRetry, { passive: true });
+  });
 }
 
 // -- REVEAL ON SCROLL --
@@ -205,7 +326,7 @@ function showPropertyView(id) {
   nav.classList.add('is-property');
 
   renderPropertyDetail(emp);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  robustScrollTo(0);
   history.pushState(null, '', `#${emp.slug}`);
   document.title = `${emp.nome} · Corretor Paulo Paixão`;
   document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${emp.nome} · Corretor Paulo Paixão`);
@@ -229,7 +350,7 @@ function showHomeView() {
   document.getElementById('section-nav').style.display = '';
   nav.classList.remove('is-property');
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  robustScrollTo(0);
   history.pushState(null, '', '/');
   document.title = 'Corretor Paulo Paixão';
   document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Corretor Paulo Paixão · Residencial Maro — Guarulhos');
@@ -918,9 +1039,7 @@ function scrollToFormCard() {
     : document.querySelector('.pq-card');
   if (!target) return;
   requestAnimationFrame(() => {
-    const navHeight = document.getElementById('nav')?.getBoundingClientRect().height || 0;
-    const elTop = target.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: Math.max(0, elTop - navHeight - 44), behavior: 'smooth' });
+    scrollToElement(target, 32);
   });
 }
 
@@ -960,14 +1079,6 @@ document.querySelectorAll('[data-submit-form]').forEach(button => {
   button.addEventListener('click', event => {
     event.preventDefault();
     submitForm();
-  });
-});
-
-document.querySelectorAll('a[href="#formulario"]').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    history.pushState(null, '', '#formulario');
-    scrollToFormCard();
   });
 });
 
@@ -1269,18 +1380,12 @@ const updateArrow = () => {
 if (sectionNav) {
   sectionNav.addEventListener('click', function scrollNavClick() {
     if (isGoingUp) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      requestAnimationFrame(function() {
-        if (window.scrollY > 0) window.scroll(0, 0);
-      });
-      setTimeout(function() {
-        if (window.scrollY > 0) window.scroll(0, 0);
-      }, 120);
+      robustScrollTo(0);
       currentScrollSection = 0;
     } else {
       const target = scrollSections[currentScrollSection + 1];
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        scrollToElement(target);
         currentScrollSection = Math.min(currentScrollSection + 1, scrollSections.length - 1);
       }
     }

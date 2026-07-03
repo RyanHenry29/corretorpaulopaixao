@@ -1452,14 +1452,14 @@ if (hamburger && mobileNav) {
 
 // -- INSTITUTIONAL VIDEOS --
 var INST_VIDEOS = [
-  { src: 'assets/videos/institucionais/video-01.mp4', title: 'Quem é Paulo Paixão | Seu Corretor de Confiança em Guarulhos' },
-  { src: 'assets/videos/institucionais/video-03.mp4', title: 'Por que o Residencial Maro é a Melhor Escolha' },
-  { src: 'assets/videos/institucionais/video-05.mp4', title: 'FGTS Parado? Descubra Como Usar na Sua Casa Própria' },
-  { src: 'assets/videos/institucionais/video-06.mp4', title: 'Residencial Maro: Conheça as Unidades Disponíveis' },
-  { src: 'assets/videos/institucionais/video-04.mp4', title: 'Tour Exclusivo: Conheça Seu Futuro Lar dos Sonhos' },
-  { src: 'assets/videos/institucionais/video-07.mp4', title: 'O Apartamento Por Dentro: Acabamento e Qualidade' },
-  { src: 'assets/videos/institucionais/video-08.mp4', title: 'Localização Estratégica: Tudo Perto de Você' },
-  { src: 'assets/videos/institucionais/video-09.mp4', title: 'Ambiente Decorado: Veja Como Fica o Seu' }
+  { src: 'assets/videos/institucionais/video-01.mp4?v=2', title: 'Quem é Paulo Paixão | Seu Corretor de Confiança em Guarulhos' },
+  { src: 'assets/videos/institucionais/video-03.mp4?v=2', title: 'Por que o Residencial Maro é a Melhor Escolha' },
+  { src: 'assets/videos/institucionais/video-05.mp4?v=2', title: 'FGTS Parado? Descubra Como Usar na Sua Casa Própria' },
+  { src: 'assets/videos/institucionais/video-06.mp4?v=2', title: 'Residencial Maro: Conheça as Unidades Disponíveis' },
+  { src: 'assets/videos/institucionais/video-04.mp4?v=2', title: 'Tour Exclusivo: Conheça Seu Futuro Lar dos Sonhos' },
+  { src: 'assets/videos/institucionais/video-07.mp4?v=2', title: 'O Apartamento Por Dentro: Acabamento e Qualidade' },
+  { src: 'assets/videos/institucionais/video-08.mp4?v=2', title: 'Localização Estratégica: Tudo Perto de Você' },
+  { src: 'assets/videos/institucionais/video-09.mp4?v=2', title: 'Ambiente Decorado: Veja Como Fica o Seu' }
 ];
 
 var vidCarouselIndex = 0;

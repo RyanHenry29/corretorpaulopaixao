@@ -1546,6 +1546,58 @@ function carouselPrev() {
 document.getElementById('vid-carousel-next')?.addEventListener('click', carouselNext);
 document.getElementById('vid-carousel-prev')?.addEventListener('click', carouselPrev);
 
+// -- SWIPE/TOUCH NO CARROSSEL DE VÍDEOS --
+// Permite arrastar com o dedo (mobile) para trocar de vídeo, sem precisar
+// tocar exatamente nas setas.
+(function() {
+  var vidCarousel = document.getElementById('vid-carousel-track');
+  if (!vidCarousel) return;
+
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var touchDeltaX = 0;
+  var isSwiping = false;
+  var SWIPE_THRESHOLD = 40; // px mínimos para considerar um swipe válido
+
+  vidCarousel.addEventListener('touchstart', function(e) {
+    var t = e.touches[0];
+    touchStartX = t.clientX;
+    touchStartY = t.clientY;
+    touchDeltaX = 0;
+    isSwiping = true;
+    stopVidAutoplay();
+  }, { passive: true });
+
+  vidCarousel.addEventListener('touchmove', function(e) {
+    if (!isSwiping) return;
+    var t = e.touches[0];
+    touchDeltaX = t.clientX - touchStartX;
+    var deltaY = t.clientY - touchStartY;
+    // Só considera gesto horizontal (evita brigar com o scroll vertical da página)
+    if (Math.abs(touchDeltaX) > Math.abs(deltaY)) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  vidCarousel.addEventListener('touchend', function() {
+    if (!isSwiping) return;
+    isSwiping = false;
+    if (touchDeltaX <= -SWIPE_THRESHOLD) {
+      carouselNext(); // arrastou para a esquerda -> próximo
+    } else if (touchDeltaX >= SWIPE_THRESHOLD) {
+      carouselPrev(); // arrastou para a direita -> anterior
+    } else {
+      delayVidAutoplay();
+    }
+    touchDeltaX = 0;
+  });
+
+  vidCarousel.addEventListener('touchcancel', function() {
+    isSwiping = false;
+    delayVidAutoplay();
+  });
+})();
+
 function openVideoLightbox(index) {
   var v = INST_VIDEOS[index];
   if (!v) return;

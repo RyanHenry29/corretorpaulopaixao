@@ -7,7 +7,7 @@ const EMPREENDIMENTOS = [
     bairro: 'Itapegica',
     cidade: 'Guarulhos - SP',
     faixaPreco: 'R$ 239.418 a R$ 381.247',
-    fotoCapa: 'assets/fotos/maro/fachada.png',
+    fotoCapa: 'assets/fotos/maro/fachada.jpg',
     video: 'assets/videos/hero-video.mp4',
     corDestaque: '#084B51',
     descricaoCurta: 'Primeiro lançamento do Pátio Guarulhos by BP8. Apartamentos de 27 a 46 m² em frente ao Shopping Internacional Guarulhos, ao lado da futura Estação Dutra de metrô. Financiamento MCMV disponível.',

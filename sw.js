@@ -1,4 +1,4 @@
-const CACHE = 'paulo-paixao-v5';
+const CACHE = 'paulo-paixao-v6';
 const IMG_CACHE = 'paulo-paixao-imgs-v3';
 const MAX_IMG_CACHE = 50;
 
@@ -73,7 +73,27 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Same-origin: stale-while-revalidate
+  // HTML/JS/CSS (documento principal e código do site): network-first.
+  // Sempre tenta buscar a versão mais nova primeiro; só usa o cache como
+  // reserva se o usuário estiver offline. Isso evita que quem já visitou o
+  // site fique preso numa versão antiga (CSP, assets, etc.) depois de um
+  // novo deploy.
+  if (event.request.mode === 'navigate' || /\.(html|js|css)$/i.test(url.pathname) || url.pathname === '/') {
+    event.respondWith(
+      fetch(event.request).then(function(response) {
+        if (response && response.status === 200) {
+          var copy = response.clone();
+          caches.open(CACHE).then(function(cache) { cache.put(event.request, copy); });
+        }
+        return response;
+      }).catch(function() {
+        return caches.match(event.request);
+      })
+    );
+    return;
+  }
+
+  // Demais arquivos same-origin: stale-while-revalidate
   event.respondWith(
     caches.match(event.request).then(function(cached) {
       var fetched = fetch(event.request).then(function(response) {

@@ -333,7 +333,7 @@
             <p class="pq-question">Em qual cidade você quer comprar?</p>
             <p class="pq-context">Usamos sua cidade para mostrar os empreendimentos mais próximos de você.</p>
             <div class="pq-input-wrap">
-              <input type="text" id="pq-cidade" class="pq-input" placeholder="Ex: Guarulhos" maxlength="60">
+              <input type="text" id="pq-cidade" aria-label="Em qual cidade você quer comprar?" class="pq-input" placeholder="Ex: Guarulhos" maxlength="60">
             </div>
           </div>
 
@@ -343,7 +343,7 @@
             <p class="pq-context">Essa informação serve apenas para verificar quais empreendimentos você pode financiar.</p>
             <div class="pq-input-group">
               <span class="pq-input-currency">R$</span>
-              <input type="number" class="pq-input" id="pq-renda-input" min="0" step="100" placeholder="0,00">
+              <input type="number" class="pq-input" id="pq-renda-input" aria-label="Qual é a sua renda familiar mensal?" min="0" step="100" placeholder="0,00">
             </div>
           </div>
 
@@ -363,7 +363,7 @@
             <p class="pq-context">Uma estimativa já ajuda a calcular seu poder de compra.</p>
             <div class="pq-input-group">
               <span class="pq-input-currency">R$</span>
-              <input type="number" class="pq-input" id="pq-renda-comp-input" min="0" step="100" placeholder="0,00">
+              <input type="number" class="pq-input" id="pq-renda-comp-input" aria-label="Qual a renda aproximada dessa pessoa?" min="0" step="100" placeholder="0,00">
             </div>
           </div>
 
@@ -383,7 +383,7 @@
             <p class="pq-context">Uma estimativa já ajuda a calcular seu poder de compra total.</p>
             <div class="pq-input-group">
               <span class="pq-input-currency">R$</span>
-              <input type="number" class="pq-input" id="pq-renda-comp2-input" min="0" step="100" placeholder="0,00">
+              <input type="number" class="pq-input" id="pq-renda-comp2-input" aria-label="Qual a renda aproximada dessa segunda pessoa?" min="0" step="100" placeholder="0,00">
             </div>
           </div>
 
@@ -562,7 +562,7 @@
 
                 <!-- CIDADE (preenchido da pré-análise) -->
                 <div class="form-group-prefill" id="f-cidade-wrap" style="display:none">
-                  <label><i class="fa-solid fa-location-dot"></i> Cidade de interesse</label>
+                  <label for="f-cidade"><i class="fa-solid fa-location-dot"></i> Cidade de interesse</label>
                   <input type="text" id="f-cidade" readonly tabindex="-1">
                 </div>
 

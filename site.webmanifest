@@ -1,7 +1,7 @@
 {
-  "name": "Corretor Paulo Paixão — Residencial Maro",
+  "name": "Corretor Paulo Paixão",
   "short_name": "Corretor Paulo Paixão",
-  "description": "Site oficial do Corretor Paulo Paixão — Residencial Maro Guarulhos",
+  "description": "Corretor de imóveis em Guarulhos. Consultoria completa para financiamento, FGTS e subsídio.",
   "start_url": "/",
   "scope": "/",
   "categories": ["real estate", "imobiliaria"],

@@ -308,7 +308,9 @@
       opacity: 1;
       transition: opacity .6s ease;
       transform: scale(1.02);
-      pointer-events: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .hero-video-wrapper video::-webkit-media-controls-start-playback-button {

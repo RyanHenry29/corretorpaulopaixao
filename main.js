@@ -127,6 +127,7 @@ document.querySelector('.nav-logo')?.addEventListener('click', (e) => {
 const heroVideo = document.getElementById('hero-video');
 const videoWrapper = document.getElementById('video-wrapper');
 let heroVideoStarted = false;
+let heroVideoUserGestureHappened = false;
 
 function showHeroVideo() {
   heroVideoStarted = true;
@@ -138,6 +139,13 @@ function tryPlayHeroVideo() {
   if (document.hidden) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (navigator.connection && (navigator.connection.effectiveType === '2g' || navigator.connection.effectiveType === 'slow-2g')) return;
+  // "Economia de dados" (Android Data Saver / navegadores baseados em Chromium) —
+  // normalmente ligado junto com o modo de economia de bateria. Quando ativo, o
+  // usuário optou explicitamente por evitar consumo automático de dados/bateria;
+  // respeitamos isso e não forçamos o autoplay (o poster cobre esse caso
+  // graciosamente). Ainda assim, um toque real do usuário libera a reprodução
+  // normalmente (ver gestureRetry abaixo).
+  if (navigator.connection && navigator.connection.saveData && !heroVideoUserGestureHappened) return;
   // iOS (Safari and Chrome, both WebKit) only honors the muted attribute reliably
   // when it's also set as a JS property — without this, Low Power Mode and some
   // WebKit builds silently block autoplay and leave the native "tap to play" button.
@@ -178,12 +186,16 @@ if (heroVideo && videoWrapper) {
   }
   heroVideo.load();
 
-  // When Low Power Mode (or a strict autoplay policy) blocks silent autoplay,
-  // iOS only allows play() to succeed inside a real user-gesture handler.
-  // Listen for the first touch/scroll/click — whichever happens first — and
-  // retry synchronously inside that handler so it still counts as a gesture.
-  var gestureEvents = ['touchstart', 'pointerdown', 'click', 'scroll'];
+  // When Low Power Mode / Data Saver (or a strict autoplay policy) blocks silent
+  // autoplay, some engines only allow play() to succeed inside a real
+  // user-gesture handler. Listen for the first genuine interaction — using the
+  // specific event types the HTML spec guarantees count as "user activation"
+  // (touchend, keydown, pointerup/click) — and retry synchronously inside that
+  // handler so it still counts as a gesture. touchstart/scroll are kept too for
+  // broader coverage on engines that are more lenient.
+  var gestureEvents = ['touchend', 'pointerup', 'click', 'keydown', 'touchstart', 'pointerdown', 'scroll'];
   function gestureRetry() {
+    heroVideoUserGestureHappened = true;
     if (heroVideoStarted) {
       gestureEvents.forEach(function(evt) {
         document.removeEventListener(evt, gestureRetry);
@@ -195,6 +207,18 @@ if (heroVideo && videoWrapper) {
   gestureEvents.forEach(function(evt) {
     document.addEventListener(evt, gestureRetry, { passive: true });
   });
+
+  // Retry whenever the hero scrolls back into view (covers coming back to the
+  // top after browsing other sections, in addition to the initial load/pageshow
+  // handling above).
+  if ('IntersectionObserver' in window) {
+    var heroVisibilityObserver = new IntersectionObserver(function(entries) {
+      if (entries[0] && entries[0].isIntersecting && !heroVideoStarted) {
+        tryPlayHeroVideo();
+      }
+    }, { threshold: 0.15 });
+    heroVisibilityObserver.observe(videoWrapper);
+  }
 }
 
 // -- REVEAL ON SCROLL --

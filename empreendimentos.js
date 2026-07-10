@@ -108,7 +108,6 @@ const EMPREENDIMENTOS = [
       }
     ],
     galeria: [
-      { src: 'assets/fotos/maro/galeria/01_fachada.jpeg', caption: 'Fachada Noturna' },
       { src: 'assets/fotos/maro/galeria/02_fachada2.jpeg', caption: 'Fachada' },
       { src: 'assets/fotos/maro/galeria/03_portaria.jpeg', caption: 'Portaria' },
       { src: 'assets/fotos/maro/galeria/04_salaofestas1.jpeg', caption: 'Salão de Festas 1' },

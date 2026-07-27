@@ -569,13 +569,13 @@ function updateVagaOptions(vagaTipo) {
     semInput.checked = false;
     semInput.disabled = true;
     comInput.checked = true;
-    if (hint) { hint.textContent = 'Esta planta já possui vaga de garagem inclusa.'; hint.style.display = ''; }
+    if (hint) { hint.textContent = 'Esta planta concorre a vaga de garagem (sorteada em assembleia entre as unidades com direito de uso).'; hint.style.display = ''; }
   } else if (vagaTipo === 'sem') {
     comLabel.style.display = 'none';
     comInput.checked = false;
     comInput.disabled = true;
     semInput.checked = true;
-    if (hint) { hint.textContent = 'Esta planta não possui vaga de garagem disponível.'; hint.style.display = ''; }
+    if (hint) { hint.textContent = 'Esta planta não possui direito de uso de vaga de garagem.'; hint.style.display = ''; }
   } else {
     comInput.checked = false;
     semInput.checked = false;

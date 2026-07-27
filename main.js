@@ -386,6 +386,8 @@ function showHomeView() {
 
   const container = document.getElementById('planta-options');
   if (container) container.innerHTML = '';
+  const vagaWrap = document.getElementById('vaga-wrap');
+  if (vagaWrap) vagaWrap.hidden = true;
   resetPreQual();
 
   if (typeof scrollSecObserver !== 'undefined' && scrollSecObserver) {
@@ -405,9 +407,6 @@ function renderPropertyDetail(emp) {
       <div class="tipo-tag">${p.tag}</div>
       <div class="tipo-name">${p.nome}</div>
       <div class="tipo-area">${p.area}</div>
-      <div class="tipo-price-label">Preço Base</div>
-      <div class="tipo-price">${p.preco}</div>
-      <div class="tipo-avaliacao">${p.avaliacao ? 'Avaliado em ' + p.avaliacao : ''}</div>
       <a href="#formulario" class="tipo-cta" data-planta="${p.nome}" data-emp-id="${emp.id}">Quero esta planta</a>
     </div>
   `).join('');
@@ -536,15 +535,63 @@ function populatePlantaOptions(emp) {
   if (!container) return;
   container.innerHTML = emp.plantas.map(p => `
     <label class="form-radio">
-      <input type="radio" name="planta" value="${p.nome}" required aria-required="true"> ${p.nome}
+      <input type="radio" name="planta" value="${p.nome}" data-vaga="${p.vaga || 'ambas'}" required aria-required="true"> ${p.nome}
     </label>
   `).join('');
+
+  container.querySelectorAll('input[name="planta"]').forEach(radio => {
+    radio.addEventListener('change', () => updateVagaOptions(radio.dataset.vaga));
+  });
+
+  const vagaWrap = document.getElementById('vaga-wrap');
+  if (vagaWrap) vagaWrap.hidden = true;
+}
+
+// -- SHOW/HIDE "COM VAGA" / "SEM VAGA" DE ACORDO COM A PLANTA ESCOLHIDA --
+function updateVagaOptions(vagaTipo) {
+  const wrap = document.getElementById('vaga-wrap');
+  if (!wrap) return;
+  const comInput = wrap.querySelector('input[name="vaga"][value="Com vaga de garagem"]');
+  const semInput = wrap.querySelector('input[name="vaga"][value="Sem vaga de garagem"]');
+  const comLabel = comInput?.closest('.form-radio');
+  const semLabel = semInput?.closest('.form-radio');
+  const hint = document.getElementById('vaga-hint');
+  if (!comInput || !semInput) return;
+
+  comLabel.style.display = '';
+  semLabel.style.display = '';
+  comInput.disabled = false;
+  semInput.disabled = false;
+  if (hint) { hint.style.display = 'none'; hint.textContent = ''; }
+
+  if (vagaTipo === 'com') {
+    semLabel.style.display = 'none';
+    semInput.checked = false;
+    semInput.disabled = true;
+    comInput.checked = true;
+    if (hint) { hint.textContent = 'Esta planta já possui vaga de garagem inclusa.'; hint.style.display = ''; }
+  } else if (vagaTipo === 'sem') {
+    comLabel.style.display = 'none';
+    comInput.checked = false;
+    comInput.disabled = true;
+    semInput.checked = true;
+    if (hint) { hint.textContent = 'Esta planta não possui vaga de garagem disponível.'; hint.style.display = ''; }
+  } else {
+    comInput.checked = false;
+    semInput.checked = false;
+  }
+
+  wrap.hidden = false;
+  wrap.querySelector('.form-group')?.classList.remove('error');
 }
 
 function selectPlanta(planta) {
   const radios = document.querySelectorAll('input[name="planta"]');
   radios.forEach(r => {
-    if (r.value === planta) r.checked = true;
+    if (r.value === planta) {
+      r.checked = true;
+      updateVagaOptions(r.dataset.vaga || 'ambas');
+    }
   });
 }
 
@@ -1214,6 +1261,7 @@ function buildFormSummary() {
   var civil = document.getElementById('f-civil').value || '—';
   var depend = document.getElementById('f-dependentes').value || '—';
   var planta = document.querySelector('input[name="planta"]:checked')?.value || '—';
+  var vaga = document.querySelector('input[name="vaga"]:checked')?.value || '—';
   var primeiroImovel = document.querySelector('input[name="primeiro-imovel"]:checked')?.value || '—';
   var prazo = document.querySelector('input[name="prazo"]:checked')?.value || '—';
 
@@ -1253,6 +1301,7 @@ function buildFormSummary() {
       '<div class="form-summary-row"><span>Estado civil</span><span>' + civil + '</span></div>' +
       '<div class="form-summary-row"><span>Dependentes</span><span>' + depend + '</span></div>' +
       '<div class="form-summary-row"><span>Planta</span><span>' + planta + '</span></div>' +
+      '<div class="form-summary-row"><span>Vaga de garagem</span><span>' + vaga + '</span></div>' +
       '<div class="form-summary-row"><span>1\u00ba im\u00f3vel</span><span>' + primeiroImovel + '</span></div>' +
     '</div>' +
     '<div class="form-summary-section">' +
@@ -1304,6 +1353,7 @@ function submitForm() {
     ? (document.getElementById('f-conjuge-renda').checked ? 'Sim' : 'Não')
     : '';
   var planta = document.querySelector('input[name="planta"]:checked')?.value || '';
+  var vaga = document.querySelector('input[name="vaga"]:checked')?.value || '';
   var primeiroImovel = document.querySelector('input[name="primeiro-imovel"]:checked')?.value || '';
   var entrada = document.getElementById('f-entrada').value.trim();
   var restricao = document.getElementById('f-restricao').value;
@@ -1359,6 +1409,7 @@ function submitForm() {
   msg += line('Dependentes', depend);
   if (conjugeRenda) msg += line('C\u00F4njuge comp\u00F5e renda', conjugeRenda);
   msg += line('Planta de interesse', planta);
+  msg += line('Vaga de garagem', vaga);
   msg += line('Primeiro im\u00F3vel', primeiroImovel);
   if (entrada) msg += line('Entrada dispon\u00EDvel', entrada);
   if (restricao) msg += line('Restri\u00E7\u00E3o CPF', restricao);

@@ -634,6 +634,17 @@
                   </div>
                   <div class="error-message" role="alert">Selecione uma planta</div>
                 </div>
+                <div class="form-conditional" id="vaga-wrap" hidden>
+                  <div class="form-group">
+                    <span class="form-group-label" id="vaga-label">Deseja vaga de garagem? *</span>
+                    <div class="form-radio-group" id="vaga-options" style="grid-template-columns: 1fr 1fr;" role="radiogroup" aria-labelledby="vaga-label">
+                      <label class="form-radio" data-vaga-option="com"><input type="radio" name="vaga" value="Com vaga de garagem" required aria-required="true"> Com vaga de garagem</label>
+                      <label class="form-radio" data-vaga-option="sem"><input type="radio" name="vaga" value="Sem vaga de garagem" required aria-required="true"> Sem vaga de garagem</label>
+                    </div>
+                    <p class="form-hint" id="vaga-hint" style="display:none;"></p>
+                    <div class="error-message" role="alert">Selecione uma opção de vaga</div>
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="form-group">
                     <span class="form-group-label">Primeiro imóvel? *</span>

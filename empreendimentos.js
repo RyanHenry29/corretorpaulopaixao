@@ -63,7 +63,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/maro/planta-studio.jpg',
         destaque: false,
         tag: 'Studio',
-        slug: 'tipo-d-studio'
+        slug: 'tipo-d-studio',
+        vaga: 'sem' // TODO confirmar com PDF: assumido "sem vaga" (studio)
       },
       {
         nome: 'Tipo A - 2 Dorms',
@@ -73,7 +74,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/maro/planta-2-dorms-sem-vaga.jpg',
         destaque: false,
         tag: '2 Dormitórios',
-        slug: 'tipo-a-2-dorms'
+        slug: 'tipo-a-2-dorms',
+        vaga: 'sem' // baseado no nome do arquivo da planta
       },
       {
         nome: 'Tipo C - 2 Dorms',
@@ -84,7 +86,8 @@ const EMPREENDIMENTOS = [
         destaque: true,
         tag: '2 Dormitórios',
         badge: 'Mais vendido',
-        slug: 'tipo-c-2-dorms'
+        slug: 'tipo-c-2-dorms',
+        vaga: 'com' // baseado no nome do arquivo da planta
       },
       {
         nome: 'Tipo E - 2 Dorms',
@@ -94,7 +97,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/maro/planta-2-dorms-sem-vaga.jpg',
         destaque: false,
         tag: '2 Dormitórios',
-        slug: 'tipo-e-2-dorms'
+        slug: 'tipo-e-2-dorms',
+        vaga: 'sem' // baseado no nome do arquivo da planta
       },
       {
         nome: 'Tipo B - 2 Dormitórios',
@@ -104,7 +108,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/maro/planta-2-dorms-suite.jpg',
         destaque: false,
         tag: '2 Dormitórios',
-        slug: 'tipo-b-2-dorms-suite'
+        slug: 'tipo-b-2-dorms-suite',
+        vaga: 'com' // TODO confirmar com PDF: assumido "com vaga" (maior metragem)
       }
     ],
     galeria: [
@@ -192,7 +197,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/momi/planta-tipo-d.webp',
         destaque: false,
         tag: 'Studio',
-        slug: 'tipo-d-studio'
+        slug: 'tipo-d-studio',
+        vaga: 'sem' // TODO confirmar com PDF: assumido "sem vaga" (studio)
       },
       {
         nome: 'Tipo A - 2 Dorms',
@@ -202,7 +208,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/momi/planta-tipo-a.webp',
         destaque: false,
         tag: '2 Dormitórios',
-        slug: 'tipo-a-2-dorms'
+        slug: 'tipo-a-2-dorms',
+        vaga: 'sem' // TODO confirmar com PDF (espelhado do Tipo A do Maro)
       },
       {
         nome: 'Tipo C - 2 Dorms',
@@ -213,7 +220,8 @@ const EMPREENDIMENTOS = [
         destaque: true,
         tag: '2 Dormitórios',
         badge: 'Mais vendido',
-        slug: 'tipo-c-2-dorms'
+        slug: 'tipo-c-2-dorms',
+        vaga: 'com' // TODO confirmar com PDF (espelhado do Tipo C do Maro)
       },
       {
         nome: 'Tipo E - 2 Dorms',
@@ -223,7 +231,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/momi/planta-tipo-e.webp',
         destaque: false,
         tag: '2 Dormitórios',
-        slug: 'tipo-e-2-dorms'
+        slug: 'tipo-e-2-dorms',
+        vaga: 'sem' // TODO confirmar com PDF (espelhado do Tipo E do Maro)
       },
       {
         nome: 'Tipo B - 2 Dormitórios',
@@ -233,7 +242,8 @@ const EMPREENDIMENTOS = [
         imagem: 'assets/plantas/momi/planta-tipo-b.webp',
         destaque: false,
         tag: '2 Dormitórios',
-        slug: 'tipo-b-2-dorms-suite'
+        slug: 'tipo-b-2-dorms-suite',
+        vaga: 'com' // TODO confirmar com PDF: assumido "com vaga" (maior metragem)
       }
     ],
     galeria: [

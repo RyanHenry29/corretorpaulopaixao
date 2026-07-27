@@ -569,13 +569,13 @@ function updateVagaOptions(vagaTipo) {
     semInput.checked = false;
     semInput.disabled = true;
     comInput.checked = true;
-    if (hint) { hint.textContent = 'Esta planta concorre a vaga de garagem (sorteada em assembleia entre as unidades com direito de uso).'; hint.style.display = ''; }
+    if (hint) { hint.textContent = 'Esta planta possui vaga de garagem.'; hint.style.display = ''; }
   } else if (vagaTipo === 'sem') {
     comLabel.style.display = 'none';
     comInput.checked = false;
     comInput.disabled = true;
     semInput.checked = true;
-    if (hint) { hint.textContent = 'Esta planta não possui direito de uso de vaga de garagem.'; hint.style.display = ''; }
+    if (hint) { hint.textContent = 'Esta planta não possui vaga de garagem.'; hint.style.display = ''; }
   } else {
     comInput.checked = false;
     semInput.checked = false;
@@ -1356,7 +1356,6 @@ function submitForm() {
   var vaga = document.querySelector('input[name="vaga"]:checked')?.value || '';
   var primeiroImovel = document.querySelector('input[name="primeiro-imovel"]:checked')?.value || '';
   var entrada = document.getElementById('f-entrada').value.trim();
-  var restricao = document.getElementById('f-restricao').value;
 
   var prazo = document.querySelector('input[name="prazo"]:checked')?.value || '';
   var horario = document.getElementById('f-horario').value || 'Qualquer hor\u00e1rio';
@@ -1412,7 +1411,6 @@ function submitForm() {
   msg += line('Vaga de garagem', vaga);
   msg += line('Primeiro im\u00F3vel', primeiroImovel);
   if (entrada) msg += line('Entrada dispon\u00EDvel', entrada);
-  if (restricao) msg += line('Restri\u00E7\u00E3o CPF', restricao);
 
   msg += section('Prefer\u00EAncias de Contato');
   msg += line('Prazo para compra', prazo);

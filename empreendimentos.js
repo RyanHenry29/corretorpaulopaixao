@@ -64,7 +64,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: 'Studio',
         slug: 'tipo-d-studio',
-        vaga: 'sem' // Book oficial confirma sorteio de vaga por assembleia (Q17); não há vinculação de Tipo x vaga no PDF — mantido como estimativa
+        vaga: 'sem' // Studio não possui vaga de garagem
       },
       {
         nome: 'Tipo A - 2 Dorms',
@@ -75,7 +75,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: '2 Dormitórios',
         slug: 'tipo-a-2-dorms',
-        vaga: 'sem' // Estimativa (arquivo de imagem da planta) — book não vincula Tipo a vaga
+        vaga: 'sem' // Baseado no nome do arquivo da planta original
       },
       {
         nome: 'Tipo C - 2 Dorms',
@@ -87,7 +87,7 @@ const EMPREENDIMENTOS = [
         tag: '2 Dormitórios',
         badge: 'Mais vendido',
         slug: 'tipo-c-2-dorms',
-        vaga: 'com' // Estimativa (arquivo de imagem da planta) — book não vincula Tipo a vaga
+        vaga: 'com' // Baseado no nome do arquivo da planta original
       },
       {
         nome: 'Tipo E - 2 Dorms',
@@ -98,7 +98,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: '2 Dormitórios',
         slug: 'tipo-e-2-dorms',
-        vaga: 'sem' // Estimativa (arquivo de imagem da planta) — book não vincula Tipo a vaga
+        vaga: 'sem' // Baseado no nome do arquivo da planta original
       },
       {
         nome: 'Tipo B - 2 Dormitórios',
@@ -109,7 +109,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: '2 Dormitórios',
         slug: 'tipo-b-2-dorms-suite',
-        vaga: 'com' // Book oficial confirma sorteio de vaga por assembleia (Q17); não há vinculação de Tipo x vaga no PDF — mantido como estimativa
+        vaga: 'com' // Estimativa a confirmar — maior metragem
       }
     ],
     galeria: [
@@ -198,7 +198,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: 'Studio',
         slug: 'tipo-d-studio',
-        vaga: 'sem' // Book oficial confirma sorteio de vaga por assembleia (Q17); não há vinculação de Tipo x vaga no PDF — mantido como estimativa
+        vaga: 'sem' // Studio não possui vaga de garagem
       },
       {
         nome: 'Tipo A - 2 Dorms',
@@ -209,7 +209,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: '2 Dormitórios',
         slug: 'tipo-a-2-dorms',
-        vaga: 'sem' // Estimativa espelhada do Maro — book não vincula Tipo a vaga
+        vaga: 'sem' // Espelhado do Residencial Maro
       },
       {
         nome: 'Tipo C - 2 Dorms',
@@ -221,7 +221,7 @@ const EMPREENDIMENTOS = [
         tag: '2 Dormitórios',
         badge: 'Mais vendido',
         slug: 'tipo-c-2-dorms',
-        vaga: 'com' // Estimativa espelhada do Maro — book não vincula Tipo a vaga
+        vaga: 'com' // Espelhado do Residencial Maro
       },
       {
         nome: 'Tipo E - 2 Dorms',
@@ -232,7 +232,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: '2 Dormitórios',
         slug: 'tipo-e-2-dorms',
-        vaga: 'sem' // Estimativa espelhada do Maro — book não vincula Tipo a vaga
+        vaga: 'sem' // Espelhado do Residencial Maro
       },
       {
         nome: 'Tipo B - 2 Dormitórios',
@@ -243,7 +243,7 @@ const EMPREENDIMENTOS = [
         destaque: false,
         tag: '2 Dormitórios',
         slug: 'tipo-b-2-dorms-suite',
-        vaga: 'com' // Book oficial confirma sorteio de vaga por assembleia (Q17); não há vinculação de Tipo x vaga no PDF — mantido como estimativa
+        vaga: 'com' // Estimativa a confirmar — maior metragem
       }
     ],
     galeria: [

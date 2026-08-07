@@ -3099,13 +3099,6 @@
       flex: 1;
     }
 
-    .emp-card-price {
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-      font-weight: 700;
-      color: var(--teal);
-      margin-top: 0.25rem;
-    }
-
 .emp-card-meta {
   display: flex;
   gap: 1rem;

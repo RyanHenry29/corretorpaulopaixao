@@ -317,7 +317,6 @@ function renderCards() {
         <div class="emp-card-local"><i class="fa-solid fa-location-dot"></i> ${emp.bairro}</div>
         <h3 class="emp-card-title">${emp.nome}</h3>
         <p class="emp-card-desc">${emp.descricaoCurta}</p>
-        <div class="emp-card-price">${emp.faixaPreco}</div>
         <div class="emp-card-meta">
           <span><i class="fa-solid fa-table-cells-large"></i> ${emp.plantas.length} plantas</span>
           ${emp.temMCMV ? '<span><i class="fa-solid fa-house-circle-check"></i> MCMV</span>' : ''}
@@ -868,7 +867,7 @@ function pqHandleNext() {
 
   if (step === '2c') {
     pqCalcTotalRenda();
-    if (pqData.rendaTotal >= 7000) {
+    if (pqData.rendaTotal >= 8000) {
       pqGoToStep(3);
       return;
     }
@@ -912,7 +911,7 @@ document.getElementById('pq-btn-next')?.addEventListener('click', pqHandleNext);
 
 function pqGetRendaGrade(rendaStr) {
   var val = parseFloat(rendaStr) || 0;
-  if (val >= 7000) return 4;
+  if (val >= 8000) return 4;
   if (val >= 5000) return 3;
   if (val >= 2001) return 2;
   if (val > 0) return 1;
@@ -984,7 +983,7 @@ function pqFinalize() {
     isElegivel = true;
   } else {
     var total = pqCalcTotalRenda();
-    if (total >= 7000) isElegivel = true;
+    if (total >= 8000) isElegivel = true;
   }
 
   var scoreHTML = pqBuildScoreHTML();
@@ -1035,7 +1034,7 @@ function pqFinalize() {
       '<div class="pq-result-icon partial"><i class="fa-solid fa-triangle-exclamation"></i></div>' +
       '<div class="pq-result-title">Renda abaixo do valor m\u00EDnimo</div>' +
       scoreHTML +
-      '<p class="pq-result-msg">Infelizmente sua renda total n\u00E3o atingiu o valor m\u00EDnimo de R$ 7.000 necess\u00E1rio para este empreendimento. Consulte outras op\u00E7\u00F5es de im\u00F3veis ou fale com Paulo para encontrar alternativas.</p>';
+      '<p class="pq-result-msg">Infelizmente sua renda total n\u00E3o atingiu o valor m\u00EDnimo de R$ 8.000 necess\u00E1rio para este empreendimento. Consulte outras op\u00E7\u00F5es de im\u00F3veis ou fale com Paulo para encontrar alternativas.</p>';
     actions.innerHTML =
       '<button type="button" class="pq-result-btn pq-result-btn-primary" onclick="showHomeView()">' +
         '<i class="fa-solid fa-building"></i> Ver outros empreendimentos' +

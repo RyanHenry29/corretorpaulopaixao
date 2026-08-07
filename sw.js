@@ -1,5 +1,5 @@
-const CACHE = 'paulo-paixao-v7';
-const IMG_CACHE = 'paulo-paixao-imgs-v3';
+const CACHE = 'paulo-paixao-v8';
+const IMG_CACHE = 'paulo-paixao-imgs-v4';
 const MAX_IMG_CACHE = 50;
 
 const PRECACHE = [
@@ -14,11 +14,11 @@ const PRECACHE = [
   'assets/favicon/favicon-192.png',
   'assets/favicon/apple-touch-icon.png',
   'politica-de-privacidade.html',
-  'assets/img/foto-residencial.jpeg',
+  'assets/img/foto-residencial.webp',
   'assets/img/hero-poster.jpg?v=1',
   'assets/img/og-banner.jpg',
   'assets/capas/capas%20paulo%20-%201.webp',
-  'assets/fotos/maro/fachada.jpg?v=2',
+  'assets/fotos/maro/fachada.webp?v=2',
   'assets/fotos/momi/foto-8.webp',
   'site.webmanifest',
   'robots.txt'

@@ -378,7 +378,7 @@ function showHomeView() {
   document.title = 'Corretor Paulo Paixão';
   document.querySelector('meta[property="og:title"]')?.setAttribute('content', 'Corretor Paulo Paixão · Residencial Maro — Guarulhos');
   document.querySelector('meta[property="og:description"]')?.setAttribute('content', 'Apartamentos de 27 a 46 m² em Guarulhos. Financiamento Minha Casa Minha Vida com orientação gratuita.');
-  document.querySelector('meta[property="og:image"]')?.setAttribute('content', 'https://corretorpaulopaixao.vercel.app/assets/img/foto-residencial.jpeg');
+  document.querySelector('meta[property="og:image"]')?.setAttribute('content', 'https://corretorpaulopaixao.vercel.app/assets/img/foto-residencial.webp');
 
   document.getElementById('f-empreendimento-hidden').value = '';
   document.getElementById('form-card-title').textContent = 'Converse conosco';
@@ -1541,7 +1541,7 @@ function renderVideoCarousel() {
   if (!track) return;
 
   track.innerHTML = INST_VIDEOS.map(function(v, i) {
-    var thumbSrc = v.src.replace('video-', 'thumb-video-').replace('.mp4', '.jpg');
+    var thumbSrc = v.src.replace('video-', 'thumb-video-').replace('.mp4', '.webp');
     return '<div class="vid-carousel-item" data-video-index="' + i + '">' +
       '<div class="vid-thumb-wrap">' +
         '<div class="vid-carousel-item-bg" id="vid-thumb-' + i + '" style="background-image:url(' + thumbSrc + ')"></div>' +
@@ -1716,7 +1716,7 @@ function generateThumbnailQueue() {
     if (!el) return;
     var img = new Image();
     img.onerror = function() { el.classList.add('vid-fallback'); };
-    img.src = v.src.replace('video-', 'thumb-video-').replace('.mp4', '.jpg');
+    img.src = v.src.replace('video-', 'thumb-video-').replace('.mp4', '.webp');
   });
 }
 
